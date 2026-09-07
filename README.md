@@ -2,6 +2,8 @@
 
 **Good food. Another chance.**
 
+[Open the public app](https://second-serve-dispatch.shobhit1kapoor.chatgpt.site/) · [Watch the full app walkthrough](https://second-serve-dispatch.shobhit1kapoor.chatgpt.site/demo/index.html)
+
 An evening's surplus food is useful only if somebody can collect it in time and take it somewhere that can accept it. Second Serve is a working dispatch prototype for that coordination problem. Three Mozaik agents assess donations, community capacity, and transport together. A coordinator can interrupt the plan by removing a driver, adding a late donation, or advancing the pickup clock.
 
 The point of the demo is the interruption. A model can finish reasoning against a board that has already changed. Second Serve validates every reservation against the current board, rejects stale decisions, and lets the team revise the plan.

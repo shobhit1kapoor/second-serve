@@ -1,0 +1,1126 @@
+{
+  "id": "1ef7aa59-fa84-4fb9-998d-88735bb9f323",
+  "mode": "rehearsal",
+  "status": "complete",
+  "startedAt": 1788747897457,
+  "state": {
+    "revision": 6,
+    "minute": 0,
+    "cancellations": 1,
+    "conflictsPrevented": 0,
+    "donations": [
+      {
+        "id": "d1",
+        "name": "Sunday Bread",
+        "food": "Sourdough & pastries",
+        "category": "Bakery",
+        "portions": 24,
+        "weight": 12,
+        "closesAt": 35,
+        "point": {
+          "x": 24,
+          "y": 24
+        },
+        "address": "1840 W North Ave",
+        "chilled": false
+      },
+      {
+        "id": "d2",
+        "name": "Green Basket",
+        "food": "Seasonal vegetables",
+        "category": "Produce",
+        "portions": 40,
+        "weight": 24,
+        "closesAt": 75,
+        "point": {
+          "x": 62,
+          "y": 24
+        },
+        "address": "1560 N Milwaukee Ave",
+        "chilled": false
+      },
+      {
+        "id": "d3",
+        "name": "The Common Table",
+        "food": "Chilled prepared meals",
+        "category": "Prepared",
+        "portions": 32,
+        "weight": 20,
+        "closesAt": 50,
+        "point": {
+          "x": 40,
+          "y": 53
+        },
+        "address": "1425 N Damen Ave",
+        "chilled": true
+      },
+      {
+        "id": "d4",
+        "name": "Orchard Market",
+        "food": "Fresh fruit boxes",
+        "category": "Produce",
+        "portions": 28,
+        "weight": 18,
+        "closesAt": 95,
+        "point": {
+          "x": 79,
+          "y": 50
+        },
+        "address": "1200 N Ashland Ave",
+        "chilled": false
+      },
+      {
+        "id": "d5",
+        "name": "Little Oven",
+        "food": "Bread & breakfast rolls",
+        "category": "Bakery",
+        "portions": 18,
+        "weight": 8,
+        "closesAt": 65,
+        "point": {
+          "x": 27,
+          "y": 77
+        },
+        "address": "1000 N Western Ave",
+        "chilled": false
+      }
+    ],
+    "recipients": [
+      {
+        "id": "r1",
+        "name": "Neighborhood Pantry",
+        "capacity": 65,
+        "accepts": [
+          "Bakery",
+          "Produce"
+        ],
+        "point": {
+          "x": 49,
+          "y": 18
+        },
+        "address": "1800 N Wood St"
+      },
+      {
+        "id": "r2",
+        "name": "Community Kitchen",
+        "capacity": 65,
+        "accepts": [
+          "Bakery",
+          "Produce",
+          "Prepared"
+        ],
+        "point": {
+          "x": 66,
+          "y": 70
+        },
+        "address": "1100 N Paulina St"
+      },
+      {
+        "id": "r3",
+        "name": "Westside Fridge",
+        "capacity": 45,
+        "accepts": [
+          "Bakery",
+          "Produce",
+          "Prepared"
+        ],
+        "point": {
+          "x": 18,
+          "y": 55
+        },
+        "address": "1350 N Western Ave"
+      }
+    ],
+    "drivers": [
+      {
+        "id": "v1",
+        "name": "Maya",
+        "initials": "MA",
+        "capacity": 35,
+        "chilled": false,
+        "available": false,
+        "point": {
+          "x": 31,
+          "y": 17
+        },
+        "color": "#e59a36"
+      },
+      {
+        "id": "v2",
+        "name": "Theo",
+        "initials": "TH",
+        "capacity": 45,
+        "chilled": true,
+        "available": true,
+        "point": {
+          "x": 56,
+          "y": 59
+        },
+        "color": "#5d75c7"
+      },
+      {
+        "id": "v3",
+        "name": "Sam",
+        "initials": "SA",
+        "capacity": 30,
+        "chilled": true,
+        "available": true,
+        "point": {
+          "x": 18,
+          "y": 68
+        },
+        "color": "#159477"
+      }
+    ],
+    "assignments": [
+      {
+        "id": "a65bf3ba-b7a9-4972-8a4c-ac9131c0b484",
+        "donationId": "d3",
+        "recipientId": "r3",
+        "driverId": "v2",
+        "minutes": 23,
+        "revision": 2,
+        "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+        "status": "reserved"
+      },
+      {
+        "id": "ed1a90ab-a855-422b-b52a-a7ef3461b220",
+        "donationId": "d1",
+        "recipientId": "r1",
+        "driverId": "v3",
+        "minutes": 32,
+        "revision": 4,
+        "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+        "status": "reserved"
+      },
+      {
+        "id": "2d449f5d-9884-4e8b-9c85-329ef4db3080",
+        "donationId": "d5",
+        "recipientId": "r2",
+        "driverId": "v2",
+        "minutes": 31,
+        "revision": 5,
+        "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+        "status": "reserved"
+      },
+      {
+        "id": "03c804b4-2389-4df7-8294-83b193191c66",
+        "donationId": "d4",
+        "recipientId": "r2",
+        "driverId": "v3",
+        "minutes": 32,
+        "revision": 6,
+        "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+        "status": "reserved"
+      }
+    ],
+    "findings": [
+      {
+        "id": "a492f3f2-9b60-4db2-900c-eda66447e3a0",
+        "role": "supply",
+        "title": "Prioritize the closing bakery",
+        "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 3 drivers are currently available.",
+        "donationIds": [
+          "d1",
+          "d3"
+        ],
+        "revision": 0
+      },
+      {
+        "id": "1b1bd909-c9d5-4437-944e-a81fa7583b2d",
+        "role": "community",
+        "title": "Match capacity before committing",
+        "detail": "Neighborhood Pantry accepts bakery and produce. Reserve chilled meal capacity at Community Kitchen or Westside Fridge; avoid routing every donation to one recipient.",
+        "donationIds": [
+          "d2",
+          "d3"
+        ],
+        "revision": 0
+      },
+      {
+        "id": "c19f329f-96c0-4991-8e34-32588d1dd357",
+        "role": "supply",
+        "title": "Prioritize the closing bakery",
+        "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.",
+        "donationIds": [
+          "d1",
+          "d3"
+        ],
+        "revision": 3
+      }
+    ],
+    "agents": [
+      {
+        "role": "supply",
+        "name": "Scout",
+        "title": "Donation specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "Pickup priorities are shared. I’m watching for new donations and changing windows."
+      },
+      {
+        "role": "community",
+        "name": "Bridge",
+        "title": "Community specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "Recipient constraints are shared. I’m watching for capacity changes."
+      },
+      {
+        "role": "dispatch",
+        "name": "Relay",
+        "title": "Transport specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "All currently feasible pickups are reserved. Any remaining donations need additional capacity or a different pickup window."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "7e0d01d4-bc9d-4988-9de0-46f4dda71386",
+      "sequence": 1,
+      "at": 1788747897462,
+      "type": "session.started",
+      "actor": "coordinator",
+      "title": "Rehearsal started",
+      "detail": "Mozaik runs with a deterministic inference simulator. No model calls or real deliveries.",
+      "revision": 0
+    },
+    {
+      "id": "4bda6347-ba91-46fd-bf53-ff12661a5f69",
+      "sequence": 2,
+      "at": 1788747897462,
+      "type": "agent.awakened",
+      "actor": "supply",
+      "title": "Scout picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "eac6cb90-0e51-48bc-9783-05f6f5acc957",
+      "sequence": 3,
+      "at": 1788747897465,
+      "type": "agent.awakened",
+      "actor": "community",
+      "title": "Bridge picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "1db37213-ef21-4e77-a1cc-503e61670573",
+      "sequence": 4,
+      "at": 1788747897465,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "520a370c-35bc-44a2-b6fb-22569b949077",
+      "sequence": 5,
+      "at": 1788747897466,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "01aa885b-7f61-49d0-b0f8-8322302a35af"
+      }
+    },
+    {
+      "id": "386a1944-5e44-492a-985f-e7316707bd61",
+      "sequence": 6,
+      "at": 1788747897466,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "bfcf5d5a-dc9b-46d2-9dc8-8fb51ed71ceb"
+      }
+    },
+    {
+      "id": "62913dcd-b2bf-49bc-9d2d-ce376a6c824c",
+      "sequence": 7,
+      "at": 1788747897466,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "b8e282a3-a8c7-4e78-b17a-1d28aab6189c"
+      }
+    },
+    {
+      "id": "3d927543-eb09-4331-9798-45398bbc8b4f",
+      "sequence": 8,
+      "at": 1788747898131,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "01aa885b-7f61-49d0-b0f8-8322302a35af",
+        "durationMs": 665
+      }
+    },
+    {
+      "id": "c1dae41a-2d26-43a6-814e-7bed6d2065e7",
+      "sequence": 9,
+      "at": 1788747898131,
+      "type": "finding.shared",
+      "actor": "supply",
+      "title": "Prioritize the closing bakery",
+      "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 3 drivers are currently available.",
+      "revision": 0,
+      "data": {
+        "findingId": "a492f3f2-9b60-4db2-900c-eda66447e3a0"
+      }
+    },
+    {
+      "id": "43482674-2268-4c29-b227-e11dea608d67",
+      "sequence": 10,
+      "at": 1788747898131,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "80cddb9b-cbd4-4708-8b86-5af5137569ed"
+      }
+    },
+    {
+      "id": "73ed0579-859d-42af-acaf-745824522aa2",
+      "sequence": 11,
+      "at": 1788747898320,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "bfcf5d5a-dc9b-46d2-9dc8-8fb51ed71ceb",
+        "durationMs": 854
+      }
+    },
+    {
+      "id": "b6ac49c5-23bf-4a32-ae89-cd53315a7831",
+      "sequence": 12,
+      "at": 1788747898320,
+      "type": "finding.shared",
+      "actor": "community",
+      "title": "Match capacity before committing",
+      "detail": "Neighborhood Pantry accepts bakery and produce. Reserve chilled meal capacity at Community Kitchen or Westside Fridge; avoid routing every donation to one recipient.",
+      "revision": 0,
+      "data": {
+        "findingId": "1b1bd909-c9d5-4437-944e-a81fa7583b2d"
+      }
+    },
+    {
+      "id": "999cef6f-376c-43d4-9035-dcf7d9b095c0",
+      "sequence": 13,
+      "at": 1788747898320,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "34fc34aa-6249-4598-9e8d-3d2433959889"
+      }
+    },
+    {
+      "id": "ac5381a7-ebb7-4013-b011-197dfc3307af",
+      "sequence": 14,
+      "at": 1788747898527,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "b8e282a3-a8c7-4e78-b17a-1d28aab6189c",
+        "durationMs": 1061
+      }
+    },
+    {
+      "id": "0699f301-b016-46fe-a18f-1c9201bedc06",
+      "sequence": 15,
+      "at": 1788747898527,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Maya → Sunday Bread",
+      "detail": "24 portions for Neighborhood Pantry. Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+      "revision": 1,
+      "data": {
+        "assignment": {
+          "id": "dec7b69f-a913-43a9-b30d-9a3c97bf4185",
+          "donationId": "d1",
+          "recipientId": "r1",
+          "driverId": "v1",
+          "minutes": 22,
+          "revision": 1,
+          "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "41de151d-2ed1-459a-b570-0de18f41478c",
+      "sequence": 16,
+      "at": 1788747898527,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "cfde1db3-7663-40ee-94b0-b752dd729cbe"
+      }
+    },
+    {
+      "id": "29de3e8a-2db7-48a4-9f8b-e43ab6b202e3",
+      "sequence": 17,
+      "at": 1788747898797,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "80cddb9b-cbd4-4708-8b86-5af5137569ed",
+        "durationMs": 666
+      }
+    },
+    {
+      "id": "ed15506a-6edd-413d-ab02-9aef69d8e891",
+      "sequence": 18,
+      "at": 1788747898798,
+      "type": "agent.settled",
+      "actor": "supply",
+      "title": "Scout finished this turn",
+      "detail": "Pickup priorities are shared. I’m watching for new donations and changing windows.",
+      "revision": 1
+    },
+    {
+      "id": "dff9eda0-0af3-429b-a15c-94b46665a73a",
+      "sequence": 19,
+      "at": 1788747899175,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "34fc34aa-6249-4598-9e8d-3d2433959889",
+        "durationMs": 855
+      }
+    },
+    {
+      "id": "a12d3c38-b2d5-4783-9bc6-fb56638f49aa",
+      "sequence": 20,
+      "at": 1788747899176,
+      "type": "agent.settled",
+      "actor": "community",
+      "title": "Bridge finished this turn",
+      "detail": "Recipient constraints are shared. I’m watching for capacity changes.",
+      "revision": 1
+    },
+    {
+      "id": "38e51570-8a4f-4b67-b745-a06f9cbb5d19",
+      "sequence": 21,
+      "at": 1788747899587,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "cfde1db3-7663-40ee-94b0-b752dd729cbe",
+        "durationMs": 1060
+      }
+    },
+    {
+      "id": "b10daabd-c67e-4f97-9e28-2ea7f19673dc",
+      "sequence": 22,
+      "at": 1788747899588,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Theo → The Common Table",
+      "detail": "32 portions for Westside Fridge. Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+      "revision": 2,
+      "data": {
+        "assignment": {
+          "id": "a65bf3ba-b7a9-4972-8a4c-ac9131c0b484",
+          "donationId": "d3",
+          "recipientId": "r3",
+          "driverId": "v2",
+          "minutes": 23,
+          "revision": 2,
+          "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "1130d253-b54d-4606-beb8-5b894bf9fd27",
+      "sequence": 23,
+      "at": 1788747899588,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 2,
+      "data": {
+        "spanId": "e4daf1d5-9963-4792-a593-cd8fcf29bfc6"
+      }
+    },
+    {
+      "id": "18bff201-8428-4771-863b-a48811332568",
+      "sequence": 24,
+      "at": 1788747899766,
+      "type": "coordinator.changed",
+      "actor": "coordinator",
+      "title": "A driver is unavailable",
+      "detail": "Maya is unavailable. 1 pickups released for reassignment.",
+      "revision": 3,
+      "data": {
+        "commandId": "e43b4e67-32b3-4d4d-a296-697feec7b48e"
+      }
+    },
+    {
+      "id": "9ba6d352-cd21-42ec-b443-03a715c4e398",
+      "sequence": 25,
+      "at": 1788747899766,
+      "type": "agent.awakened",
+      "actor": "supply",
+      "title": "Scout picked up an update",
+      "detail": "Coordinator update: {\"id\":\"e43b4e67-32b3-4d4d-a296-697feec7b48e\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 3,
+      "data": {
+        "evidenceIds": [
+          "a492f3f2-9b60-4db2-900c-eda66447e3a0",
+          "1b1bd909-c9d5-4437-944e-a81fa7583b2d"
+        ]
+      }
+    },
+    {
+      "id": "4868e025-2a0b-4bea-a171-3d2b2c7310bb",
+      "sequence": 26,
+      "at": 1788747899767,
+      "type": "agent.awakened",
+      "actor": "community",
+      "title": "Bridge picked up an update",
+      "detail": "Coordinator update: {\"id\":\"e43b4e67-32b3-4d4d-a296-697feec7b48e\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 3,
+      "data": {
+        "evidenceIds": [
+          "a492f3f2-9b60-4db2-900c-eda66447e3a0",
+          "1b1bd909-c9d5-4437-944e-a81fa7583b2d"
+        ]
+      }
+    },
+    {
+      "id": "e2d1ba24-6ccc-4360-980f-728fd5e94c04",
+      "sequence": 27,
+      "at": 1788747899767,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "9bed404d-84e4-4411-96d2-0f8842541ad3"
+      }
+    },
+    {
+      "id": "f27c4fb6-f12f-4a4c-9f7e-051802ded4c0",
+      "sequence": 28,
+      "at": 1788747899768,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "a3bc1f9b-9e0c-4aec-acf4-a924c8c0239c"
+      }
+    },
+    {
+      "id": "e24af239-eafc-4a1b-89a6-704b78e4c0eb",
+      "sequence": 29,
+      "at": 1788747900423,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "9bed404d-84e4-4411-96d2-0f8842541ad3",
+        "durationMs": 656
+      }
+    },
+    {
+      "id": "a7542174-7e4d-4be5-a2bb-335817c5627c",
+      "sequence": 30,
+      "at": 1788747900423,
+      "type": "finding.shared",
+      "actor": "supply",
+      "title": "Prioritize the closing bakery",
+      "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.",
+      "revision": 3,
+      "data": {
+        "findingId": "c19f329f-96c0-4991-8e34-32588d1dd357"
+      }
+    },
+    {
+      "id": "08219ee3-00f6-47d9-80e4-4e037d4e9c7d",
+      "sequence": 31,
+      "at": 1788747900423,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "f53743cb-a120-499f-bad1-8fc2ce6d8cab"
+      }
+    },
+    {
+      "id": "ee177323-9d96-4a22-b1b1-702f57d73b93",
+      "sequence": 32,
+      "at": 1788747900628,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "a3bc1f9b-9e0c-4aec-acf4-a924c8c0239c",
+        "durationMs": 860
+      }
+    },
+    {
+      "id": "818c1a93-3de3-4a4e-b76b-228cb3d49395",
+      "sequence": 33,
+      "at": 1788747900629,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "a2c2e9a1-97fc-4dc3-b9c9-3865b966c1e1"
+      }
+    },
+    {
+      "id": "24f4773e-79d0-4ded-b5eb-13aa78a676b0",
+      "sequence": 34,
+      "at": 1788747900645,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "e4daf1d5-9963-4792-a593-cd8fcf29bfc6",
+        "durationMs": 1056
+      }
+    },
+    {
+      "id": "822639d0-545e-4c59-98e9-80a48a3c2335",
+      "sequence": 35,
+      "at": 1788747900645,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Sam → Sunday Bread",
+      "detail": "24 portions for Neighborhood Pantry. Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+      "revision": 4,
+      "data": {
+        "assignment": {
+          "id": "ed1a90ab-a855-422b-b52a-a7ef3461b220",
+          "donationId": "d1",
+          "recipientId": "r1",
+          "driverId": "v3",
+          "minutes": 32,
+          "revision": 4,
+          "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "43759a18-8631-41b9-b224-ea686fae998f",
+      "sequence": 36,
+      "at": 1788747900645,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "cf6e13f3-9ca6-4703-8eec-b52abf93d9fd"
+      }
+    },
+    {
+      "id": "f07b3bd6-aa23-43a7-86be-0c4be56af0db",
+      "sequence": 37,
+      "at": 1788747901088,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "f53743cb-a120-499f-bad1-8fc2ce6d8cab",
+        "durationMs": 665
+      }
+    },
+    {
+      "id": "457e63fd-7995-49c4-a73c-8fda11e30b47",
+      "sequence": 38,
+      "at": 1788747901088,
+      "type": "agent.settled",
+      "actor": "supply",
+      "title": "Scout finished this turn",
+      "detail": "Pickup priorities are shared. I’m watching for new donations and changing windows.",
+      "revision": 4
+    },
+    {
+      "id": "bd504542-0123-49f3-aa36-3a18485bb7ad",
+      "sequence": 39,
+      "at": 1788747901484,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "a2c2e9a1-97fc-4dc3-b9c9-3865b966c1e1",
+        "durationMs": 855
+      }
+    },
+    {
+      "id": "9c2c22e7-f504-4d73-af8a-df16e6a15fe5",
+      "sequence": 40,
+      "at": 1788747901484,
+      "type": "agent.settled",
+      "actor": "community",
+      "title": "Bridge finished this turn",
+      "detail": "Recipient constraints are shared. I’m watching for capacity changes.",
+      "revision": 4
+    },
+    {
+      "id": "f2a26744-a7b2-44ba-85c4-de5a583b980e",
+      "sequence": 41,
+      "at": 1788747901704,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "cf6e13f3-9ca6-4703-8eec-b52abf93d9fd",
+        "durationMs": 1059
+      }
+    },
+    {
+      "id": "7a51a5b6-7904-42e4-8a73-a7c89036d744",
+      "sequence": 42,
+      "at": 1788747901705,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Theo → Little Oven",
+      "detail": "18 portions for Community Kitchen. Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+      "revision": 5,
+      "data": {
+        "assignment": {
+          "id": "2d449f5d-9884-4e8b-9c85-329ef4db3080",
+          "donationId": "d5",
+          "recipientId": "r2",
+          "driverId": "v2",
+          "minutes": 31,
+          "revision": 5,
+          "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "32366c18-ee14-4999-ba26-fe9fae72542e",
+      "sequence": 43,
+      "at": 1788747901705,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "2778b0e6-28ba-4cdd-a87e-3a9a217ac21b"
+      }
+    },
+    {
+      "id": "18e5c73b-fa4b-4dba-8094-48dff86a0b5f",
+      "sequence": 44,
+      "at": 1788747902761,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "2778b0e6-28ba-4cdd-a87e-3a9a217ac21b",
+        "durationMs": 1056
+      }
+    },
+    {
+      "id": "c4cfd78b-6e68-4d70-ae08-d0d585e91093",
+      "sequence": 45,
+      "at": 1788747902762,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Sam → Orchard Market",
+      "detail": "28 portions for Community Kitchen. Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+      "revision": 6,
+      "data": {
+        "assignment": {
+          "id": "03c804b4-2389-4df7-8294-83b193191c66",
+          "donationId": "d4",
+          "recipientId": "r2",
+          "driverId": "v3",
+          "minutes": 32,
+          "revision": 6,
+          "explanation": "Pickup fits the current window, vehicle capacity, refrigeration requirement, and recipient capacity. Closing windows are prioritized.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "515046e1-1244-4413-81ad-a6ce68866325",
+      "sequence": 46,
+      "at": 1788747902762,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "c6feb314-f3ff-4325-bb8e-bca72273b5aa"
+      }
+    },
+    {
+      "id": "6a33c725-9e05-4165-9f92-5884becaf89a",
+      "sequence": 47,
+      "at": 1788747903824,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "c6feb314-f3ff-4325-bb8e-bca72273b5aa",
+        "durationMs": 1062
+      }
+    },
+    {
+      "id": "2834cafa-fbca-4584-8a8f-1b7bdc667488",
+      "sequence": 48,
+      "at": 1788747903824,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "All currently feasible pickups are reserved. Any remaining donations need additional capacity or a different pickup window.",
+      "revision": 6
+    },
+    {
+      "id": "bbf163ff-7692-42b8-8697-220093cd6499",
+      "sequence": 49,
+      "at": 1788747903824,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Peer finding: {\"id\":\"c19f329f-96c0-4991-8e34-32588d1dd357\",\"role\":\"supply\",\"title\":\"Prioritize the closing bakery\",\"detail\":\"Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.\",\"donationIds\":[\"d1\",\"d3\"],\"revision\":3}",
+      "revision": 6,
+      "data": {
+        "evidenceIds": [
+          "a492f3f2-9b60-4db2-900c-eda66447e3a0",
+          "1b1bd909-c9d5-4437-944e-a81fa7583b2d",
+          "c19f329f-96c0-4991-8e34-32588d1dd357"
+        ]
+      }
+    },
+    {
+      "id": "05bb48f9-9d7d-4a3f-9d25-3eee36a07b1a",
+      "sequence": 50,
+      "at": 1788747903825,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "ef2f47f0-b0d9-4816-a18b-13a21d49696f"
+      }
+    },
+    {
+      "id": "c2484164-25fa-4b53-93f8-2f70efd8f819",
+      "sequence": 51,
+      "at": 1788747904884,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "ef2f47f0-b0d9-4816-a18b-13a21d49696f",
+        "durationMs": 1059
+      }
+    },
+    {
+      "id": "02bb044b-a6fa-45f4-bbf0-07ec6ba48157",
+      "sequence": 52,
+      "at": 1788747904885,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "All currently feasible pickups are reserved. Any remaining donations need additional capacity or a different pickup window.",
+      "revision": 6
+    },
+    {
+      "id": "1fcd13c9-e749-440d-ba10-8541158f8b01",
+      "sequence": 53,
+      "at": 1788747905286,
+      "type": "session.finished",
+      "actor": "coordinator",
+      "title": "Dispatch session saved",
+      "detail": "The plan and its event trail are ready to review.",
+      "revision": 6
+    }
+  ],
+  "spans": [
+    {
+      "id": "01aa885b-7f61-49d0-b0f8-8322302a35af",
+      "role": "supply",
+      "start": 1788747897466,
+      "end": 1788747898131,
+      "outcome": "ok"
+    },
+    {
+      "id": "bfcf5d5a-dc9b-46d2-9dc8-8fb51ed71ceb",
+      "role": "community",
+      "start": 1788747897466,
+      "end": 1788747898320,
+      "outcome": "ok"
+    },
+    {
+      "id": "b8e282a3-a8c7-4e78-b17a-1d28aab6189c",
+      "role": "dispatch",
+      "start": 1788747897466,
+      "end": 1788747898527,
+      "outcome": "ok"
+    },
+    {
+      "id": "80cddb9b-cbd4-4708-8b86-5af5137569ed",
+      "role": "supply",
+      "start": 1788747898131,
+      "end": 1788747898797,
+      "outcome": "ok"
+    },
+    {
+      "id": "34fc34aa-6249-4598-9e8d-3d2433959889",
+      "role": "community",
+      "start": 1788747898320,
+      "end": 1788747899175,
+      "outcome": "ok"
+    },
+    {
+      "id": "cfde1db3-7663-40ee-94b0-b752dd729cbe",
+      "role": "dispatch",
+      "start": 1788747898527,
+      "end": 1788747899587,
+      "outcome": "ok"
+    },
+    {
+      "id": "e4daf1d5-9963-4792-a593-cd8fcf29bfc6",
+      "role": "dispatch",
+      "start": 1788747899588,
+      "end": 1788747900644,
+      "outcome": "ok"
+    },
+    {
+      "id": "9bed404d-84e4-4411-96d2-0f8842541ad3",
+      "role": "supply",
+      "start": 1788747899767,
+      "end": 1788747900423,
+      "outcome": "ok"
+    },
+    {
+      "id": "a3bc1f9b-9e0c-4aec-acf4-a924c8c0239c",
+      "role": "community",
+      "start": 1788747899768,
+      "end": 1788747900628,
+      "outcome": "ok"
+    },
+    {
+      "id": "f53743cb-a120-499f-bad1-8fc2ce6d8cab",
+      "role": "supply",
+      "start": 1788747900423,
+      "end": 1788747901088,
+      "outcome": "ok"
+    },
+    {
+      "id": "a2c2e9a1-97fc-4dc3-b9c9-3865b966c1e1",
+      "role": "community",
+      "start": 1788747900629,
+      "end": 1788747901484,
+      "outcome": "ok"
+    },
+    {
+      "id": "cf6e13f3-9ca6-4703-8eec-b52abf93d9fd",
+      "role": "dispatch",
+      "start": 1788747900645,
+      "end": 1788747901704,
+      "outcome": "ok"
+    },
+    {
+      "id": "2778b0e6-28ba-4cdd-a87e-3a9a217ac21b",
+      "role": "dispatch",
+      "start": 1788747901705,
+      "end": 1788747902761,
+      "outcome": "ok"
+    },
+    {
+      "id": "c6feb314-f3ff-4325-bb8e-bca72273b5aa",
+      "role": "dispatch",
+      "start": 1788747902762,
+      "end": 1788747903824,
+      "outcome": "ok"
+    },
+    {
+      "id": "ef2f47f0-b0d9-4816-a18b-13a21d49696f",
+      "role": "dispatch",
+      "start": 1788747903825,
+      "end": 1788747904884,
+      "outcome": "ok"
+    }
+  ],
+  "model": "Deterministic rehearsal (no LLM)",
+  "calls": 15,
+  "endedAt": 1788747905286
+}

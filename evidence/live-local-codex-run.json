@@ -1,0 +1,1242 @@
+{
+  "id": "18f10da2-dd39-4e1d-946c-98ec62553ea2",
+  "mode": "live",
+  "status": "complete",
+  "startedAt": 1788748524691,
+  "state": {
+    "revision": 6,
+    "minute": 0,
+    "cancellations": 1,
+    "conflictsPrevented": 1,
+    "donations": [
+      {
+        "id": "d1",
+        "name": "Sunday Bread",
+        "food": "Sourdough & pastries",
+        "category": "Bakery",
+        "portions": 24,
+        "weight": 12,
+        "closesAt": 35,
+        "point": {
+          "x": 24,
+          "y": 24
+        },
+        "address": "1840 W North Ave",
+        "chilled": false
+      },
+      {
+        "id": "d2",
+        "name": "Green Basket",
+        "food": "Seasonal vegetables",
+        "category": "Produce",
+        "portions": 40,
+        "weight": 24,
+        "closesAt": 75,
+        "point": {
+          "x": 62,
+          "y": 24
+        },
+        "address": "1560 N Milwaukee Ave",
+        "chilled": false
+      },
+      {
+        "id": "d3",
+        "name": "The Common Table",
+        "food": "Chilled prepared meals",
+        "category": "Prepared",
+        "portions": 32,
+        "weight": 20,
+        "closesAt": 50,
+        "point": {
+          "x": 40,
+          "y": 53
+        },
+        "address": "1425 N Damen Ave",
+        "chilled": true
+      },
+      {
+        "id": "d4",
+        "name": "Orchard Market",
+        "food": "Fresh fruit boxes",
+        "category": "Produce",
+        "portions": 28,
+        "weight": 18,
+        "closesAt": 95,
+        "point": {
+          "x": 79,
+          "y": 50
+        },
+        "address": "1200 N Ashland Ave",
+        "chilled": false
+      },
+      {
+        "id": "d5",
+        "name": "Little Oven",
+        "food": "Bread & breakfast rolls",
+        "category": "Bakery",
+        "portions": 18,
+        "weight": 8,
+        "closesAt": 65,
+        "point": {
+          "x": 27,
+          "y": 77
+        },
+        "address": "1000 N Western Ave",
+        "chilled": false
+      }
+    ],
+    "recipients": [
+      {
+        "id": "r1",
+        "name": "Neighborhood Pantry",
+        "capacity": 65,
+        "accepts": [
+          "Bakery",
+          "Produce"
+        ],
+        "point": {
+          "x": 49,
+          "y": 18
+        },
+        "address": "1800 N Wood St"
+      },
+      {
+        "id": "r2",
+        "name": "Community Kitchen",
+        "capacity": 65,
+        "accepts": [
+          "Bakery",
+          "Produce",
+          "Prepared"
+        ],
+        "point": {
+          "x": 66,
+          "y": 70
+        },
+        "address": "1100 N Paulina St"
+      },
+      {
+        "id": "r3",
+        "name": "Westside Fridge",
+        "capacity": 45,
+        "accepts": [
+          "Bakery",
+          "Produce",
+          "Prepared"
+        ],
+        "point": {
+          "x": 18,
+          "y": 55
+        },
+        "address": "1350 N Western Ave"
+      }
+    ],
+    "drivers": [
+      {
+        "id": "v1",
+        "name": "Maya",
+        "initials": "MA",
+        "capacity": 35,
+        "chilled": false,
+        "available": false,
+        "point": {
+          "x": 31,
+          "y": 17
+        },
+        "color": "#e59a36"
+      },
+      {
+        "id": "v2",
+        "name": "Theo",
+        "initials": "TH",
+        "capacity": 45,
+        "chilled": true,
+        "available": true,
+        "point": {
+          "x": 56,
+          "y": 59
+        },
+        "color": "#5d75c7"
+      },
+      {
+        "id": "v3",
+        "name": "Sam",
+        "initials": "SA",
+        "capacity": 30,
+        "chilled": true,
+        "available": true,
+        "point": {
+          "x": 18,
+          "y": 68
+        },
+        "color": "#159477"
+      }
+    ],
+    "assignments": [
+      {
+        "id": "70080b35-4a91-438c-be40-6faa53952d12",
+        "donationId": "d3",
+        "recipientId": "r2",
+        "driverId": "v2",
+        "minutes": 26,
+        "revision": 2,
+        "explanation": "Theo's chilled vehicle can deliver the 32 prepared-meal portions to Community Kitchen in 26 minutes; the 20 weight fits his 45 capacity, and the kitchen accepts Prepared with 65 portions available. This preserves Westside Fridge's capacity for Little Oven's feasible bakery delivery. No peer findings are posted.",
+        "status": "reserved"
+      },
+      {
+        "id": "3535f4bd-795f-4ea9-999a-c10c1aeed3ef",
+        "donationId": "d1",
+        "recipientId": "r1",
+        "driverId": "v3",
+        "minutes": 32,
+        "revision": 4,
+        "explanation": "Following Scout and Bridge's updated findings after Maya's cancellation, reserve Sam for Sunday Bread to Neighborhood Pantry. This listed feasible route takes 32 minutes before the minute-35 close; the 12 weight fits Sam's 30 capacity, and the pantry accepts all 24 bakery portions. It leaves 41 pantry portions available for Green Basket and preserves Theo's existing chilled-meal reservation.",
+        "status": "reserved"
+      },
+      {
+        "id": "9592e1e2-0813-4521-b96f-c17558124005",
+        "donationId": "d5",
+        "recipientId": "r3",
+        "driverId": "v3",
+        "minutes": 38,
+        "revision": 5,
+        "explanation": "Reserve the listed feasible Sam route for Little Oven's 18 bakery portions to Westside Fridge in 38 minutes. The 8 weight fits Sam's 30 capacity, and the fridge has room for all 18 portions. This follows Bridge's recipient plan, preserves Pantry's remaining 41 portions for Green Basket, and keeps Theo available for Green Basket's currently listed routes.",
+        "status": "reserved"
+      },
+      {
+        "id": "dd841590-550f-4608-b4f8-a9dc8917dae2",
+        "donationId": "d2",
+        "recipientId": "r1",
+        "driverId": "v2",
+        "minutes": 30,
+        "revision": 6,
+        "explanation": "Reserve Theo's listed feasible 30-minute route for Green Basket, which closes at minute 75. Its 24 weight fits his 45 capacity, and Neighborhood Pantry accepts Produce with 41 portions remaining for these 40 portions. This follows Bridge's capacity plan and preserves Community Kitchen's remaining 33 portions for Orchard Market's 28.",
+        "status": "reserved"
+      }
+    ],
+    "findings": [
+      {
+        "id": "d4e34757-ddf8-43cf-8927-1ac80a5adb2b",
+        "role": "supply",
+        "title": "Prioritize Sunday Bread; preserve chilled transport",
+        "detail": "Sunday Bread closes first at minute 35: prioritize Maya to Neighborhood Pantry (22 minutes, 24 portions). The Common Table closes at minute 50 and requires chilled transport; keep Theo or Sam available (Theo to Westside Fridge: 23 minutes, 32 portions). Remaining closing order: Little Oven 65, Green Basket 75, Orchard Market 95.",
+        "donationIds": [
+          "d1",
+          "d3",
+          "d5",
+          "d2",
+          "d4"
+        ],
+        "revision": 0
+      },
+      {
+        "id": "31eea0f4-ba5f-4307-ba2e-7169d76953ac",
+        "role": "community",
+        "title": "Preserve prepared-meal capacity",
+        "detail": "All recipient capacity remains open: Pantry 65 portions (Bakery/Produce), Kitchen 65 and Fridge 45 (also Prepared). Send d1's 24 portions to Pantry, leaving 41. Prefer d3's 32 chilled meals to Kitchen with Theo (26 minutes), leaving 33; this preserves Fridge capacity for d5's 18 portions, leaving 27. These are feasible listed options; dispatch should recheck availability before reserving.",
+        "donationIds": [
+          "d1",
+          "d3",
+          "d5"
+        ],
+        "revision": 1
+      },
+      {
+        "id": "04f190b6-32a5-498e-8d05-ce953c131a05",
+        "role": "community",
+        "title": "Updated capacity plan after Maya cancellation",
+        "detail": "At revision 3, remaining capacity is Pantry 65 (Bakery/Produce), Kitchen 33 and Fridge 45 (both also accept Prepared), accounting for d3's reservation. Prioritize listed Sam→Pantry option for d1 (32 minutes, 24 portions); Pantry would retain 41, enough for d2's 40. Route d5's 18 to Fridge and d4's 28 to Kitchen, leaving capacities 1/5/27 if all proceed. Maya is unavailable; recheck sequential driver feasibility before reserving later pickups.",
+        "donationIds": [
+          "d1",
+          "d2",
+          "d3",
+          "d4",
+          "d5"
+        ],
+        "revision": 3
+      },
+      {
+        "id": "48143d0f-ae92-4228-9172-d2b23e33523e",
+        "role": "supply",
+        "title": "Reassign urgent Sunday Bread to Sam",
+        "detail": "Maya is unavailable, superseding my earlier recommendation. Prioritize Sam for Sunday Bread to Neighborhood Pantry: listed feasible at 32 minutes for 24 portions; it closes at minute 35. Preserve Theo's existing chilled-meal reservation from The Common Table to Community Kitchen (26 minutes; closes at 50). Little Oven closes next at 65, followed by Green Basket at 75 and Orchard Market at 95; recheck routes after reassignment.",
+        "donationIds": [
+          "d1",
+          "d3",
+          "d5",
+          "d2",
+          "d4"
+        ],
+        "revision": 3
+      }
+    ],
+    "agents": [
+      {
+        "role": "supply",
+        "name": "Scout",
+        "title": "Donation specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "Updated finding published: prioritize Sam for Sunday Bread to Neighborhood Pantry before minute 35; preserve Theo’s chilled-meal reservation. No pickups reserved."
+      },
+      {
+        "role": "community",
+        "name": "Bridge",
+        "title": "Community specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "Published updated capacity guidance: prioritize Sam taking d1 to Pantry; target d2 to Pantry, d5 to Fridge, and d4 to Kitchen. Dispatch must recheck driver feasibility. No pickups reserved."
+      },
+      {
+        "role": "dispatch",
+        "name": "Relay",
+        "title": "Transport specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "Scout’s recommendation is already reflected at revision 6: Sam has Sunday Bread, and Theo retains the chilled meals. Four pickups totaling 114 portions are reserved. Orchard Market’s 28 portions remain unassigned because no feasible options remain."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "7bdca407-9ebe-4500-91a3-4ed68458f503",
+      "sequence": 1,
+      "at": 1788748524692,
+      "type": "session.started",
+      "actor": "coordinator",
+      "title": "Live dispatch started",
+      "detail": "Three Mozaik agents use codex-local-default.",
+      "revision": 0
+    },
+    {
+      "id": "6d510762-9c92-4cef-bd4f-c537036c2961",
+      "sequence": 2,
+      "at": 1788748524693,
+      "type": "agent.awakened",
+      "actor": "supply",
+      "title": "Scout picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "16a98c48-d33a-4627-8f04-89cc2ca330e8",
+      "sequence": 3,
+      "at": 1788748524701,
+      "type": "agent.awakened",
+      "actor": "community",
+      "title": "Bridge picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "c9a6f927-89e5-44ce-aeef-350f82ba6290",
+      "sequence": 4,
+      "at": 1788748524702,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "8b727209-bcc5-44b2-bb9f-510ee5986839",
+      "sequence": 5,
+      "at": 1788748524702,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "255b38e6-9f42-4338-9c54-3db2fc0436e5"
+      }
+    },
+    {
+      "id": "20c3afce-d47a-4ad7-a437-047f07b05db5",
+      "sequence": 6,
+      "at": 1788748524715,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "8580d44e-d0d8-4174-9b6b-027a5fa940c1"
+      }
+    },
+    {
+      "id": "c9110a42-f559-4efe-8f95-13d2efbe32fb",
+      "sequence": 7,
+      "at": 1788748524716,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "211b4f70-34fa-45d1-8cfb-994a3e9e121c"
+      }
+    },
+    {
+      "id": "fef1feeb-c72d-4234-853e-cc696b068180",
+      "sequence": 8,
+      "at": 1788748534083,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "255b38e6-9f42-4338-9c54-3db2fc0436e5",
+        "durationMs": 9381
+      }
+    },
+    {
+      "id": "7c9393fd-93c0-46c8-bccd-b33a2d427cc7",
+      "sequence": 9,
+      "at": 1788748534083,
+      "type": "finding.shared",
+      "actor": "supply",
+      "title": "Prioritize Sunday Bread; preserve chilled transport",
+      "detail": "Sunday Bread closes first at minute 35: prioritize Maya to Neighborhood Pantry (22 minutes, 24 portions). The Common Table closes at minute 50 and requires chilled transport; keep Theo or Sam available (Theo to Westside Fridge: 23 minutes, 32 portions). Remaining closing order: Little Oven 65, Green Basket 75, Orchard Market 95.",
+      "revision": 0,
+      "data": {
+        "findingId": "d4e34757-ddf8-43cf-8927-1ac80a5adb2b"
+      }
+    },
+    {
+      "id": "173d8224-4370-4d20-b733-8cb0280ae6eb",
+      "sequence": 10,
+      "at": 1788748534084,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "87c1d9c1-bc6b-4776-ae0c-078afd1a3e5b"
+      }
+    },
+    {
+      "id": "898d5c87-6d35-4cbf-b02b-3173193448db",
+      "sequence": 11,
+      "at": 1788748534503,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "211b4f70-34fa-45d1-8cfb-994a3e9e121c",
+        "durationMs": 9787
+      }
+    },
+    {
+      "id": "b5449a41-1595-4e5a-b564-cdc1fb8bd101",
+      "sequence": 12,
+      "at": 1788748534503,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Maya → Sunday Bread",
+      "detail": "24 portions for Neighborhood Pantry. Reserve the earliest-closing pickup: Maya can deliver Sunday Bread's 24 portions to Neighborhood Pantry in 22 minutes. The 12 weight fits her 35 capacity, the pantry accepts Bakery and has 65 portions of capacity, and this preserves chilled drivers for prepared meals. No peer findings are posted.",
+      "revision": 1,
+      "data": {
+        "assignment": {
+          "id": "54780ad5-a1f8-4531-9bfb-a80519f61dae",
+          "donationId": "d1",
+          "recipientId": "r1",
+          "driverId": "v1",
+          "minutes": 22,
+          "revision": 1,
+          "explanation": "Reserve the earliest-closing pickup: Maya can deliver Sunday Bread's 24 portions to Neighborhood Pantry in 22 minutes. The 12 weight fits her 35 capacity, the pantry accepts Bakery and has 65 portions of capacity, and this preserves chilled drivers for prepared meals. No peer findings are posted.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "f310258f-3038-4832-a5a2-b307b58eac92",
+      "sequence": 13,
+      "at": 1788748534503,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "88c68ddb-cb40-4185-b4f0-ef26dd8844f7"
+      }
+    },
+    {
+      "id": "31eb9c3a-b741-4dfe-ab49-5da8871b4690",
+      "sequence": 14,
+      "at": 1788748535119,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "8580d44e-d0d8-4174-9b6b-027a5fa940c1",
+        "durationMs": 10404
+      }
+    },
+    {
+      "id": "7c82f1e0-39b5-4403-8dbe-e996ee0d21e4",
+      "sequence": 15,
+      "at": 1788748535119,
+      "type": "finding.shared",
+      "actor": "community",
+      "title": "Preserve prepared-meal capacity",
+      "detail": "All recipient capacity remains open: Pantry 65 portions (Bakery/Produce), Kitchen 65 and Fridge 45 (also Prepared). Send d1's 24 portions to Pantry, leaving 41. Prefer d3's 32 chilled meals to Kitchen with Theo (26 minutes), leaving 33; this preserves Fridge capacity for d5's 18 portions, leaving 27. These are feasible listed options; dispatch should recheck availability before reserving.",
+      "revision": 1,
+      "data": {
+        "findingId": "31eea0f4-ba5f-4307-ba2e-7169d76953ac"
+      }
+    },
+    {
+      "id": "0cd54fd3-54da-4310-bc46-282f5261f218",
+      "sequence": 16,
+      "at": 1788748535119,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "d56e24f2-5852-4616-a51f-d4566d84b9ec"
+      }
+    },
+    {
+      "id": "d614ae05-da9a-495d-ac07-24e3a02a7344",
+      "sequence": 17,
+      "at": 1788748539878,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "87c1d9c1-bc6b-4776-ae0c-078afd1a3e5b",
+        "durationMs": 5794
+      }
+    },
+    {
+      "id": "e87ac5ed-dca6-4358-bbe4-28ed8e77e2e7",
+      "sequence": 18,
+      "at": 1788748539878,
+      "type": "agent.settled",
+      "actor": "supply",
+      "title": "Scout finished this turn",
+      "detail": "Finding published: prioritize Sunday Bread before minute 35 and preserve chilled transport for The Common Table before minute 50. No pickups reserved.",
+      "revision": 1
+    },
+    {
+      "id": "9c45360a-64b8-4812-9164-4d2ee487a7bc",
+      "sequence": 19,
+      "at": 1788748541370,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "d56e24f2-5852-4616-a51f-d4566d84b9ec",
+        "durationMs": 6251
+      }
+    },
+    {
+      "id": "a9ef855d-4b95-4218-9a6b-d30109fc0905",
+      "sequence": 20,
+      "at": 1788748541370,
+      "type": "agent.settled",
+      "actor": "community",
+      "title": "Bridge finished this turn",
+      "detail": "Published recipient-capacity guidance: d1 to Pantry, d3 to Kitchen, and d5 to Fridge. Dispatch should recheck availability before reserving.",
+      "revision": 1
+    },
+    {
+      "id": "20e43771-0b22-420f-a7d3-92070e92d871",
+      "sequence": 21,
+      "at": 1788748543072,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "88c68ddb-cb40-4185-b4f0-ef26dd8844f7",
+        "durationMs": 8569
+      }
+    },
+    {
+      "id": "9b8dd5a0-a59f-4191-a1fb-579df03ded0b",
+      "sequence": 22,
+      "at": 1788748543072,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Theo → The Common Table",
+      "detail": "32 portions for Community Kitchen. Theo's chilled vehicle can deliver the 32 prepared-meal portions to Community Kitchen in 26 minutes; the 20 weight fits his 45 capacity, and the kitchen accepts Prepared with 65 portions available. This preserves Westside Fridge's capacity for Little Oven's feasible bakery delivery. No peer findings are posted.",
+      "revision": 2,
+      "data": {
+        "assignment": {
+          "id": "70080b35-4a91-438c-be40-6faa53952d12",
+          "donationId": "d3",
+          "recipientId": "r2",
+          "driverId": "v2",
+          "minutes": 26,
+          "revision": 2,
+          "explanation": "Theo's chilled vehicle can deliver the 32 prepared-meal portions to Community Kitchen in 26 minutes; the 20 weight fits his 45 capacity, and the kitchen accepts Prepared with 65 portions available. This preserves Westside Fridge's capacity for Little Oven's feasible bakery delivery. No peer findings are posted.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "497dd785-0fd4-457d-8d6d-9e75431b2ca7",
+      "sequence": 23,
+      "at": 1788748543072,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 2,
+      "data": {
+        "spanId": "16d0a5bf-4979-438f-a564-e91216d14e6e"
+      }
+    },
+    {
+      "id": "fad389d8-596f-47c1-a35d-16562ff097fd",
+      "sequence": 24,
+      "at": 1788748543219,
+      "type": "coordinator.changed",
+      "actor": "coordinator",
+      "title": "A driver is unavailable",
+      "detail": "Maya is unavailable. 1 pickups released for reassignment.",
+      "revision": 3,
+      "data": {
+        "commandId": "05182e74-73a9-485b-b260-1df68335334b"
+      }
+    },
+    {
+      "id": "1fd41d17-803b-4e36-94db-8ca9d55c7eec",
+      "sequence": 25,
+      "at": 1788748543220,
+      "type": "agent.awakened",
+      "actor": "supply",
+      "title": "Scout picked up an update",
+      "detail": "Coordinator update: {\"id\":\"05182e74-73a9-485b-b260-1df68335334b\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 3,
+      "data": {
+        "evidenceIds": [
+          "d4e34757-ddf8-43cf-8927-1ac80a5adb2b",
+          "31eea0f4-ba5f-4307-ba2e-7169d76953ac"
+        ]
+      }
+    },
+    {
+      "id": "cfff51cf-2ae5-423c-8342-00b0ce731176",
+      "sequence": 26,
+      "at": 1788748543220,
+      "type": "agent.awakened",
+      "actor": "community",
+      "title": "Bridge picked up an update",
+      "detail": "Coordinator update: {\"id\":\"05182e74-73a9-485b-b260-1df68335334b\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 3,
+      "data": {
+        "evidenceIds": [
+          "d4e34757-ddf8-43cf-8927-1ac80a5adb2b",
+          "31eea0f4-ba5f-4307-ba2e-7169d76953ac"
+        ]
+      }
+    },
+    {
+      "id": "eade0944-76fc-486f-a9b8-80cbc0af7dd7",
+      "sequence": 27,
+      "at": 1788748543221,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "a491ddf3-9164-461d-88b8-6fddca924b67"
+      }
+    },
+    {
+      "id": "0f2013c8-195e-4d90-b608-5eeb4b3972b9",
+      "sequence": 28,
+      "at": 1788748543221,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "fcb6afbd-e03f-407c-b96e-3491c01c4acc"
+      }
+    },
+    {
+      "id": "cb23e360-2c29-4861-9e53-f4ec061d2cc1",
+      "sequence": 29,
+      "at": 1788748551708,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "16d0a5bf-4979-438f-a564-e91216d14e6e",
+        "durationMs": 8636
+      }
+    },
+    {
+      "id": "3f994af3-d438-4ac2-8b77-4ed6b9579b6a",
+      "sequence": 30,
+      "at": 1788748551708,
+      "type": "reservation.rejected",
+      "actor": "dispatch",
+      "title": "Reservation conflict prevented",
+      "detail": "Board changed from revision 2 to 3. Read the latest board and retry.",
+      "revision": 3,
+      "data": {
+        "assignment": null
+      }
+    },
+    {
+      "id": "bc6afa94-aa4f-4c64-bcf8-676f03579738",
+      "sequence": 31,
+      "at": 1788748551708,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "b56e6e8d-1b35-41ce-8f2f-1094b215b363"
+      }
+    },
+    {
+      "id": "e84ded45-ab3e-4911-94cb-29be6836c539",
+      "sequence": 32,
+      "at": 1788748553292,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "fcb6afbd-e03f-407c-b96e-3491c01c4acc",
+        "durationMs": 10071
+      }
+    },
+    {
+      "id": "4044a185-2821-49e5-80ec-f83c6dba2bb0",
+      "sequence": 33,
+      "at": 1788748553292,
+      "type": "finding.shared",
+      "actor": "community",
+      "title": "Updated capacity plan after Maya cancellation",
+      "detail": "At revision 3, remaining capacity is Pantry 65 (Bakery/Produce), Kitchen 33 and Fridge 45 (both also accept Prepared), accounting for d3's reservation. Prioritize listed Sam→Pantry option for d1 (32 minutes, 24 portions); Pantry would retain 41, enough for d2's 40. Route d5's 18 to Fridge and d4's 28 to Kitchen, leaving capacities 1/5/27 if all proceed. Maya is unavailable; recheck sequential driver feasibility before reserving later pickups.",
+      "revision": 3,
+      "data": {
+        "findingId": "04f190b6-32a5-498e-8d05-ce953c131a05"
+      }
+    },
+    {
+      "id": "383594bf-5f2a-4967-8b6b-df4785d75973",
+      "sequence": 34,
+      "at": 1788748553292,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "c03c49fb-6c18-4e5f-afad-123e8ae21d37"
+      }
+    },
+    {
+      "id": "c3cb106a-7a0d-4cca-836a-7cea55e3a351",
+      "sequence": 35,
+      "at": 1788748555198,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "a491ddf3-9164-461d-88b8-6fddca924b67",
+        "durationMs": 11977
+      }
+    },
+    {
+      "id": "07ce1283-05af-4271-abab-f118457a1152",
+      "sequence": 36,
+      "at": 1788748555198,
+      "type": "finding.shared",
+      "actor": "supply",
+      "title": "Reassign urgent Sunday Bread to Sam",
+      "detail": "Maya is unavailable, superseding my earlier recommendation. Prioritize Sam for Sunday Bread to Neighborhood Pantry: listed feasible at 32 minutes for 24 portions; it closes at minute 35. Preserve Theo's existing chilled-meal reservation from The Common Table to Community Kitchen (26 minutes; closes at 50). Little Oven closes next at 65, followed by Green Basket at 75 and Orchard Market at 95; recheck routes after reassignment.",
+      "revision": 3,
+      "data": {
+        "findingId": "48143d0f-ae92-4228-9172-d2b23e33523e"
+      }
+    },
+    {
+      "id": "df0be04e-1169-47bc-9f2b-50804d625336",
+      "sequence": 37,
+      "at": 1788748555198,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "2de06e60-b0da-40bb-9c77-4e276fa4184c"
+      }
+    },
+    {
+      "id": "159e1341-e3bd-4f72-8b7d-654f7ad924dd",
+      "sequence": 38,
+      "at": 1788748557659,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "b56e6e8d-1b35-41ce-8f2f-1094b215b363",
+        "durationMs": 5951
+      }
+    },
+    {
+      "id": "1b5d27eb-6f54-441c-9b06-479bdb1d44ab",
+      "sequence": 39,
+      "at": 1788748557659,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "d86dc88f-7775-4fa1-a168-7842d3bdd5b7"
+      }
+    },
+    {
+      "id": "6b68e03b-f74f-49b9-b517-76b0456e99d0",
+      "sequence": 40,
+      "at": 1788748560748,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "c03c49fb-6c18-4e5f-afad-123e8ae21d37",
+        "durationMs": 7456
+      }
+    },
+    {
+      "id": "6a787157-82e6-45cf-abe6-0625c99147d4",
+      "sequence": 41,
+      "at": 1788748560748,
+      "type": "agent.settled",
+      "actor": "community",
+      "title": "Bridge finished this turn",
+      "detail": "Published updated capacity guidance: prioritize Sam taking d1 to Pantry; target d2 to Pantry, d5 to Fridge, and d4 to Kitchen. Dispatch must recheck driver feasibility. No pickups reserved.",
+      "revision": 3
+    },
+    {
+      "id": "c3b51e15-b553-4e0e-a246-1ccdd36d70b7",
+      "sequence": 42,
+      "at": 1788748561062,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "2de06e60-b0da-40bb-9c77-4e276fa4184c",
+        "durationMs": 5864
+      }
+    },
+    {
+      "id": "5203bdf0-2202-4d25-a956-1d6520583636",
+      "sequence": 43,
+      "at": 1788748561062,
+      "type": "agent.settled",
+      "actor": "supply",
+      "title": "Scout finished this turn",
+      "detail": "Updated finding published: prioritize Sam for Sunday Bread to Neighborhood Pantry before minute 35; preserve Theo’s chilled-meal reservation. No pickups reserved.",
+      "revision": 3
+    },
+    {
+      "id": "9c783290-f996-467d-8b1e-b0a55dde8cdc",
+      "sequence": 44,
+      "at": 1788748567105,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "d86dc88f-7775-4fa1-a168-7842d3bdd5b7",
+        "durationMs": 9446
+      }
+    },
+    {
+      "id": "968110f8-3259-4ba2-8063-5a548d866160",
+      "sequence": 45,
+      "at": 1788748567105,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Sam → Sunday Bread",
+      "detail": "24 portions for Neighborhood Pantry. Following Scout and Bridge's updated findings after Maya's cancellation, reserve Sam for Sunday Bread to Neighborhood Pantry. This listed feasible route takes 32 minutes before the minute-35 close; the 12 weight fits Sam's 30 capacity, and the pantry accepts all 24 bakery portions. It leaves 41 pantry portions available for Green Basket and preserves Theo's existing chilled-meal reservation.",
+      "revision": 4,
+      "data": {
+        "assignment": {
+          "id": "3535f4bd-795f-4ea9-999a-c10c1aeed3ef",
+          "donationId": "d1",
+          "recipientId": "r1",
+          "driverId": "v3",
+          "minutes": 32,
+          "revision": 4,
+          "explanation": "Following Scout and Bridge's updated findings after Maya's cancellation, reserve Sam for Sunday Bread to Neighborhood Pantry. This listed feasible route takes 32 minutes before the minute-35 close; the 12 weight fits Sam's 30 capacity, and the pantry accepts all 24 bakery portions. It leaves 41 pantry portions available for Green Basket and preserves Theo's existing chilled-meal reservation.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "58816a6f-c7b1-44fa-b85e-8c97b1475b1a",
+      "sequence": 46,
+      "at": 1788748567105,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "69bc88f1-3aa8-444f-a429-ea9054ce18ac"
+      }
+    },
+    {
+      "id": "647bae6a-f0f7-4193-8d66-4a57eb511f7b",
+      "sequence": 47,
+      "at": 1788748577564,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "69bc88f1-3aa8-444f-a429-ea9054ce18ac",
+        "durationMs": 10459
+      }
+    },
+    {
+      "id": "3db95013-d780-40d7-a042-3c13addee4bb",
+      "sequence": 48,
+      "at": 1788748577564,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Sam → Little Oven",
+      "detail": "18 portions for Westside Fridge. Reserve the listed feasible Sam route for Little Oven's 18 bakery portions to Westside Fridge in 38 minutes. The 8 weight fits Sam's 30 capacity, and the fridge has room for all 18 portions. This follows Bridge's recipient plan, preserves Pantry's remaining 41 portions for Green Basket, and keeps Theo available for Green Basket's currently listed routes.",
+      "revision": 5,
+      "data": {
+        "assignment": {
+          "id": "9592e1e2-0813-4521-b96f-c17558124005",
+          "donationId": "d5",
+          "recipientId": "r3",
+          "driverId": "v3",
+          "minutes": 38,
+          "revision": 5,
+          "explanation": "Reserve the listed feasible Sam route for Little Oven's 18 bakery portions to Westside Fridge in 38 minutes. The 8 weight fits Sam's 30 capacity, and the fridge has room for all 18 portions. This follows Bridge's recipient plan, preserves Pantry's remaining 41 portions for Green Basket, and keeps Theo available for Green Basket's currently listed routes.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "ba411b8b-aa1f-45d7-8db6-e5eb6e4890f2",
+      "sequence": 49,
+      "at": 1788748577565,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "4ad4ff13-e001-44c1-982a-f73765ba61d4"
+      }
+    },
+    {
+      "id": "4b4d6a2e-bf97-459b-a2b1-8315ae8b5466",
+      "sequence": 50,
+      "at": 1788748585835,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "4ad4ff13-e001-44c1-982a-f73765ba61d4",
+        "durationMs": 8270
+      }
+    },
+    {
+      "id": "40537441-f6b4-4a50-a32d-a858b040e486",
+      "sequence": 51,
+      "at": 1788748585835,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Theo → Green Basket",
+      "detail": "40 portions for Neighborhood Pantry. Reserve Theo's listed feasible 30-minute route for Green Basket, which closes at minute 75. Its 24 weight fits his 45 capacity, and Neighborhood Pantry accepts Produce with 41 portions remaining for these 40 portions. This follows Bridge's capacity plan and preserves Community Kitchen's remaining 33 portions for Orchard Market's 28.",
+      "revision": 6,
+      "data": {
+        "assignment": {
+          "id": "dd841590-550f-4608-b4f8-a9dc8917dae2",
+          "donationId": "d2",
+          "recipientId": "r1",
+          "driverId": "v2",
+          "minutes": 30,
+          "revision": 6,
+          "explanation": "Reserve Theo's listed feasible 30-minute route for Green Basket, which closes at minute 75. Its 24 weight fits his 45 capacity, and Neighborhood Pantry accepts Produce with 41 portions remaining for these 40 portions. This follows Bridge's capacity plan and preserves Community Kitchen's remaining 33 portions for Orchard Market's 28.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "d22f0f98-8055-406b-9c12-b1c06a2b0c76",
+      "sequence": 52,
+      "at": 1788748585835,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "e14e02e4-103b-4bd0-ab2b-72ecf58148fc"
+      }
+    },
+    {
+      "id": "6c32e921-ddbf-49fa-81c9-d9754af2ca25",
+      "sequence": 53,
+      "at": 1788748593751,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "e14e02e4-103b-4bd0-ab2b-72ecf58148fc",
+        "durationMs": 7916
+      }
+    },
+    {
+      "id": "81101020-3bc5-429b-b55c-73da70415b9f",
+      "sequence": 54,
+      "at": 1788748593751,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "Reserved 4 pickups totaling 114 portions:\n- Sam: Sunday Bread → Neighborhood Pantry; Little Oven → Westside Fridge.\n- Theo: The Common Table → Community Kitchen; Green Basket → Neighborhood Pantry.\n\nMaya’s cancellation was handled by reassigning Sunday Bread. Orchard Market’s 28 portions remain unassigned; no feasible routes remain at revision 6.",
+      "revision": 6
+    },
+    {
+      "id": "3ad98e9d-a45b-4449-8acd-c7ea24eaede2",
+      "sequence": 55,
+      "at": 1788748593752,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Peer finding: {\"id\":\"48143d0f-ae92-4228-9172-d2b23e33523e\",\"role\":\"supply\",\"title\":\"Reassign urgent Sunday Bread to Sam\",\"detail\":\"Maya is unavailable, superseding my earlier recommendation. Prioritize Sam for Sunday Bread to Neighborhood Pantry: listed feasible at 32 minutes for 24 portions; it closes at minute 35. Preserve Theo's existing chilled-meal reservation from The Common Table to Community Kitchen (26 minutes; closes at 50). Little Oven closes next at 65, followed by Green Basket at 75 and Orchard Market at 95; recheck routes after reassignment.\",\"donationIds\":[\"d1\",\"d3\",\"d5\",\"d2\",\"d4\"],\"revision\":3}",
+      "revision": 6,
+      "data": {
+        "evidenceIds": [
+          "d4e34757-ddf8-43cf-8927-1ac80a5adb2b",
+          "31eea0f4-ba5f-4307-ba2e-7169d76953ac",
+          "04f190b6-32a5-498e-8d05-ce953c131a05",
+          "48143d0f-ae92-4228-9172-d2b23e33523e"
+        ]
+      }
+    },
+    {
+      "id": "82e042f5-7ccf-4003-8d3a-970fee92ef20",
+      "sequence": 56,
+      "at": 1788748593752,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "9710c314-6b0e-4b0a-bb2a-852e3dbda4e5"
+      }
+    },
+    {
+      "id": "8588fa8a-7243-4253-96ba-7759c244f56d",
+      "sequence": 57,
+      "at": 1788748601230,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "9710c314-6b0e-4b0a-bb2a-852e3dbda4e5",
+        "durationMs": 7478
+      }
+    },
+    {
+      "id": "0e3b95ee-e769-4040-bab5-64c2e865d71a",
+      "sequence": 58,
+      "at": 1788748601230,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "Scout’s recommendation is already reflected at revision 6: Sam has Sunday Bread, and Theo retains the chilled meals. Four pickups totaling 114 portions are reserved. Orchard Market’s 28 portions remain unassigned because no feasible options remain.",
+      "revision": 6
+    },
+    {
+      "id": "47ae7731-5c88-47ca-a694-3be1fa878e61",
+      "sequence": 59,
+      "at": 1788748601279,
+      "type": "session.finished",
+      "actor": "coordinator",
+      "title": "Dispatch session saved",
+      "detail": "The plan and its event trail are ready to review.",
+      "revision": 6
+    }
+  ],
+  "spans": [
+    {
+      "id": "255b38e6-9f42-4338-9c54-3db2fc0436e5",
+      "role": "supply",
+      "start": 1788748524702,
+      "end": 1788748534083,
+      "outcome": "ok"
+    },
+    {
+      "id": "8580d44e-d0d8-4174-9b6b-027a5fa940c1",
+      "role": "community",
+      "start": 1788748524715,
+      "end": 1788748535119,
+      "outcome": "ok"
+    },
+    {
+      "id": "211b4f70-34fa-45d1-8cfb-994a3e9e121c",
+      "role": "dispatch",
+      "start": 1788748524716,
+      "end": 1788748534503,
+      "outcome": "ok"
+    },
+    {
+      "id": "87c1d9c1-bc6b-4776-ae0c-078afd1a3e5b",
+      "role": "supply",
+      "start": 1788748534084,
+      "end": 1788748539878,
+      "outcome": "ok"
+    },
+    {
+      "id": "88c68ddb-cb40-4185-b4f0-ef26dd8844f7",
+      "role": "dispatch",
+      "start": 1788748534503,
+      "end": 1788748543072,
+      "outcome": "ok"
+    },
+    {
+      "id": "d56e24f2-5852-4616-a51f-d4566d84b9ec",
+      "role": "community",
+      "start": 1788748535119,
+      "end": 1788748541370,
+      "outcome": "ok"
+    },
+    {
+      "id": "16d0a5bf-4979-438f-a564-e91216d14e6e",
+      "role": "dispatch",
+      "start": 1788748543072,
+      "end": 1788748551708,
+      "outcome": "ok"
+    },
+    {
+      "id": "a491ddf3-9164-461d-88b8-6fddca924b67",
+      "role": "supply",
+      "start": 1788748543221,
+      "end": 1788748555198,
+      "outcome": "ok"
+    },
+    {
+      "id": "fcb6afbd-e03f-407c-b96e-3491c01c4acc",
+      "role": "community",
+      "start": 1788748543221,
+      "end": 1788748553292,
+      "outcome": "ok"
+    },
+    {
+      "id": "b56e6e8d-1b35-41ce-8f2f-1094b215b363",
+      "role": "dispatch",
+      "start": 1788748551708,
+      "end": 1788748557659,
+      "outcome": "ok"
+    },
+    {
+      "id": "c03c49fb-6c18-4e5f-afad-123e8ae21d37",
+      "role": "community",
+      "start": 1788748553292,
+      "end": 1788748560748,
+      "outcome": "ok"
+    },
+    {
+      "id": "2de06e60-b0da-40bb-9c77-4e276fa4184c",
+      "role": "supply",
+      "start": 1788748555198,
+      "end": 1788748561062,
+      "outcome": "ok"
+    },
+    {
+      "id": "d86dc88f-7775-4fa1-a168-7842d3bdd5b7",
+      "role": "dispatch",
+      "start": 1788748557659,
+      "end": 1788748567105,
+      "outcome": "ok"
+    },
+    {
+      "id": "69bc88f1-3aa8-444f-a429-ea9054ce18ac",
+      "role": "dispatch",
+      "start": 1788748567105,
+      "end": 1788748577564,
+      "outcome": "ok"
+    },
+    {
+      "id": "4ad4ff13-e001-44c1-982a-f73765ba61d4",
+      "role": "dispatch",
+      "start": 1788748577565,
+      "end": 1788748585835,
+      "outcome": "ok"
+    },
+    {
+      "id": "e14e02e4-103b-4bd0-ab2b-72ecf58148fc",
+      "role": "dispatch",
+      "start": 1788748585835,
+      "end": 1788748593751,
+      "outcome": "ok"
+    },
+    {
+      "id": "9710c314-6b0e-4b0a-bb2a-852e3dbda4e5",
+      "role": "dispatch",
+      "start": 1788748593752,
+      "end": 1788748601230,
+      "outcome": "ok"
+    }
+  ],
+  "model": "codex-local-default",
+  "calls": 17,
+  "endedAt": 1788748601279
+}

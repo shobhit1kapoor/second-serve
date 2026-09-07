@@ -31,7 +31,11 @@ while (true) {
     const e = JSON.parse(line.startsWith('data: ') ? line.slice(6) : line);
     if (e.type !== 'snapshot') continue;
     latest = e.run;
-    assert.ok(Date.now() - (latest.events.at(-1)?.at ?? latest.startedAt) < 20000, 'Streaming snapshots must arrive promptly, before the session expires.');
+    assert.ok(
+      Date.now() - (e.at ?? latest.events.at(-1)?.at ?? latest.startedAt) <
+        20000,
+      'Streaming snapshots must arrive promptly, before the session expires.',
+    );
     if (!cancelled && latest.state.assignments.length >= 2) {
       cancelled = true;
       const driverId = latest.state.assignments[0].driverId;

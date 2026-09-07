@@ -34,6 +34,12 @@ export async function POST(request: Request) {
     );
   const id = crypto.randomUUID();
   const encoder = new TextEncoder();
+  const snapshot = (run: RunRecord) =>
+    encoder.encode(
+      'data: ' +
+        JSON.stringify({ type: 'snapshot', at: Date.now(), run }) +
+        '\n\n',
+    );
   let disconnected = false;
   let latest: RunRecord;
   const engine = createDispatchEngine({
@@ -48,11 +54,7 @@ export async function POST(request: Request) {
       latest = run;
       if (!disconnected) {
         try {
-          streamController?.enqueue(
-            encoder.encode(
-              'data: ' + JSON.stringify({ type: 'snapshot', run }) + '\n\n',
-            ),
-          );
+          streamController?.enqueue(snapshot(run));
         } catch {
           disconnected = true;
         }
@@ -74,6 +76,7 @@ export async function POST(request: Request) {
   });
   async function pump() {
     let lastSaved = 0;
+    let lastSnapshot = 0;
     try {
       engine.start();
       while (!engine.isFinished()) {
@@ -87,14 +90,12 @@ export async function POST(request: Request) {
           await saveRun(latest, owner);
           lastSaved = Date.now();
         }
-        if (!disconnected)
-          streamController?.enqueue(
-            encoder.encode(
-              'data: ' +
-                JSON.stringify({ type: 'heartbeat', at: Date.now() }) +
-                '\n\n',
-            ),
-          );
+        // Some gateways coalesce small chunks. Repeating authoritative snapshots
+        // also delivers a settled state when no further semantic events occur.
+        if (!disconnected && Date.now() - lastSnapshot > 1000) {
+          streamController?.enqueue(snapshot(latest));
+          lastSnapshot = Date.now();
+        }
         await new Promise((resolve) => setTimeout(resolve, 450));
       }
       // Let in-flight inference settle; stopped tools cannot mutate the final plan.
@@ -114,13 +115,7 @@ export async function POST(request: Request) {
     } finally {
       if (!disconnected) {
         try {
-          streamController?.enqueue(
-            encoder.encode(
-              'data: ' +
-                JSON.stringify({ type: 'snapshot', run: engine.record }) +
-                '\n\n',
-            ),
-          );
+          streamController?.enqueue(snapshot(engine.record));
           streamController?.close();
         } catch {
           /* Client closed the stream. */

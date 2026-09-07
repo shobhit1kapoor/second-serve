@@ -1,8 +1,8 @@
 {
-  "id": "90e38795-f0fd-4f61-acfe-9e01fa2ef71c",
+  "id": "311c682c-f695-4520-8f41-f90625c2ad5c",
   "mode": "rehearsal",
   "status": "complete",
-  "startedAt": 1788750157848,
+  "startedAt": 1788750532433,
   "state": {
     "revision": 6,
     "minute": 0,
@@ -174,7 +174,7 @@
     ],
     "assignments": [
       {
-        "id": "91043701-ffb0-43be-a89d-97734880d9ed",
+        "id": "5cb3e825-a72c-4697-9323-1e8b0fb5dc67",
         "donationId": "d3",
         "recipientId": "r3",
         "driverId": "v2",
@@ -184,7 +184,7 @@
         "status": "reserved"
       },
       {
-        "id": "5477a2ac-2202-421a-be38-168e3246ebd9",
+        "id": "16a56024-b598-4981-9c33-07e45338b336",
         "donationId": "d1",
         "recipientId": "r1",
         "driverId": "v3",
@@ -194,7 +194,7 @@
         "status": "reserved"
       },
       {
-        "id": "e03f35ca-d464-4743-bfd2-6c31904fa028",
+        "id": "18314b9d-a714-4ac8-a2ba-ac7b9b85df64",
         "donationId": "d5",
         "recipientId": "r2",
         "driverId": "v2",
@@ -204,7 +204,7 @@
         "status": "reserved"
       },
       {
-        "id": "4efa7379-ccbb-42e3-90d0-bb575d28d122",
+        "id": "4fc238b4-d9e6-4e14-a9a8-eca3f03037af",
         "donationId": "d4",
         "recipientId": "r2",
         "driverId": "v3",
@@ -216,7 +216,7 @@
     ],
     "findings": [
       {
-        "id": "2b9f7185-3337-46ef-b9b3-907678569c2e",
+        "id": "bd9ca941-4a2c-433b-ba53-76847b68afdb",
         "role": "supply",
         "title": "Prioritize the closing bakery",
         "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 3 drivers are currently available.",
@@ -227,7 +227,7 @@
         "revision": 0
       },
       {
-        "id": "7794beed-8adf-4609-b20f-3f1cd860ee7a",
+        "id": "bd01d362-1ca0-4ad3-8620-2672c87d9388",
         "role": "community",
         "title": "Match capacity before committing",
         "detail": "Neighborhood Pantry accepts bakery and produce. Reserve chilled meal capacity at Community Kitchen or Westside Fridge; avoid routing every donation to one recipient.",
@@ -238,7 +238,7 @@
         "revision": 0
       },
       {
-        "id": "df02f85f-851a-41ef-bd45-1cec0e9f835a",
+        "id": "19e9f658-4e00-44ff-8597-d6e23780f137",
         "role": "supply",
         "title": "Prioritize the closing bakery",
         "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.",
@@ -278,9 +278,9 @@
   },
   "events": [
     {
-      "id": "120d2282-b954-452b-84c7-fc34de803989",
+      "id": "e9b7b594-2acf-42db-a179-09acd84b7ad2",
       "sequence": 1,
-      "at": 1788750157853,
+      "at": 1788750532437,
       "type": "session.started",
       "actor": "coordinator",
       "title": "Rehearsal started",
@@ -288,9 +288,9 @@
       "revision": 0
     },
     {
-      "id": "ee5b083b-18ab-460c-badb-b8f6a389d54d",
+      "id": "e82d58b3-1be1-48a6-a978-8bc9812debca",
       "sequence": 2,
-      "at": 1788750157853,
+      "at": 1788750532437,
       "type": "agent.awakened",
       "actor": "supply",
       "title": "Scout picked up an update",
@@ -301,9 +301,9 @@
       }
     },
     {
-      "id": "a4ae8bcb-970f-48d1-8a30-c4cd478955bd",
+      "id": "06669685-11d6-4009-9d43-0b97da718636",
       "sequence": 3,
-      "at": 1788750157854,
+      "at": 1788750532438,
       "type": "agent.awakened",
       "actor": "community",
       "title": "Bridge picked up an update",
@@ -314,9 +314,9 @@
       }
     },
     {
-      "id": "b8854dbd-a436-45a0-9931-f2d1ea7655b7",
+      "id": "547ba965-8f07-44a4-8e99-0ed235071cb9",
       "sequence": 4,
-      "at": 1788750157855,
+      "at": 1788750532438,
       "type": "agent.awakened",
       "actor": "dispatch",
       "title": "Relay picked up an update",
@@ -327,142 +327,142 @@
       }
     },
     {
-      "id": "03f05c50-ff78-4dd0-b4dc-bc078332cc36",
+      "id": "cc25dfcb-1a44-4a17-b3c6-38d980206c70",
       "sequence": 5,
-      "at": 1788750157855,
+      "at": 1788750532439,
       "type": "inference.started",
       "actor": "supply",
       "title": "Scout is reasoning",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "57776221-d09f-44df-872c-68d3452d2df5"
+        "spanId": "64991c68-9b70-4a58-acf6-737dbac29433"
       }
     },
     {
-      "id": "95d427f1-baf8-4479-b468-07d50011b8be",
+      "id": "16f736ff-258f-4cd2-911a-1c868ec0584b",
       "sequence": 6,
-      "at": 1788750157855,
+      "at": 1788750532439,
       "type": "inference.started",
       "actor": "community",
       "title": "Bridge is reasoning",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "6c9e0888-4d37-4db1-bc38-18adb79a92e2"
+        "spanId": "0be9ce9e-24e7-4572-8a73-9eb5e24e9c7f"
       }
     },
     {
-      "id": "fa24709b-d6b8-42c9-9ea2-45375df01499",
+      "id": "4bcbfb0b-3ad1-461e-8134-042d7f08b750",
       "sequence": 7,
-      "at": 1788750157855,
+      "at": 1788750532439,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "cc6d6169-bb59-419f-ae9a-927aeceddb25"
+        "spanId": "52ee3b51-edad-421e-9ae4-94d2df7db9c0"
       }
     },
     {
-      "id": "c137ece4-d826-4c10-9e1c-f6ca4fbeac46",
+      "id": "d71787c3-715e-4fe2-98e4-447b15bab8c2",
       "sequence": 8,
-      "at": 1788750158520,
+      "at": 1788750533101,
       "type": "inference.completed",
       "actor": "supply",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "57776221-d09f-44df-872c-68d3452d2df5",
-        "durationMs": 665
+        "spanId": "64991c68-9b70-4a58-acf6-737dbac29433",
+        "durationMs": 662
       }
     },
     {
-      "id": "12d20c43-6f87-4507-9d13-95654ddc0972",
+      "id": "c84d4b84-a396-423d-8842-4ece4b68ffa4",
       "sequence": 9,
-      "at": 1788750158520,
+      "at": 1788750533101,
       "type": "finding.shared",
       "actor": "supply",
       "title": "Prioritize the closing bakery",
       "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 3 drivers are currently available.",
       "revision": 0,
       "data": {
-        "findingId": "2b9f7185-3337-46ef-b9b3-907678569c2e"
+        "findingId": "bd9ca941-4a2c-433b-ba53-76847b68afdb"
       }
     },
     {
-      "id": "a65bdab9-077f-4480-8eef-0b8013526c4c",
+      "id": "43a2ee9c-0898-44f5-b2e8-476134cb3a59",
       "sequence": 10,
-      "at": 1788750158521,
+      "at": 1788750533101,
       "type": "inference.started",
       "actor": "supply",
       "title": "Scout is reasoning",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "bc34eae3-98db-451d-ad8a-91d1a2532ae8"
+        "spanId": "61642fc1-7995-4911-8ed2-0e301512a1aa"
       }
     },
     {
-      "id": "6363292c-0e0f-43ef-ab95-7e16e666a311",
+      "id": "df6d983f-a397-4758-9bbe-a62859be8352",
       "sequence": 11,
-      "at": 1788750158709,
+      "at": 1788750533291,
       "type": "inference.completed",
       "actor": "community",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "6c9e0888-4d37-4db1-bc38-18adb79a92e2",
-        "durationMs": 854
+        "spanId": "0be9ce9e-24e7-4572-8a73-9eb5e24e9c7f",
+        "durationMs": 852
       }
     },
     {
-      "id": "ee1c6d59-348b-42f3-80f6-84c79ec0729d",
+      "id": "3f2407c9-72fe-4696-a1f5-6554cab1b62b",
       "sequence": 12,
-      "at": 1788750158709,
+      "at": 1788750533292,
       "type": "finding.shared",
       "actor": "community",
       "title": "Match capacity before committing",
       "detail": "Neighborhood Pantry accepts bakery and produce. Reserve chilled meal capacity at Community Kitchen or Westside Fridge; avoid routing every donation to one recipient.",
       "revision": 0,
       "data": {
-        "findingId": "7794beed-8adf-4609-b20f-3f1cd860ee7a"
+        "findingId": "bd01d362-1ca0-4ad3-8620-2672c87d9388"
       }
     },
     {
-      "id": "64811ba6-4409-486d-9637-98e62dba1c2b",
+      "id": "33008297-9e74-4571-b31b-4a0ce813f673",
       "sequence": 13,
-      "at": 1788750158709,
+      "at": 1788750533292,
       "type": "inference.started",
       "actor": "community",
       "title": "Bridge is reasoning",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "6db0c5c5-859c-47ab-bd7d-8d553a0c658e"
+        "spanId": "125ad1a6-e4a9-4738-8950-b30bb6cb6f3d"
       }
     },
     {
-      "id": "d99fe38e-a471-48f2-927d-a84070ab01e1",
+      "id": "5f8b1157-b994-4ffa-a429-e1f43259ce06",
       "sequence": 14,
-      "at": 1788750158913,
+      "at": 1788750533498,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 0,
       "data": {
-        "spanId": "cc6d6169-bb59-419f-ae9a-927aeceddb25",
-        "durationMs": 1058
+        "spanId": "52ee3b51-edad-421e-9ae4-94d2df7db9c0",
+        "durationMs": 1059
       }
     },
     {
-      "id": "2299bf67-82e2-4bee-a326-8189c6b21769",
+      "id": "6c1a5b60-4865-4b6a-9dbb-e20cc4135a18",
       "sequence": 15,
-      "at": 1788750158913,
+      "at": 1788750533499,
       "type": "pickup.reserved",
       "actor": "dispatch",
       "title": "Maya → Sunday Bread",
@@ -470,7 +470,7 @@
       "revision": 1,
       "data": {
         "assignment": {
-          "id": "3fcbf671-96cb-4184-8837-c9f8872a18bc",
+          "id": "10c82d5b-fcb8-4fab-b7b6-e9e02e5d26b7",
           "donationId": "d1",
           "recipientId": "r1",
           "driverId": "v1",
@@ -482,36 +482,36 @@
       }
     },
     {
-      "id": "f3659a9b-525e-416a-9b73-0454dc88bbdd",
+      "id": "e66889d2-b7a6-4acc-9257-5c96b0366623",
       "sequence": 16,
-      "at": 1788750158913,
+      "at": 1788750533499,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 1,
       "data": {
-        "spanId": "a7d1e2d3-247f-4998-a47a-d9fc1c99d083"
+        "spanId": "110e31f2-0ee8-4abf-b8a9-eb1a4663df2f"
       }
     },
     {
-      "id": "6085f41c-69b9-44d7-a4db-a93ac6c89a6c",
+      "id": "dc0c4555-5697-4aca-9b94-0a5677194701",
       "sequence": 17,
-      "at": 1788750159181,
+      "at": 1788750533766,
       "type": "inference.completed",
       "actor": "supply",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 1,
       "data": {
-        "spanId": "bc34eae3-98db-451d-ad8a-91d1a2532ae8",
-        "durationMs": 660
+        "spanId": "61642fc1-7995-4911-8ed2-0e301512a1aa",
+        "durationMs": 665
       }
     },
     {
-      "id": "6f87d42e-58ee-4f89-af5e-ed4357b226c3",
+      "id": "b6267c2a-ef0b-493d-bff5-7dfd08bd21cb",
       "sequence": 18,
-      "at": 1788750159181,
+      "at": 1788750533766,
       "type": "agent.settled",
       "actor": "supply",
       "title": "Scout finished this turn",
@@ -519,23 +519,23 @@
       "revision": 1
     },
     {
-      "id": "9f57fc28-eb38-42b6-835e-388c69b57c5a",
+      "id": "a4fe3157-9131-4b50-8fe1-da0dfd991dec",
       "sequence": 19,
-      "at": 1788750159562,
+      "at": 1788750534144,
       "type": "inference.completed",
       "actor": "community",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 1,
       "data": {
-        "spanId": "6db0c5c5-859c-47ab-bd7d-8d553a0c658e",
-        "durationMs": 853
+        "spanId": "125ad1a6-e4a9-4738-8950-b30bb6cb6f3d",
+        "durationMs": 852
       }
     },
     {
-      "id": "b3e6ec81-61bc-4821-b526-d1af619670b6",
+      "id": "110d088e-72ed-4bbe-8965-35f979eeee64",
       "sequence": 20,
-      "at": 1788750159562,
+      "at": 1788750534145,
       "type": "agent.settled",
       "actor": "community",
       "title": "Bridge finished this turn",
@@ -543,23 +543,23 @@
       "revision": 1
     },
     {
-      "id": "13636b02-5638-4ab9-82e6-388c99e57d14",
+      "id": "fd11c3f9-0b89-46e7-a054-2445f03b28ff",
       "sequence": 21,
-      "at": 1788750159970,
+      "at": 1788750534556,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 1,
       "data": {
-        "spanId": "a7d1e2d3-247f-4998-a47a-d9fc1c99d083",
+        "spanId": "110e31f2-0ee8-4abf-b8a9-eb1a4663df2f",
         "durationMs": 1057
       }
     },
     {
-      "id": "98c13ef8-2ac0-4a3c-9033-87e973be0fd6",
+      "id": "4c27c875-24f5-46e0-b521-9a8e93252ca5",
       "sequence": 22,
-      "at": 1788750159970,
+      "at": 1788750534556,
       "type": "pickup.reserved",
       "actor": "dispatch",
       "title": "Theo → The Common Table",
@@ -567,7 +567,7 @@
       "revision": 2,
       "data": {
         "assignment": {
-          "id": "91043701-ffb0-43be-a89d-97734880d9ed",
+          "id": "5cb3e825-a72c-4697-9323-1e8b0fb5dc67",
           "donationId": "d3",
           "recipientId": "r3",
           "driverId": "v2",
@@ -579,147 +579,147 @@
       }
     },
     {
-      "id": "f0dd5ec6-4661-42e9-8450-753e9297c469",
+      "id": "13120fed-9f1d-41e6-9902-0cebc870a95b",
       "sequence": 23,
-      "at": 1788750159970,
+      "at": 1788750534557,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 2,
       "data": {
-        "spanId": "da68af5f-f264-43d9-989c-ae39fcb97a72"
+        "spanId": "fdaf047f-4c6f-4db2-9596-1de17d0787af"
       }
     },
     {
-      "id": "7a1fa4ea-0062-497e-b388-a4d0cb6915f5",
+      "id": "a14f5704-ef18-472e-8dcb-946b7241dd5d",
       "sequence": 24,
-      "at": 1788750160231,
+      "at": 1788750534804,
       "type": "coordinator.changed",
       "actor": "coordinator",
       "title": "A driver is unavailable",
       "detail": "Maya is unavailable. 1 pickups released for reassignment.",
       "revision": 3,
       "data": {
-        "commandId": "fdf02cb5-60bd-49ef-a850-ab4edfce0acf"
+        "commandId": "d18e7c2c-f81f-4b2e-904b-4819c52dfeb8"
       }
     },
     {
-      "id": "d6b3ccb7-d0f9-4c4b-a363-c28be4c595fd",
+      "id": "5a1ca4da-5997-48cb-b4dc-7e913a5a40f9",
       "sequence": 25,
-      "at": 1788750160231,
+      "at": 1788750534804,
       "type": "agent.awakened",
       "actor": "supply",
       "title": "Scout picked up an update",
-      "detail": "Coordinator update: {\"id\":\"fdf02cb5-60bd-49ef-a850-ab4edfce0acf\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "detail": "Coordinator update: {\"id\":\"d18e7c2c-f81f-4b2e-904b-4819c52dfeb8\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
       "revision": 3,
       "data": {
         "evidenceIds": [
-          "2b9f7185-3337-46ef-b9b3-907678569c2e",
-          "7794beed-8adf-4609-b20f-3f1cd860ee7a"
+          "bd9ca941-4a2c-433b-ba53-76847b68afdb",
+          "bd01d362-1ca0-4ad3-8620-2672c87d9388"
         ]
       }
     },
     {
-      "id": "b7503587-f8fb-40e4-9886-0a1f56548ee2",
+      "id": "8842f924-7b3a-46e3-93c8-2e07b0ec4bbc",
       "sequence": 26,
-      "at": 1788750160232,
+      "at": 1788750534805,
       "type": "agent.awakened",
       "actor": "community",
       "title": "Bridge picked up an update",
-      "detail": "Coordinator update: {\"id\":\"fdf02cb5-60bd-49ef-a850-ab4edfce0acf\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "detail": "Coordinator update: {\"id\":\"d18e7c2c-f81f-4b2e-904b-4819c52dfeb8\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
       "revision": 3,
       "data": {
         "evidenceIds": [
-          "2b9f7185-3337-46ef-b9b3-907678569c2e",
-          "7794beed-8adf-4609-b20f-3f1cd860ee7a"
+          "bd9ca941-4a2c-433b-ba53-76847b68afdb",
+          "bd01d362-1ca0-4ad3-8620-2672c87d9388"
         ]
       }
     },
     {
-      "id": "7404869c-11a9-4d73-a81d-c38d77b071a1",
+      "id": "de37285a-2079-4691-b29d-c35c8d50ca82",
       "sequence": 27,
-      "at": 1788750160234,
+      "at": 1788750534805,
       "type": "inference.started",
       "actor": "supply",
       "title": "Scout is reasoning",
       "detail": "",
       "revision": 3,
       "data": {
-        "spanId": "5c9a0ef6-d2e1-4646-a23e-2967a5f42cbe"
+        "spanId": "cbf64efa-e307-4dd2-bc2d-c0374b271d04"
       }
     },
     {
-      "id": "04fca9a3-e37f-434a-bdfe-d7f6600338b6",
+      "id": "fc1cf538-f6ac-4c33-8ca4-16e9789c0f64",
       "sequence": 28,
-      "at": 1788750160234,
+      "at": 1788750534806,
       "type": "inference.started",
       "actor": "community",
       "title": "Bridge is reasoning",
       "detail": "",
       "revision": 3,
       "data": {
-        "spanId": "3e4d7431-179a-49af-884d-7f7cada08fd1"
+        "spanId": "5f32e6c4-5600-4cfd-977d-b3ea36d53530"
       }
     },
     {
-      "id": "f77cc486-8344-42dc-a4bf-d12e86817722",
+      "id": "f96b268e-328c-4db9-8369-7686436629ba",
       "sequence": 29,
-      "at": 1788750160885,
+      "at": 1788750535457,
       "type": "inference.completed",
       "actor": "supply",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 3,
       "data": {
-        "spanId": "5c9a0ef6-d2e1-4646-a23e-2967a5f42cbe",
-        "durationMs": 651
+        "spanId": "cbf64efa-e307-4dd2-bc2d-c0374b271d04",
+        "durationMs": 652
       }
     },
     {
-      "id": "eabc2405-7e7f-4e15-9981-ec5f7698de30",
+      "id": "2442e3b7-79e0-4e7e-bfdc-5accee467a59",
       "sequence": 30,
-      "at": 1788750160886,
+      "at": 1788750535457,
       "type": "finding.shared",
       "actor": "supply",
       "title": "Prioritize the closing bakery",
       "detail": "Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.",
       "revision": 3,
       "data": {
-        "findingId": "df02f85f-851a-41ef-bd45-1cec0e9f835a"
+        "findingId": "19e9f658-4e00-44ff-8597-d6e23780f137"
       }
     },
     {
-      "id": "2ce542ed-4bb7-4bdc-bfc9-72ed4c271d0b",
+      "id": "6e565a62-21fc-4779-b350-8fc9e4b7c176",
       "sequence": 31,
-      "at": 1788750160886,
+      "at": 1788750535458,
       "type": "inference.started",
       "actor": "supply",
       "title": "Scout is reasoning",
       "detail": "",
       "revision": 3,
       "data": {
-        "spanId": "b9704288-80c7-4442-8ba1-a760ce753401"
+        "spanId": "15b25ce2-e75f-4d37-b3ae-b2807ae88bc4"
       }
     },
     {
-      "id": "a3dbca29-a415-4530-abd1-f62c1e5e3a13",
+      "id": "c0ebc49e-703f-4e7d-8e65-3c157ab00273",
       "sequence": 32,
-      "at": 1788750161026,
+      "at": 1788750535614,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 3,
       "data": {
-        "spanId": "da68af5f-f264-43d9-989c-ae39fcb97a72",
-        "durationMs": 1056
+        "spanId": "fdaf047f-4c6f-4db2-9596-1de17d0787af",
+        "durationMs": 1057
       }
     },
     {
-      "id": "b7b4c84c-cdd6-4089-b893-105b30090bf0",
+      "id": "d1011fe7-169a-4868-b9f3-123e40e09cb5",
       "sequence": 33,
-      "at": 1788750161027,
+      "at": 1788750535615,
       "type": "pickup.reserved",
       "actor": "dispatch",
       "title": "Sam → Sunday Bread",
@@ -727,7 +727,7 @@
       "revision": 4,
       "data": {
         "assignment": {
-          "id": "5477a2ac-2202-421a-be38-168e3246ebd9",
+          "id": "16a56024-b598-4981-9c33-07e45338b336",
           "donationId": "d1",
           "recipientId": "r1",
           "driverId": "v3",
@@ -739,63 +739,63 @@
       }
     },
     {
-      "id": "71d89e53-a513-459a-989d-1a3ef74a3705",
+      "id": "599ac387-0b94-45d8-b000-ba11626e443b",
       "sequence": 34,
-      "at": 1788750161027,
+      "at": 1788750535615,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 4,
       "data": {
-        "spanId": "92ca79f7-e79c-4a37-80cd-1bcc1230499b"
+        "spanId": "706d8e7c-17d7-4748-93a2-4d8399797fd1"
       }
     },
     {
-      "id": "656f0cc7-e4f7-4ed6-9bb4-826223c7e397",
+      "id": "2f1467fc-2754-4050-8c6a-e778d6d93a4f",
       "sequence": 35,
-      "at": 1788750161089,
+      "at": 1788750535662,
       "type": "inference.completed",
       "actor": "community",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 4,
       "data": {
-        "spanId": "3e4d7431-179a-49af-884d-7f7cada08fd1",
-        "durationMs": 855
+        "spanId": "5f32e6c4-5600-4cfd-977d-b3ea36d53530",
+        "durationMs": 856
       }
     },
     {
-      "id": "89f5a5f0-4cb8-4831-b9b1-c2409ac58158",
+      "id": "57a8229d-5720-487b-a127-112297464ec8",
       "sequence": 36,
-      "at": 1788750161090,
+      "at": 1788750535663,
       "type": "inference.started",
       "actor": "community",
       "title": "Bridge is reasoning",
       "detail": "",
       "revision": 4,
       "data": {
-        "spanId": "d2e73dae-2b24-4948-932a-c0c7efed128d"
+        "spanId": "67f9bf55-1e97-4f10-b425-03a07b8eebfc"
       }
     },
     {
-      "id": "bc572508-7417-4001-8d72-f65d4dd47904",
+      "id": "228177f7-c542-48b3-a56d-d1921528e325",
       "sequence": 37,
-      "at": 1788750161547,
+      "at": 1788750536116,
       "type": "inference.completed",
       "actor": "supply",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 4,
       "data": {
-        "spanId": "b9704288-80c7-4442-8ba1-a760ce753401",
-        "durationMs": 661
+        "spanId": "15b25ce2-e75f-4d37-b3ae-b2807ae88bc4",
+        "durationMs": 658
       }
     },
     {
-      "id": "59d8913f-c92b-4fe4-9f71-c5eea741ba25",
+      "id": "2ecbd311-bb06-41b8-bdc3-b03bbfb50d42",
       "sequence": 38,
-      "at": 1788750161547,
+      "at": 1788750536116,
       "type": "agent.settled",
       "actor": "supply",
       "title": "Scout finished this turn",
@@ -803,23 +803,23 @@
       "revision": 4
     },
     {
-      "id": "3b48beb4-26dc-471e-8e6f-5623734d558e",
+      "id": "07b692e9-54a1-4bb2-befe-1b1f484dee3a",
       "sequence": 39,
-      "at": 1788750161943,
+      "at": 1788750536526,
       "type": "inference.completed",
       "actor": "community",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 4,
       "data": {
-        "spanId": "d2e73dae-2b24-4948-932a-c0c7efed128d",
-        "durationMs": 853
+        "spanId": "67f9bf55-1e97-4f10-b425-03a07b8eebfc",
+        "durationMs": 863
       }
     },
     {
-      "id": "57a643ef-c2ca-42a6-8ee0-0341041768f4",
+      "id": "58d5d58f-df35-4c4f-83ba-a8f109325694",
       "sequence": 40,
-      "at": 1788750161943,
+      "at": 1788750536527,
       "type": "agent.settled",
       "actor": "community",
       "title": "Bridge finished this turn",
@@ -827,23 +827,23 @@
       "revision": 4
     },
     {
-      "id": "63097643-2f13-4cb6-8349-19ead6e52631",
+      "id": "83b96f69-d25e-4659-97b9-1616a571ce40",
       "sequence": 41,
-      "at": 1788750162087,
+      "at": 1788750536669,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 4,
       "data": {
-        "spanId": "92ca79f7-e79c-4a37-80cd-1bcc1230499b",
-        "durationMs": 1060
+        "spanId": "706d8e7c-17d7-4748-93a2-4d8399797fd1",
+        "durationMs": 1054
       }
     },
     {
-      "id": "adeee015-95bd-4e70-bb71-a5e0b54b6dca",
+      "id": "48e320db-1af7-4e3b-982a-de1f18689175",
       "sequence": 42,
-      "at": 1788750162087,
+      "at": 1788750536670,
       "type": "pickup.reserved",
       "actor": "dispatch",
       "title": "Theo → Little Oven",
@@ -851,7 +851,7 @@
       "revision": 5,
       "data": {
         "assignment": {
-          "id": "e03f35ca-d464-4743-bfd2-6c31904fa028",
+          "id": "18314b9d-a714-4ac8-a2ba-ac7b9b85df64",
           "donationId": "d5",
           "recipientId": "r2",
           "driverId": "v2",
@@ -863,36 +863,36 @@
       }
     },
     {
-      "id": "09d27e1b-89c6-46fe-ab84-7662eef42122",
+      "id": "1c3cae23-534f-42d4-8a0d-670c40742262",
       "sequence": 43,
-      "at": 1788750162087,
+      "at": 1788750536670,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 5,
       "data": {
-        "spanId": "42873bd1-7a65-4118-bbc7-7ad768861a6a"
+        "spanId": "dbc38233-d3bc-4325-8038-390a01cdf96c"
       }
     },
     {
-      "id": "7b923892-4688-4f6b-b64d-b055519349bd",
+      "id": "ca322fa3-8f50-47ed-8983-73bba18c5b26",
       "sequence": 44,
-      "at": 1788750163143,
+      "at": 1788750537731,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 5,
       "data": {
-        "spanId": "42873bd1-7a65-4118-bbc7-7ad768861a6a",
-        "durationMs": 1056
+        "spanId": "dbc38233-d3bc-4325-8038-390a01cdf96c",
+        "durationMs": 1061
       }
     },
     {
-      "id": "8463cf46-e784-4d78-9ef3-0543b91a8768",
+      "id": "cb01e1ea-3dde-4a41-ac10-4d80a81181f4",
       "sequence": 45,
-      "at": 1788750163144,
+      "at": 1788750537732,
       "type": "pickup.reserved",
       "actor": "dispatch",
       "title": "Sam → Orchard Market",
@@ -900,7 +900,7 @@
       "revision": 6,
       "data": {
         "assignment": {
-          "id": "4efa7379-ccbb-42e3-90d0-bb575d28d122",
+          "id": "4fc238b4-d9e6-4e14-a9a8-eca3f03037af",
           "donationId": "d4",
           "recipientId": "r2",
           "driverId": "v3",
@@ -912,36 +912,36 @@
       }
     },
     {
-      "id": "0eb28927-5fda-4c9f-a16d-0af22b5dad71",
+      "id": "9f3443f9-4471-4a11-80a3-c841c9dd11f4",
       "sequence": 46,
-      "at": 1788750163144,
+      "at": 1788750537732,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 6,
       "data": {
-        "spanId": "6ab7f085-1cc5-4773-b279-a83c60817306"
+        "spanId": "bf1e5a7d-ecdb-446b-8d3d-356d2e7c12b5"
       }
     },
     {
-      "id": "14cc6440-e452-4cc8-8827-b5e521b46ee6",
+      "id": "fed7d507-74dc-4ad1-9c50-a889e15cde30",
       "sequence": 47,
-      "at": 1788750164204,
+      "at": 1788750538783,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 6,
       "data": {
-        "spanId": "6ab7f085-1cc5-4773-b279-a83c60817306",
-        "durationMs": 1060
+        "spanId": "bf1e5a7d-ecdb-446b-8d3d-356d2e7c12b5",
+        "durationMs": 1051
       }
     },
     {
-      "id": "bb08c6ad-20a6-434e-9030-0797af7651a2",
+      "id": "a0a578ab-dec3-47d6-8912-d722414833aa",
       "sequence": 48,
-      "at": 1788750164204,
+      "at": 1788750538783,
       "type": "agent.settled",
       "actor": "dispatch",
       "title": "Relay finished this turn",
@@ -949,53 +949,53 @@
       "revision": 6
     },
     {
-      "id": "04b3901e-390b-4f36-a1e4-ad7d8ff11eab",
+      "id": "a81aaaca-73ff-4db7-bd43-a9a8a59baec4",
       "sequence": 49,
-      "at": 1788750164205,
+      "at": 1788750538784,
       "type": "agent.awakened",
       "actor": "dispatch",
       "title": "Relay picked up an update",
-      "detail": "Peer finding: {\"id\":\"df02f85f-851a-41ef-bd45-1cec0e9f835a\",\"role\":\"supply\",\"title\":\"Prioritize the closing bakery\",\"detail\":\"Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.\",\"donationIds\":[\"d1\",\"d3\"],\"revision\":3}",
+      "detail": "Peer finding: {\"id\":\"19e9f658-4e00-44ff-8597-d6e23780f137\",\"role\":\"supply\",\"title\":\"Prioritize the closing bakery\",\"detail\":\"Sunday Bread closes in 35 scenario minutes. Chilled meals need a refrigerated vehicle. 2 drivers are currently available.\",\"donationIds\":[\"d1\",\"d3\"],\"revision\":3}",
       "revision": 6,
       "data": {
         "evidenceIds": [
-          "2b9f7185-3337-46ef-b9b3-907678569c2e",
-          "7794beed-8adf-4609-b20f-3f1cd860ee7a",
-          "df02f85f-851a-41ef-bd45-1cec0e9f835a"
+          "bd9ca941-4a2c-433b-ba53-76847b68afdb",
+          "bd01d362-1ca0-4ad3-8620-2672c87d9388",
+          "19e9f658-4e00-44ff-8597-d6e23780f137"
         ]
       }
     },
     {
-      "id": "4e0e9037-2f05-4389-b7c9-29aab23098df",
+      "id": "57717879-972a-406f-bfa5-4f1b374d3e26",
       "sequence": 50,
-      "at": 1788750164206,
+      "at": 1788750538784,
       "type": "inference.started",
       "actor": "dispatch",
       "title": "Relay is reasoning",
       "detail": "",
       "revision": 6,
       "data": {
-        "spanId": "a1f01128-6ed5-43ce-9d16-11ff901be7c1"
+        "spanId": "ca626fc9-bdff-4d9d-a834-73ed72309e43"
       }
     },
     {
-      "id": "7034a68f-6ca8-4560-aac3-e0d2a5c4883e",
+      "id": "d2b6cbc9-3fcd-4cf9-a8db-639ac205a0d0",
       "sequence": 51,
-      "at": 1788750165262,
+      "at": 1788750539844,
       "type": "inference.completed",
       "actor": "dispatch",
       "title": "Reasoning completed",
       "detail": "",
       "revision": 6,
       "data": {
-        "spanId": "a1f01128-6ed5-43ce-9d16-11ff901be7c1",
-        "durationMs": 1055
+        "spanId": "ca626fc9-bdff-4d9d-a834-73ed72309e43",
+        "durationMs": 1060
       }
     },
     {
-      "id": "18d7e149-4b31-4fff-a4af-1e6f300a7079",
+      "id": "21ed45fd-78ab-4aab-8dea-b72589be2e40",
       "sequence": 52,
-      "at": 1788750165262,
+      "at": 1788750539845,
       "type": "agent.settled",
       "actor": "dispatch",
       "title": "Relay finished this turn",
@@ -1003,9 +1003,9 @@
       "revision": 6
     },
     {
-      "id": "b6460d78-0490-4e48-a562-07ddc5511243",
+      "id": "33c8369e-db05-4664-b97b-1f44257f3e76",
       "sequence": 53,
-      "at": 1788750165416,
+      "at": 1788750540009,
       "type": "session.finished",
       "actor": "coordinator",
       "title": "Dispatch session saved",
@@ -1015,112 +1015,112 @@
   ],
   "spans": [
     {
-      "id": "57776221-d09f-44df-872c-68d3452d2df5",
+      "id": "64991c68-9b70-4a58-acf6-737dbac29433",
       "role": "supply",
-      "start": 1788750157855,
-      "end": 1788750158520,
+      "start": 1788750532439,
+      "end": 1788750533101,
       "outcome": "ok"
     },
     {
-      "id": "6c9e0888-4d37-4db1-bc38-18adb79a92e2",
+      "id": "0be9ce9e-24e7-4572-8a73-9eb5e24e9c7f",
       "role": "community",
-      "start": 1788750157855,
-      "end": 1788750158709,
+      "start": 1788750532439,
+      "end": 1788750533291,
       "outcome": "ok"
     },
     {
-      "id": "cc6d6169-bb59-419f-ae9a-927aeceddb25",
+      "id": "52ee3b51-edad-421e-9ae4-94d2df7db9c0",
       "role": "dispatch",
-      "start": 1788750157855,
-      "end": 1788750158913,
+      "start": 1788750532439,
+      "end": 1788750533498,
       "outcome": "ok"
     },
     {
-      "id": "bc34eae3-98db-451d-ad8a-91d1a2532ae8",
+      "id": "61642fc1-7995-4911-8ed2-0e301512a1aa",
       "role": "supply",
-      "start": 1788750158521,
-      "end": 1788750159181,
+      "start": 1788750533101,
+      "end": 1788750533766,
       "outcome": "ok"
     },
     {
-      "id": "6db0c5c5-859c-47ab-bd7d-8d553a0c658e",
+      "id": "125ad1a6-e4a9-4738-8950-b30bb6cb6f3d",
       "role": "community",
-      "start": 1788750158709,
-      "end": 1788750159562,
+      "start": 1788750533292,
+      "end": 1788750534144,
       "outcome": "ok"
     },
     {
-      "id": "a7d1e2d3-247f-4998-a47a-d9fc1c99d083",
+      "id": "110e31f2-0ee8-4abf-b8a9-eb1a4663df2f",
       "role": "dispatch",
-      "start": 1788750158913,
-      "end": 1788750159970,
+      "start": 1788750533499,
+      "end": 1788750534556,
       "outcome": "ok"
     },
     {
-      "id": "da68af5f-f264-43d9-989c-ae39fcb97a72",
+      "id": "fdaf047f-4c6f-4db2-9596-1de17d0787af",
       "role": "dispatch",
-      "start": 1788750159970,
-      "end": 1788750161026,
+      "start": 1788750534557,
+      "end": 1788750535614,
       "outcome": "ok"
     },
     {
-      "id": "5c9a0ef6-d2e1-4646-a23e-2967a5f42cbe",
+      "id": "cbf64efa-e307-4dd2-bc2d-c0374b271d04",
       "role": "supply",
-      "start": 1788750160234,
-      "end": 1788750160885,
+      "start": 1788750534805,
+      "end": 1788750535457,
       "outcome": "ok"
     },
     {
-      "id": "3e4d7431-179a-49af-884d-7f7cada08fd1",
+      "id": "5f32e6c4-5600-4cfd-977d-b3ea36d53530",
       "role": "community",
-      "start": 1788750160234,
-      "end": 1788750161089,
+      "start": 1788750534806,
+      "end": 1788750535662,
       "outcome": "ok"
     },
     {
-      "id": "b9704288-80c7-4442-8ba1-a760ce753401",
+      "id": "15b25ce2-e75f-4d37-b3ae-b2807ae88bc4",
       "role": "supply",
-      "start": 1788750160886,
-      "end": 1788750161547,
+      "start": 1788750535458,
+      "end": 1788750536116,
       "outcome": "ok"
     },
     {
-      "id": "92ca79f7-e79c-4a37-80cd-1bcc1230499b",
+      "id": "706d8e7c-17d7-4748-93a2-4d8399797fd1",
       "role": "dispatch",
-      "start": 1788750161027,
-      "end": 1788750162087,
+      "start": 1788750535615,
+      "end": 1788750536669,
       "outcome": "ok"
     },
     {
-      "id": "d2e73dae-2b24-4948-932a-c0c7efed128d",
+      "id": "67f9bf55-1e97-4f10-b425-03a07b8eebfc",
       "role": "community",
-      "start": 1788750161090,
-      "end": 1788750161943,
+      "start": 1788750535663,
+      "end": 1788750536526,
       "outcome": "ok"
     },
     {
-      "id": "42873bd1-7a65-4118-bbc7-7ad768861a6a",
+      "id": "dbc38233-d3bc-4325-8038-390a01cdf96c",
       "role": "dispatch",
-      "start": 1788750162087,
-      "end": 1788750163143,
+      "start": 1788750536670,
+      "end": 1788750537731,
       "outcome": "ok"
     },
     {
-      "id": "6ab7f085-1cc5-4773-b279-a83c60817306",
+      "id": "bf1e5a7d-ecdb-446b-8d3d-356d2e7c12b5",
       "role": "dispatch",
-      "start": 1788750163144,
-      "end": 1788750164204,
+      "start": 1788750537732,
+      "end": 1788750538783,
       "outcome": "ok"
     },
     {
-      "id": "a1f01128-6ed5-43ce-9d16-11ff901be7c1",
+      "id": "ca626fc9-bdff-4d9d-a834-73ed72309e43",
       "role": "dispatch",
-      "start": 1788750164206,
-      "end": 1788750165261,
+      "start": 1788750538784,
+      "end": 1788750539844,
       "outcome": "ok"
     }
   ],
   "model": "Deterministic rehearsal (no LLM)",
   "calls": 15,
-  "endedAt": 1788750165416
+  "endedAt": 1788750540009
 }

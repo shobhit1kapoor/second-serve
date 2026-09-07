@@ -36,12 +36,12 @@ I'm Shobhit Kapoor, building solo. For this hackathon, I wanted to explore what 
 
 I used Codex to assist with research, implementation, writing, and verification. Existing open-source dependencies and generated UI primitives are credited in the repository. The project-specific dispatch logic, Mozaik orchestration, interface, persistence, and evidence scripts were developed for this entry. AI assistance is part of the build process; live application inference is separately observable in the exported run records.
 
-## Fields to finish after publication
+## Submitted public links
 
 - Repository URL: https://github.com/shobhit1kapoor/second-serve
-- Deployment URL: https://second-serve-dispatch.shobhit1kapoor.chatgpt.site (currently owner-only; change and verify judge access before submitting this optional link).
-- Demo video URL: leave blank while video production is paused; the written walkthrough is in `docs/DEMO.md`.
+- Deployment URL: https://second-serve-dispatch.shobhit1kapoor.chatgpt.site/ (public; verified without a sign-in).
+- Demo video URL: https://second-serve-dispatch.shobhit1kapoor.chatgpt.site/demo/index.html (3:25 narrated browser recording; public playback verified).
 - Contact email: shobhit1kapoor@gmail.com
 - Team name: leave blank for solo.
 
-Do not submit placeholder links or describe a private deployment as judge-accessible. Confirm the event's eligibility and submission attestations from the participant before making personal declarations on their behalf.
+The official submission API accepted the updated public links and three screenshots on September 7, 2026. The participant confirmed eligibility and agreement to the rules before submission.

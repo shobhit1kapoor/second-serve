@@ -7,7 +7,7 @@ Validated locally on September 6, 2026 with Node.js 25.3.0. The supported minimu
 | TypeScript strict check | Passed |
 | Application lint | Passed |
 | Domain and actual Mozaik runtime tests | 11 passed |
-| Provider transport and request pacing tests | Ten passed: metadata round-trip, batched tool delivery, quota redaction, transient retry, invalid action rejection, rolling admission, cancelled waits |
+| Provider transport and request pacing tests | Eleven passed: metadata round-trip, batched tool delivery, quota redaction, service/timeout retries, invalid action rejection, rolling admission, cancelled waits |
 | Production Worker build | Passed |
 | Production dependency audit | Zero known vulnerabilities at validation |
 | Fresh D1 migration in a separate local store | Passed |
@@ -15,6 +15,7 @@ Validated locally on September 6, 2026 with Node.js 25.3.0. The supported minimu
 | Real-model streaming API integration | Passed: 17 calls, 59 events, four final reservations |
 | Live overlap/replanning evidence script | Passed: three overlapping model requests, one stale rejection |
 | Hosted streaming API integration | Passed: timely SSE snapshots, cancellation, durable history, owner isolation, origin rejection |
+| Hosted live Gemini integration | Passed: 22 requests, three overlapping, four final reservations, four recovered provider failures |
 | Clean GitHub CI on Node 22 | Passed for the deployed release |
 
 ## Browser verification

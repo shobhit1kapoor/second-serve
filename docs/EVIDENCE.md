@@ -14,6 +14,14 @@ If `evidence/live-api-run.json` is present, it was produced separately by the sa
 
 ## Independently inspect
 
+### Hosted Gemini verification
+
+`evidence/live-hosted-gemini-run.json` is an actual production HTTP run using `gemini-3.1-flash-lite`, collected on September 6, 2026 (Chicago). It completed in 156.4 seconds with 22 provider requests, peak overlap three, one driver cancellation, and four final reservations covering 102 of 142 portions. Four requests required recovery: two HTTP 503 responses and two timeouts. Those failed requests remain visible in the trace. Quota pacing and retry backoff are excluded from request spans. The HTTP integration also verified streaming freshness, durable retrieval, session ownership, and cross-origin rejection.
+
+`evidence/live-gemini-run.json` records a separate direct-engine Gemini run: 16 successful requests, peak overlap three, and three final pickups covering 74 portions. These different results demonstrate nondeterministic planning; neither is described as an optimal route. The older local-Codex capture remains unchanged.
+
+The deployed application now has a configured Gemini credential stored as a Sites secret. The credential is absent from tracked files and production assets. The source repository is public; the hosted site remains owner-only until its audience is explicitly changed.
+
 1. Read each span's `start`, `end`, `role`, and `outcome`.
 2. Find `coordinator.changed`, then `reservation.rejected` and subsequent `pickup.reserved` events.
 3. Compare event board revisions and the final driver availability.

@@ -38,10 +38,10 @@ I used Codex to assist with research, implementation, writing, and verification.
 
 ## Fields to finish after publication
 
-- Repository URL: use the final accessible GitHub repository.
-- Deployment URL: use the final published link after verifying judge access.
-- Demo video URL: use the uploaded demonstration if available; the written walkthrough is in `docs/DEMO.md`.
-- Contact email: use the participant's registered address.
+- Repository URL: https://github.com/shobhit1kapoor/second-serve
+- Deployment URL: https://second-serve-dispatch.shobhit1kapoor.chatgpt.site (currently owner-only; change and verify judge access before submitting this optional link).
+- Demo video URL: leave blank while video production is paused; the written walkthrough is in `docs/DEMO.md`.
+- Contact email: shobhit1kapoor@gmail.com
 - Team name: leave blank for solo.
 
 Do not submit placeholder links or describe a private deployment as judge-accessible. Confirm the event's eligibility and submission attestations from the participant before making personal declarations on their behalf.

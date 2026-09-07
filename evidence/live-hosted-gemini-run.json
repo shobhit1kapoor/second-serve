@@ -1,0 +1,1561 @@
+{
+  "id": "773d7602-fa4c-46a7-bb98-db5f2ba67c35",
+  "mode": "live",
+  "status": "complete",
+  "startedAt": 1788753418745,
+  "state": {
+    "revision": 6,
+    "minute": 0,
+    "cancellations": 1,
+    "conflictsPrevented": 1,
+    "donations": [
+      {
+        "id": "d1",
+        "name": "Sunday Bread",
+        "food": "Sourdough & pastries",
+        "category": "Bakery",
+        "portions": 24,
+        "weight": 12,
+        "closesAt": 35,
+        "point": {
+          "x": 24,
+          "y": 24
+        },
+        "address": "1840 W North Ave",
+        "chilled": false
+      },
+      {
+        "id": "d2",
+        "name": "Green Basket",
+        "food": "Seasonal vegetables",
+        "category": "Produce",
+        "portions": 40,
+        "weight": 24,
+        "closesAt": 75,
+        "point": {
+          "x": 62,
+          "y": 24
+        },
+        "address": "1560 N Milwaukee Ave",
+        "chilled": false
+      },
+      {
+        "id": "d3",
+        "name": "The Common Table",
+        "food": "Chilled prepared meals",
+        "category": "Prepared",
+        "portions": 32,
+        "weight": 20,
+        "closesAt": 50,
+        "point": {
+          "x": 40,
+          "y": 53
+        },
+        "address": "1425 N Damen Ave",
+        "chilled": true
+      },
+      {
+        "id": "d4",
+        "name": "Orchard Market",
+        "food": "Fresh fruit boxes",
+        "category": "Produce",
+        "portions": 28,
+        "weight": 18,
+        "closesAt": 95,
+        "point": {
+          "x": 79,
+          "y": 50
+        },
+        "address": "1200 N Ashland Ave",
+        "chilled": false
+      },
+      {
+        "id": "d5",
+        "name": "Little Oven",
+        "food": "Bread & breakfast rolls",
+        "category": "Bakery",
+        "portions": 18,
+        "weight": 8,
+        "closesAt": 65,
+        "point": {
+          "x": 27,
+          "y": 77
+        },
+        "address": "1000 N Western Ave",
+        "chilled": false
+      }
+    ],
+    "recipients": [
+      {
+        "id": "r1",
+        "name": "Neighborhood Pantry",
+        "capacity": 65,
+        "accepts": [
+          "Bakery",
+          "Produce"
+        ],
+        "point": {
+          "x": 49,
+          "y": 18
+        },
+        "address": "1800 N Wood St"
+      },
+      {
+        "id": "r2",
+        "name": "Community Kitchen",
+        "capacity": 65,
+        "accepts": [
+          "Bakery",
+          "Produce",
+          "Prepared"
+        ],
+        "point": {
+          "x": 66,
+          "y": 70
+        },
+        "address": "1100 N Paulina St"
+      },
+      {
+        "id": "r3",
+        "name": "Westside Fridge",
+        "capacity": 45,
+        "accepts": [
+          "Bakery",
+          "Produce",
+          "Prepared"
+        ],
+        "point": {
+          "x": 18,
+          "y": 55
+        },
+        "address": "1350 N Western Ave"
+      }
+    ],
+    "drivers": [
+      {
+        "id": "v1",
+        "name": "Maya",
+        "initials": "MA",
+        "capacity": 35,
+        "chilled": false,
+        "available": false,
+        "point": {
+          "x": 31,
+          "y": 17
+        },
+        "color": "#e59a36"
+      },
+      {
+        "id": "v2",
+        "name": "Theo",
+        "initials": "TH",
+        "capacity": 45,
+        "chilled": true,
+        "available": true,
+        "point": {
+          "x": 56,
+          "y": 59
+        },
+        "color": "#5d75c7"
+      },
+      {
+        "id": "v3",
+        "name": "Sam",
+        "initials": "SA",
+        "capacity": 30,
+        "chilled": true,
+        "available": true,
+        "point": {
+          "x": 18,
+          "y": 68
+        },
+        "color": "#159477"
+      }
+    ],
+    "assignments": [
+      {
+        "id": "273cdabf-faed-4362-ac95-5a07dd362b36",
+        "donationId": "d3",
+        "recipientId": "r3",
+        "driverId": "v2",
+        "minutes": 23,
+        "revision": 2,
+        "explanation": "Reserving chilled pickup d3 for Theo (v2) to Westside Fridge (r3) following d1 reservation.",
+        "status": "reserved"
+      },
+      {
+        "id": "c035b93e-e3dc-40ca-b39e-61c23fc83308",
+        "donationId": "d1",
+        "recipientId": "r1",
+        "driverId": "v3",
+        "minutes": 32,
+        "revision": 4,
+        "explanation": "Reassigning d1 to Sam (v3) due to Maya's unavailability. Sam is the next best option to hit the 35-minute deadline.",
+        "status": "reserved"
+      },
+      {
+        "id": "c8b5fd66-133c-4613-b438-c983124e5358",
+        "donationId": "d5",
+        "recipientId": "r2",
+        "driverId": "v2",
+        "minutes": 31,
+        "revision": 5,
+        "explanation": "Assigning d5 to Theo (v2) for delivery to Community Kitchen (r2) to utilize available capacity.",
+        "status": "reserved"
+      },
+      {
+        "id": "b82dca2c-4d1a-4cbd-a935-8c737813bc9b",
+        "donationId": "d4",
+        "recipientId": "r2",
+        "driverId": "v3",
+        "minutes": 32,
+        "revision": 6,
+        "explanation": "Assigning d4 to Sam (v3) for delivery to Community Kitchen (r2) following d1 rescue.",
+        "status": "reserved"
+      }
+    ],
+    "findings": [
+      {
+        "id": "f62bbd81-7a6f-4c93-aa83-69b40748e0b1",
+        "role": "community",
+        "title": "Prioritizing chilled prepared meals for Theo",
+        "detail": "Theo (v2) can efficiently handle chilled items from The Common Table (d3) for either the Westside Fridge (r3) or Community Kitchen (r2), as both recipients have capacity and accept prepared meals.",
+        "donationIds": [
+          "d3"
+        ],
+        "revision": 0
+      },
+      {
+        "id": "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+        "role": "supply",
+        "title": "Priority Rescue for Early Closing Donation",
+        "detail": "Sunday Bread (d1) has the earliest closing window at minute 35. Maya (v1) should prioritize d1 for delivery to Neighborhood Pantry (r1) to ensure completion within the window.",
+        "donationIds": [
+          "d1"
+        ],
+        "revision": 0
+      },
+      {
+        "id": "404db850-2e2c-49b1-bc47-2d021d1c3cee",
+        "role": "dispatch",
+        "title": "Initial Routing Strategy",
+        "detail": "Maya (v1) can efficiently handle the bakery pickup d1, and Theo (v2) is well-suited for the chilled prepared meals at d3.",
+        "donationIds": [
+          "d1",
+          "d3"
+        ],
+        "revision": 0
+      },
+      {
+        "id": "8012dd44-eeea-4d36-bb30-ac2c890edd39",
+        "role": "supply",
+        "title": "Urgent Reassignment of Early Closing Donation",
+        "detail": "With Maya unavailable, Sunday Bread (d1) must be reassigned immediately to Sam (v3) for delivery to Neighborhood Pantry (r1) to avoid missing the minute 35 deadline.",
+        "donationIds": [
+          "d1"
+        ],
+        "revision": 3
+      },
+      {
+        "id": "6574ed09-3de7-4cb9-b262-70d946ef0d74",
+        "role": "dispatch",
+        "title": "Reassigning Sunday Bread pickup",
+        "detail": "Maya (v1) is unavailable; reassigning d1 (Sunday Bread) to Sam (v3) to meet the minute 35 closing deadline.",
+        "donationIds": [
+          "d1"
+        ],
+        "revision": 3
+      },
+      {
+        "id": "8e69dad0-42e2-411e-9a62-30b6d9943244",
+        "role": "dispatch",
+        "title": "Optimizing Theo's capacity",
+        "detail": "Theo (v2) is available to handle additional bakery/produce pickups, such as d5 or d2, while Sam (v3) is handling the urgent d1 rescue.",
+        "donationIds": [
+          "d2",
+          "d5"
+        ],
+        "revision": 4
+      },
+      {
+        "id": "0a22f4bf-fe79-4cab-9ce6-bd636fcf8d32",
+        "role": "community",
+        "title": "Optimizing Theo's capacity for remaining bakery items",
+        "detail": "Theo (v2) has remaining capacity and can efficiently handle Little Oven (d5) for Community Kitchen (r2) following his current assignment, as it is the most efficient remaining option for him.",
+        "donationIds": [
+          "d5"
+        ],
+        "revision": 6
+      }
+    ],
+    "agents": [
+      {
+        "role": "supply",
+        "name": "Scout",
+        "title": "Donation specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "The early-closing donation (d1) remains critical following Maya's unavailability. It must be reassigned to Sam (v3) immediately to meet the minute 35 deadline. All other donations have later closing windows and can be addressed once d1 is secured."
+      },
+      {
+        "role": "community",
+        "name": "Bridge",
+        "title": "Community specialist",
+        "state": "watching",
+        "turns": 2,
+        "summary": "Finished assessment. With d1 and d3 assigned, remaining resources should be directed toward d5, d2, and d4. Theo (v2) remains the most efficient candidate for the remaining bakery and produce donations due to his capacity and proximity to the Community Kitchen (r2)."
+      },
+      {
+        "role": "dispatch",
+        "name": "Relay",
+        "title": "Transport specialist",
+        "state": "watching",
+        "turns": 5,
+        "summary": "The evening rescue plan is fully executed based on the current available resources and constraints:\n\n*   **Sam (v3):** Assigned **d1** (Sunday Bread) to **Neighborhood Pantry (r1)** and **d4** (Orchard Market) to **Community Kitchen (r2)**.\n*   **Theo (v2):** Assigned **d3** (The Common Table) to **Westside Fridge (r3)** and **d5** (Little Oven) to **Community Kitchen (r2)**.\n\nAll feasible assignments have been made. Donation **d2** (Green Basket) remains unassigned as no valid pickup/delivery options are currently feasible. My dispatch tasks for this cycle are complete."
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": "24d87c0b-33a0-4185-803e-84e5e98033e0",
+      "sequence": 1,
+      "at": 1788753418886,
+      "type": "session.started",
+      "actor": "coordinator",
+      "title": "Live dispatch started",
+      "detail": "Three Mozaik agents use gemini-3.1-flash-lite.",
+      "revision": 0
+    },
+    {
+      "id": "eb170328-fe37-4176-9332-4af053d87fcb",
+      "sequence": 2,
+      "at": 1788753418886,
+      "type": "agent.awakened",
+      "actor": "supply",
+      "title": "Scout picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "8c7fcf78-e24c-49c4-a841-2c8a5ae40f74",
+      "sequence": 3,
+      "at": 1788753418886,
+      "type": "agent.awakened",
+      "actor": "community",
+      "title": "Bridge picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "2e9b940d-e256-4b20-a212-83f477904b29",
+      "sequence": 4,
+      "at": 1788753418886,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Prepare the evening rescue plan.",
+      "revision": 0,
+      "data": {
+        "evidenceIds": []
+      }
+    },
+    {
+      "id": "c55ebd73-dbee-4502-bd4a-19d1d43c32c5",
+      "sequence": 5,
+      "at": 1788753418886,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "67f14b76-be9d-49bd-a48c-f7400ea1a3fa"
+      }
+    },
+    {
+      "id": "dc9ad24b-c24a-44d3-8db9-8a9abb95039c",
+      "sequence": 6,
+      "at": 1788753418886,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "b5da242f-0ec6-4b82-99be-a44d6d5fa9bc"
+      }
+    },
+    {
+      "id": "81f60df6-f264-45c9-bbcb-59bf21f7c186",
+      "sequence": 7,
+      "at": 1788753418886,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "e7927156-f5f7-4307-b59e-a554559db26a"
+      }
+    },
+    {
+      "id": "9ac5e225-6b68-4446-83df-62acb63c080b",
+      "sequence": 8,
+      "at": 1788753420378,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "b5da242f-0ec6-4b82-99be-a44d6d5fa9bc",
+        "durationMs": 1492
+      }
+    },
+    {
+      "id": "bc794e1e-53d7-4c35-a5fd-c2d702af80d4",
+      "sequence": 9,
+      "at": 1788753420378,
+      "type": "finding.shared",
+      "actor": "community",
+      "title": "Prioritizing chilled prepared meals for Theo",
+      "detail": "Theo (v2) can efficiently handle chilled items from The Common Table (d3) for either the Westside Fridge (r3) or Community Kitchen (r2), as both recipients have capacity and accept prepared meals.",
+      "revision": 0,
+      "data": {
+        "findingId": "f62bbd81-7a6f-4c93-aa83-69b40748e0b1"
+      }
+    },
+    {
+      "id": "50b01977-a3ba-4215-86c7-391d55aa9a0a",
+      "sequence": 10,
+      "at": 1788753420378,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "da1c6f42-2f59-405d-a0cb-b1ec6fe0f047"
+      }
+    },
+    {
+      "id": "a31b26e6-ae86-44c6-a5fc-b4acde80a5ca",
+      "sequence": 11,
+      "at": 1788753420401,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "67f14b76-be9d-49bd-a48c-f7400ea1a3fa",
+        "durationMs": 1515
+      }
+    },
+    {
+      "id": "30e8554c-c944-4d20-9928-9de76038acc1",
+      "sequence": 12,
+      "at": 1788753420401,
+      "type": "finding.shared",
+      "actor": "supply",
+      "title": "Priority Rescue for Early Closing Donation",
+      "detail": "Sunday Bread (d1) has the earliest closing window at minute 35. Maya (v1) should prioritize d1 for delivery to Neighborhood Pantry (r1) to ensure completion within the window.",
+      "revision": 0,
+      "data": {
+        "findingId": "dadb5db0-5471-47bc-933c-fbd783ab2a3b"
+      }
+    },
+    {
+      "id": "d85aece9-8b43-4bb1-9916-8c7fdf2d1761",
+      "sequence": 13,
+      "at": 1788753420401,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "b161a5c0-aea3-4f07-a187-5e4df09ef7c2"
+      }
+    },
+    {
+      "id": "212a9678-6e73-460d-a056-a680e398fa52",
+      "sequence": 14,
+      "at": 1788753421094,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "b161a5c0-aea3-4f07-a187-5e4df09ef7c2",
+        "durationMs": 693
+      }
+    },
+    {
+      "id": "40aaa955-c8ce-4f96-97c5-c7bf30214549",
+      "sequence": 15,
+      "at": 1788753421094,
+      "type": "agent.settled",
+      "actor": "supply",
+      "title": "Scout finished this turn",
+      "detail": "The evening rescue plan prioritizes the donation closing earliest. I have identified the urgency for the Sunday Bread pickup and matched it to an available driver and recipient. No further actions are required at this time.",
+      "revision": 0
+    },
+    {
+      "id": "340bd37a-5da4-40af-88d6-5362bb9d14ad",
+      "sequence": 16,
+      "at": 1788753434109,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 0,
+      "data": {
+        "spanId": "e7927156-f5f7-4307-b59e-a554559db26a",
+        "durationMs": 15223
+      }
+    },
+    {
+      "id": "9f983b68-2dba-4b5c-ae62-e87b6600353f",
+      "sequence": 17,
+      "at": 1788753434109,
+      "type": "finding.shared",
+      "actor": "dispatch",
+      "title": "Initial Routing Strategy",
+      "detail": "Maya (v1) can efficiently handle the bakery pickup d1, and Theo (v2) is well-suited for the chilled prepared meals at d3.",
+      "revision": 0,
+      "data": {
+        "findingId": "404db850-2e2c-49b1-bc47-2d021d1c3cee"
+      }
+    },
+    {
+      "id": "4975d6f1-df47-459c-a8b9-07aa862fb59a",
+      "sequence": 18,
+      "at": 1788753434109,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Maya → Sunday Bread",
+      "detail": "24 portions for Neighborhood Pantry. Maya (v1) is available and can deliver d1 to Neighborhood Pantry (r1) within the window.",
+      "revision": 1,
+      "data": {
+        "assignment": {
+          "id": "18079cfc-9b60-4a25-924c-25c56602d1f2",
+          "donationId": "d1",
+          "recipientId": "r1",
+          "driverId": "v1",
+          "minutes": 22,
+          "revision": 1,
+          "explanation": "Maya (v1) is available and can deliver d1 to Neighborhood Pantry (r1) within the window.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "d4e1abdc-1b9c-49b2-a7e9-d4a27bc584b2",
+      "sequence": 19,
+      "at": 1788753434109,
+      "type": "reservation.rejected",
+      "actor": "dispatch",
+      "title": "Reservation conflict prevented",
+      "detail": "Board changed from revision 0 to 1. Read the latest board and retry.",
+      "revision": 1,
+      "data": {
+        "assignment": null
+      }
+    },
+    {
+      "id": "b609888a-b317-44e6-b1b5-9a4d74bc71ba",
+      "sequence": 20,
+      "at": 1788753434109,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "0cce378f-b449-4f0f-8d9a-58cc87da797b"
+      }
+    },
+    {
+      "id": "a2734a2d-790f-46d9-ad8c-66cf7321a353",
+      "sequence": 21,
+      "at": 1788753434809,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 1,
+      "data": {
+        "spanId": "0cce378f-b449-4f0f-8d9a-58cc87da797b",
+        "durationMs": 700
+      }
+    },
+    {
+      "id": "c838078b-5a14-45ab-bf05-b001c6f33b08",
+      "sequence": 22,
+      "at": 1788753434809,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Theo → The Common Table",
+      "detail": "32 portions for Westside Fridge. Reserving chilled pickup d3 for Theo (v2) to Westside Fridge (r3) following d1 reservation.",
+      "revision": 2,
+      "data": {
+        "assignment": {
+          "id": "273cdabf-faed-4362-ac95-5a07dd362b36",
+          "donationId": "d3",
+          "recipientId": "r3",
+          "driverId": "v2",
+          "minutes": 23,
+          "revision": 2,
+          "explanation": "Reserving chilled pickup d3 for Theo (v2) to Westside Fridge (r3) following d1 reservation.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "e1c8794a-e915-4d88-ac07-191b2750b648",
+      "sequence": 23,
+      "at": 1788753434809,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 2,
+      "data": {
+        "spanId": "d3e5a1fb-018a-4b37-972b-4b2dd18d14ab"
+      }
+    },
+    {
+      "id": "3ce4bbf2-ac07-443d-90c6-dcdf85069a49",
+      "sequence": 24,
+      "at": 1788753435824,
+      "type": "coordinator.changed",
+      "actor": "coordinator",
+      "title": "A driver is unavailable",
+      "detail": "Maya is unavailable. 1 pickups released for reassignment.",
+      "revision": 3,
+      "data": {
+        "commandId": "8f0f5e8d-43f5-4b84-a7fa-0bb83aa72a31"
+      }
+    },
+    {
+      "id": "335b6f9d-c9e9-4c7d-adc4-97b743c392e4",
+      "sequence": 25,
+      "at": 1788753435824,
+      "type": "agent.awakened",
+      "actor": "supply",
+      "title": "Scout picked up an update",
+      "detail": "Coordinator update: {\"id\":\"8f0f5e8d-43f5-4b84-a7fa-0bb83aa72a31\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 3,
+      "data": {
+        "evidenceIds": [
+          "f62bbd81-7a6f-4c93-aa83-69b40748e0b1",
+          "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+          "404db850-2e2c-49b1-bc47-2d021d1c3cee"
+        ]
+      }
+    },
+    {
+      "id": "d2643b05-368b-4195-afae-05b06b2091a8",
+      "sequence": 26,
+      "at": 1788753435824,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "fd6252f8-2ea8-4910-8934-5b68195f1fc2"
+      }
+    },
+    {
+      "id": "72dca93d-782a-492e-966a-432261a1bec4",
+      "sequence": 27,
+      "at": 1788753436390,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "d3e5a1fb-018a-4b37-972b-4b2dd18d14ab",
+        "durationMs": 1581
+      }
+    },
+    {
+      "id": "c1a9ec68-f12f-4eb6-8760-7e014aa50218",
+      "sequence": 28,
+      "at": 1788753436390,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "The evening rescue plan has been initiated. I have successfully reserved two pickups:\n\n*   **Maya (v1):** Pickup **d1** (Sunday Bread) for delivery to **Neighborhood Pantry (r1)**.\n*   **Theo (v2):** Pickup **d3** (The Common Table) for delivery to **Westside Fridge (r3)**.\n\nThese assignments optimize driver capacity and chilled requirements. I will monitor the board for remaining opportunities.",
+      "revision": 3
+    },
+    {
+      "id": "beb1081e-60b0-4dac-911a-be303958ab98",
+      "sequence": 29,
+      "at": 1788753436390,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Coordinator update: {\"id\":\"8f0f5e8d-43f5-4b84-a7fa-0bb83aa72a31\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 3,
+      "data": {
+        "evidenceIds": [
+          "f62bbd81-7a6f-4c93-aa83-69b40748e0b1",
+          "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+          "404db850-2e2c-49b1-bc47-2d021d1c3cee"
+        ]
+      }
+    },
+    {
+      "id": "2f455301-fe47-40e0-823c-f0bfb9720ce8",
+      "sequence": 30,
+      "at": 1788753436390,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "691a0b13-e55e-4fbd-9cde-39b4c3fd73e4"
+      }
+    },
+    {
+      "id": "e7a8e0e7-7da6-42af-a34b-ea8634da1c25",
+      "sequence": 31,
+      "at": 1788753436657,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "fd6252f8-2ea8-4910-8934-5b68195f1fc2",
+        "durationMs": 833
+      }
+    },
+    {
+      "id": "9c0042df-f12d-4137-85d5-0133d83f22fc",
+      "sequence": 32,
+      "at": 1788753436657,
+      "type": "finding.shared",
+      "actor": "supply",
+      "title": "Urgent Reassignment of Early Closing Donation",
+      "detail": "With Maya unavailable, Sunday Bread (d1) must be reassigned immediately to Sam (v3) for delivery to Neighborhood Pantry (r1) to avoid missing the minute 35 deadline.",
+      "revision": 3,
+      "data": {
+        "findingId": "8012dd44-eeea-4d36-bb30-ac2c890edd39"
+      }
+    },
+    {
+      "id": "3d25c054-dcf1-44f2-a0fc-dc14b0af907a",
+      "sequence": 33,
+      "at": 1788753436657,
+      "type": "inference.started",
+      "actor": "supply",
+      "title": "Scout is reasoning",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "1222c8aa-7875-4981-bb0e-4c8d2010ea99"
+      }
+    },
+    {
+      "id": "9a250c7b-1ca1-4770-a2bd-b3fd019d35dd",
+      "sequence": 34,
+      "at": 1788753437335,
+      "type": "inference.completed",
+      "actor": "supply",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "1222c8aa-7875-4981-bb0e-4c8d2010ea99",
+        "durationMs": 678
+      }
+    },
+    {
+      "id": "c0d94ea0-f788-4a32-b92d-01077a112518",
+      "sequence": 35,
+      "at": 1788753437335,
+      "type": "agent.settled",
+      "actor": "supply",
+      "title": "Scout finished this turn",
+      "detail": "The early-closing donation (d1) remains critical following Maya's unavailability. It must be reassigned to Sam (v3) immediately to meet the minute 35 deadline. All other donations have later closing windows and can be addressed once d1 is secured.",
+      "revision": 3
+    },
+    {
+      "id": "1be07218-5a65-4802-ae43-14ca5b8bbfff",
+      "sequence": 36,
+      "at": 1788753437894,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 3,
+      "data": {
+        "spanId": "691a0b13-e55e-4fbd-9cde-39b4c3fd73e4",
+        "durationMs": 1504
+      }
+    },
+    {
+      "id": "6c76d060-4670-4aed-a9c2-519cd695fa7a",
+      "sequence": 37,
+      "at": 1788753437894,
+      "type": "finding.shared",
+      "actor": "dispatch",
+      "title": "Reassigning Sunday Bread pickup",
+      "detail": "Maya (v1) is unavailable; reassigning d1 (Sunday Bread) to Sam (v3) to meet the minute 35 closing deadline.",
+      "revision": 3,
+      "data": {
+        "findingId": "6574ed09-3de7-4cb9-b262-70d946ef0d74"
+      }
+    },
+    {
+      "id": "6a3a612a-9fb7-4936-a749-9064cfdf5ac3",
+      "sequence": 38,
+      "at": 1788753437894,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Sam → Sunday Bread",
+      "detail": "24 portions for Neighborhood Pantry. Reassigning d1 to Sam (v3) due to Maya's unavailability. Sam is the next best option to hit the 35-minute deadline.",
+      "revision": 4,
+      "data": {
+        "assignment": {
+          "id": "c035b93e-e3dc-40ca-b39e-61c23fc83308",
+          "donationId": "d1",
+          "recipientId": "r1",
+          "driverId": "v3",
+          "minutes": 32,
+          "revision": 4,
+          "explanation": "Reassigning d1 to Sam (v3) due to Maya's unavailability. Sam is the next best option to hit the 35-minute deadline.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "5a720cb1-3af8-4f56-b5a3-3df10d991bca",
+      "sequence": 39,
+      "at": 1788753437894,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "128fb0a2-0fcb-448b-80ec-18a737fdf7ba"
+      }
+    },
+    {
+      "id": "5b67ceac-0986-4e65-815e-b5a53f79ff80",
+      "sequence": 40,
+      "at": 1788753439840,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "128fb0a2-0fcb-448b-80ec-18a737fdf7ba",
+        "durationMs": 1946
+      }
+    },
+    {
+      "id": "0025eb87-7181-42b3-abe6-88f54d30cc11",
+      "sequence": 41,
+      "at": 1788753439840,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "Due to Maya (v1) becoming unavailable, I have reassigned the urgent **d1** (Sunday Bread) pickup to **Sam (v3)** for delivery to **Neighborhood Pantry (r1)**. This ensures the donation is collected before its 35-minute deadline.\n\n**Current Status:**\n*   **d1 (Sunday Bread):** Reserved for **Sam (v3)** to **Neighborhood Pantry (r1)**.\n*   **d3 (The Common Table):** Reserved for **Theo (v2)** to **Westside Fridge (r3)**.\n\nI am continuing to review the board for further feasible assignments.",
+      "revision": 4
+    },
+    {
+      "id": "88afc47e-3ddc-4545-9eab-88d65161acab",
+      "sequence": 42,
+      "at": 1788753439840,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Peer finding: {\"id\":\"6574ed09-3de7-4cb9-b262-70d946ef0d74\",\"role\":\"dispatch\",\"title\":\"Reassigning Sunday Bread pickup\",\"detail\":\"Maya (v1) is unavailable; reassigning d1 (Sunday Bread) to Sam (v3) to meet the minute 35 closing deadline.\",\"donationIds\":[\"d1\"],\"revision\":3}",
+      "revision": 4,
+      "data": {
+        "evidenceIds": [
+          "f62bbd81-7a6f-4c93-aa83-69b40748e0b1",
+          "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+          "404db850-2e2c-49b1-bc47-2d021d1c3cee",
+          "8012dd44-eeea-4d36-bb30-ac2c890edd39",
+          "6574ed09-3de7-4cb9-b262-70d946ef0d74"
+        ]
+      }
+    },
+    {
+      "id": "7a5833bf-42d8-48c9-b84d-aa242fc9b0bc",
+      "sequence": 43,
+      "at": 1788753439840,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "24b1f420-5277-4335-8db0-5e66df801e55"
+      }
+    },
+    {
+      "id": "f1e239a8-c6e3-4a74-943f-3f74c6bd704a",
+      "sequence": 44,
+      "at": 1788753441974,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "da1c6f42-2f59-405d-a0cb-b1ec6fe0f047",
+        "durationMs": 21596
+      }
+    },
+    {
+      "id": "8265af7d-1672-41bd-a706-8a024f06ddbd",
+      "sequence": 45,
+      "at": 1788753441974,
+      "type": "agent.settled",
+      "actor": "community",
+      "title": "Bridge finished this turn",
+      "detail": "Finished assessment. Prioritized chilled prepared meals for Theo (v2) due to capacity and acceptance alignment. Remaining donations like d1, d2, d4, and d5 should be matched to available capacity at Neighborhood Pantry (r1), Community Kitchen (r2), and Westside Fridge (r3) by Relay.",
+      "revision": 4
+    },
+    {
+      "id": "3caac634-1535-444d-94c3-8e307bdc8d6b",
+      "sequence": 46,
+      "at": 1788753441974,
+      "type": "agent.awakened",
+      "actor": "community",
+      "title": "Bridge picked up an update",
+      "detail": "Coordinator update: {\"id\":\"8f0f5e8d-43f5-4b84-a7fa-0bb83aa72a31\",\"type\":\"driver_unavailable\",\"driverId\":\"v1\",\"detail\":\"Maya is unavailable. 1 pickups released for reassignment.\",\"revision\":3}",
+      "revision": 4,
+      "data": {
+        "evidenceIds": [
+          "f62bbd81-7a6f-4c93-aa83-69b40748e0b1",
+          "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+          "404db850-2e2c-49b1-bc47-2d021d1c3cee",
+          "8012dd44-eeea-4d36-bb30-ac2c890edd39",
+          "6574ed09-3de7-4cb9-b262-70d946ef0d74"
+        ]
+      }
+    },
+    {
+      "id": "80d9bb04-9128-4d0f-b2c9-34594bc9ef3f",
+      "sequence": 47,
+      "at": 1788753442212,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 4,
+      "data": {
+        "spanId": "24b1f420-5277-4335-8db0-5e66df801e55",
+        "durationMs": 2372
+      }
+    },
+    {
+      "id": "a4a41129-a3eb-4de9-a199-4f8ef1b7c390",
+      "sequence": 48,
+      "at": 1788753442212,
+      "type": "finding.shared",
+      "actor": "dispatch",
+      "title": "Optimizing Theo's capacity",
+      "detail": "Theo (v2) is available to handle additional bakery/produce pickups, such as d5 or d2, while Sam (v3) is handling the urgent d1 rescue.",
+      "revision": 4,
+      "data": {
+        "findingId": "8e69dad0-42e2-411e-9a62-30b6d9943244"
+      }
+    },
+    {
+      "id": "06acc2a2-5e2b-4b76-9927-ef6fb45e0b9d",
+      "sequence": 49,
+      "at": 1788753442212,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Theo → Little Oven",
+      "detail": "18 portions for Community Kitchen. Assigning d5 to Theo (v2) for delivery to Community Kitchen (r2) to utilize available capacity.",
+      "revision": 5,
+      "data": {
+        "assignment": {
+          "id": "c8b5fd66-133c-4613-b438-c983124e5358",
+          "donationId": "d5",
+          "recipientId": "r2",
+          "driverId": "v2",
+          "minutes": 31,
+          "revision": 5,
+          "explanation": "Assigning d5 to Theo (v2) for delivery to Community Kitchen (r2) to utilize available capacity.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "d91386d1-40cd-4db1-a41b-00ba6bb1ea80",
+      "sequence": 50,
+      "at": 1788753478886,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "d09a6545-a6e6-48f1-9e11-1371a8cc1424"
+      }
+    },
+    {
+      "id": "6c24131c-d43e-4e7f-a374-ce726290a939",
+      "sequence": 51,
+      "at": 1788753478886,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "4b1a8495-1977-49b4-be5e-9b35189c5ea2"
+      }
+    },
+    {
+      "id": "cf169fb4-379f-46ba-b33f-d3930ab4b482",
+      "sequence": 52,
+      "at": 1788753514580,
+      "type": "inference.retrying",
+      "actor": "community",
+      "title": "Provider busy; retrying this request",
+      "detail": "The model service temporarily returned HTTP 503.",
+      "revision": 5,
+      "data": {
+        "spanId": "d09a6545-a6e6-48f1-9e11-1371a8cc1424",
+        "durationMs": 35694
+      }
+    },
+    {
+      "id": "415c5fd0-ab22-47bd-b932-15e12feaf339",
+      "sequence": 53,
+      "at": 1788753515580,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "5f09729c-0b95-4342-a4bf-9d38723be1d5"
+      }
+    },
+    {
+      "id": "2fbcd6eb-1331-4570-9f50-e7d3c9b0c590",
+      "sequence": 54,
+      "at": 1788753523886,
+      "type": "inference.retrying",
+      "actor": "dispatch",
+      "title": "Provider busy; retrying this request",
+      "detail": "The operation was aborted due to timeout",
+      "revision": 5,
+      "data": {
+        "spanId": "4b1a8495-1977-49b4-be5e-9b35189c5ea2",
+        "durationMs": 45000
+      }
+    },
+    {
+      "id": "ff6f7b57-e278-4f21-b9fd-adb1cc8a079e",
+      "sequence": 55,
+      "at": 1788753524886,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "b30e9453-a204-4b47-98e9-6c2f8f83dd39"
+      }
+    },
+    {
+      "id": "e7b63c83-ebff-4e22-9e9b-503b209b65a7",
+      "sequence": 56,
+      "at": 1788753552401,
+      "type": "inference.retrying",
+      "actor": "dispatch",
+      "title": "Provider busy; retrying this request",
+      "detail": "The model service temporarily returned HTTP 503.",
+      "revision": 5,
+      "data": {
+        "spanId": "b30e9453-a204-4b47-98e9-6c2f8f83dd39",
+        "durationMs": 27515
+      }
+    },
+    {
+      "id": "0f5eb60f-d906-4cbf-a5d6-b4e16c3f7af3",
+      "sequence": 57,
+      "at": 1788753554401,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "6ef526c1-6ace-4c58-a272-570c3fab7d25"
+      }
+    },
+    {
+      "id": "799bfb71-5cd6-436c-9e49-3d75e4f40a37",
+      "sequence": 58,
+      "at": 1788753555775,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 5,
+      "data": {
+        "spanId": "6ef526c1-6ace-4c58-a272-570c3fab7d25",
+        "durationMs": 1374
+      }
+    },
+    {
+      "id": "37cddf7d-b757-49f7-ae85-61a1735614f2",
+      "sequence": 59,
+      "at": 1788753555775,
+      "type": "pickup.reserved",
+      "actor": "dispatch",
+      "title": "Sam → Orchard Market",
+      "detail": "28 portions for Community Kitchen. Assigning d4 to Sam (v3) for delivery to Community Kitchen (r2) following d1 rescue.",
+      "revision": 6,
+      "data": {
+        "assignment": {
+          "id": "b82dca2c-4d1a-4cbd-a935-8c737813bc9b",
+          "donationId": "d4",
+          "recipientId": "r2",
+          "driverId": "v3",
+          "minutes": 32,
+          "revision": 6,
+          "explanation": "Assigning d4 to Sam (v3) for delivery to Community Kitchen (r2) following d1 rescue.",
+          "status": "reserved"
+        }
+      }
+    },
+    {
+      "id": "7f92b2ab-a33b-4c3f-b7d4-4109ea4c2c7e",
+      "sequence": 60,
+      "at": 1788753555775,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "5955a94d-b963-460b-8be4-c0192aee09ef"
+      }
+    },
+    {
+      "id": "06c23e36-60e6-4a70-a828-26a1ae0dceb8",
+      "sequence": 61,
+      "at": 1788753556709,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "5955a94d-b963-460b-8be4-c0192aee09ef",
+        "durationMs": 934
+      }
+    },
+    {
+      "id": "29b43bb1-de4a-42f0-8339-7efe94dec9ea",
+      "sequence": 62,
+      "at": 1788753556709,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "The evening rescue plan has been updated following the reassignment of **d1** to **Sam (v3)** and the addition of further pickups to utilize capacity:\n\n*   **Sam (v3):** Reserved for **d1** (to **r1**) and **d4** (to **r2**).\n*   **Theo (v2):** Reserved for **d3** (to **r3**) and **d5** (to **r2**).\n\nAll feasible donations have been assigned. I will continue to monitor the board for any changes or new opportunities.",
+      "revision": 6
+    },
+    {
+      "id": "3de2434b-b9ab-4000-9a65-d3d1a2fb64d7",
+      "sequence": 63,
+      "at": 1788753556709,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Peer finding: {\"id\":\"8e69dad0-42e2-411e-9a62-30b6d9943244\",\"role\":\"dispatch\",\"title\":\"Optimizing Theo's capacity\",\"detail\":\"Theo (v2) is available to handle additional bakery/produce pickups, such as d5 or d2, while Sam (v3) is handling the urgent d1 rescue.\",\"donationIds\":[\"d2\",\"d5\"],\"revision\":4}",
+      "revision": 6,
+      "data": {
+        "evidenceIds": [
+          "f62bbd81-7a6f-4c93-aa83-69b40748e0b1",
+          "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+          "404db850-2e2c-49b1-bc47-2d021d1c3cee",
+          "8012dd44-eeea-4d36-bb30-ac2c890edd39",
+          "6574ed09-3de7-4cb9-b262-70d946ef0d74",
+          "8e69dad0-42e2-411e-9a62-30b6d9943244"
+        ]
+      }
+    },
+    {
+      "id": "c536c7c6-d875-4ecc-953c-ae288af4abff",
+      "sequence": 64,
+      "at": 1788753556709,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "d25d7816-a234-4900-994b-7b10e507641c"
+      }
+    },
+    {
+      "id": "d0e52cf3-5bd4-420d-909a-d52d7d20204e",
+      "sequence": 65,
+      "at": 1788753557526,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "d25d7816-a234-4900-994b-7b10e507641c",
+        "durationMs": 817
+      }
+    },
+    {
+      "id": "98cc7dd8-4784-48d3-b2c5-5e056d1a78d9",
+      "sequence": 66,
+      "at": 1788753557526,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "The rescue plan is currently executed with all feasible donations assigned:\n\n*   **Sam (v3):** Assigned **d1** (to **r1**) and **d4** (to **r2**).\n*   **Theo (v2):** Assigned **d3** (to **r3**) and **d5** (to **r2**).\n\nDonation **d2** (Green Basket) remains unassigned as no further feasible options are currently available on the board. My dispatch duties for this cycle are complete.",
+      "revision": 6
+    },
+    {
+      "id": "af13f77c-edda-4d9f-9433-0cfe68da43c8",
+      "sequence": 67,
+      "at": 1788753560580,
+      "type": "inference.retrying",
+      "actor": "community",
+      "title": "Provider busy; retrying this request",
+      "detail": "The operation was aborted due to timeout",
+      "revision": 6,
+      "data": {
+        "spanId": "5f09729c-0b95-4342-a4bf-9d38723be1d5",
+        "durationMs": 45000
+      }
+    },
+    {
+      "id": "0ae93e34-746c-4265-9034-c6104cd47087",
+      "sequence": 68,
+      "at": 1788753562580,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "e83563d6-b3f6-475e-ac52-a2f6b0ed1057"
+      }
+    },
+    {
+      "id": "a961522f-9c6e-48db-bc41-c1a623da27a2",
+      "sequence": 69,
+      "at": 1788753572697,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "e83563d6-b3f6-475e-ac52-a2f6b0ed1057",
+        "durationMs": 10117
+      }
+    },
+    {
+      "id": "2fb4b7cd-d6da-4119-8e29-4f2c8d98bc68",
+      "sequence": 70,
+      "at": 1788753572697,
+      "type": "finding.shared",
+      "actor": "community",
+      "title": "Optimizing Theo's capacity for remaining bakery items",
+      "detail": "Theo (v2) has remaining capacity and can efficiently handle Little Oven (d5) for Community Kitchen (r2) following his current assignment, as it is the most efficient remaining option for him.",
+      "revision": 6,
+      "data": {
+        "findingId": "0a22f4bf-fe79-4cab-9ce6-bd636fcf8d32"
+      }
+    },
+    {
+      "id": "d0db3423-da5d-4bf9-a688-8a2089a0156c",
+      "sequence": 71,
+      "at": 1788753572697,
+      "type": "agent.awakened",
+      "actor": "dispatch",
+      "title": "Relay picked up an update",
+      "detail": "Peer finding: {\"id\":\"0a22f4bf-fe79-4cab-9ce6-bd636fcf8d32\",\"role\":\"community\",\"title\":\"Optimizing Theo's capacity for remaining bakery items\",\"detail\":\"Theo (v2) has remaining capacity and can efficiently handle Little Oven (d5) for Community Kitchen (r2) following his current assignment, as it is the most efficient remaining option for him.\",\"donationIds\":[\"d5\"],\"revision\":6}",
+      "revision": 6,
+      "data": {
+        "evidenceIds": [
+          "dadb5db0-5471-47bc-933c-fbd783ab2a3b",
+          "404db850-2e2c-49b1-bc47-2d021d1c3cee",
+          "8012dd44-eeea-4d36-bb30-ac2c890edd39",
+          "6574ed09-3de7-4cb9-b262-70d946ef0d74",
+          "8e69dad0-42e2-411e-9a62-30b6d9943244",
+          "0a22f4bf-fe79-4cab-9ce6-bd636fcf8d32"
+        ]
+      }
+    },
+    {
+      "id": "670fdb9a-3a28-4ed0-913d-3aa64b8c5e43",
+      "sequence": 72,
+      "at": 1788753572697,
+      "type": "inference.started",
+      "actor": "dispatch",
+      "title": "Relay is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "2575bc90-aee4-4ea7-84cc-95f318f4aee4"
+      }
+    },
+    {
+      "id": "90939698-8cd5-430c-afff-af5439424566",
+      "sequence": 73,
+      "at": 1788753572697,
+      "type": "inference.started",
+      "actor": "community",
+      "title": "Bridge is reasoning",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "2ab409b5-900d-4579-a183-c6dd2535a4da"
+      }
+    },
+    {
+      "id": "72dde87e-841b-4416-b6c1-b4ad74a24b29",
+      "sequence": 74,
+      "at": 1788753573774,
+      "type": "inference.completed",
+      "actor": "dispatch",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "2575bc90-aee4-4ea7-84cc-95f318f4aee4",
+        "durationMs": 1077
+      }
+    },
+    {
+      "id": "179f4b9f-e694-497d-bd44-05caddf8094a",
+      "sequence": 75,
+      "at": 1788753573774,
+      "type": "agent.settled",
+      "actor": "dispatch",
+      "title": "Relay finished this turn",
+      "detail": "The evening rescue plan is fully executed based on the current available resources and constraints:\n\n*   **Sam (v3):** Assigned **d1** (Sunday Bread) to **Neighborhood Pantry (r1)** and **d4** (Orchard Market) to **Community Kitchen (r2)**.\n*   **Theo (v2):** Assigned **d3** (The Common Table) to **Westside Fridge (r3)** and **d5** (Little Oven) to **Community Kitchen (r2)**.\n\nAll feasible assignments have been made. Donation **d2** (Green Basket) remains unassigned as no valid pickup/delivery options are currently feasible. My dispatch tasks for this cycle are complete.",
+      "revision": 6
+    },
+    {
+      "id": "8de5eb45-86f5-40a0-9438-dd970e29df39",
+      "sequence": 76,
+      "at": 1788753574203,
+      "type": "inference.completed",
+      "actor": "community",
+      "title": "Reasoning completed",
+      "detail": "",
+      "revision": 6,
+      "data": {
+        "spanId": "2ab409b5-900d-4579-a183-c6dd2535a4da",
+        "durationMs": 1506
+      }
+    },
+    {
+      "id": "7d73bdd2-7c9e-4496-9558-91cb49b72127",
+      "sequence": 77,
+      "at": 1788753574203,
+      "type": "agent.settled",
+      "actor": "community",
+      "title": "Bridge finished this turn",
+      "detail": "Finished assessment. With d1 and d3 assigned, remaining resources should be directed toward d5, d2, and d4. Theo (v2) remains the most efficient candidate for the remaining bakery and produce donations due to his capacity and proximity to the Community Kitchen (r2).",
+      "revision": 6
+    },
+    {
+      "id": "b15d3293-6753-4edf-9f21-9a6697eb331b",
+      "sequence": 78,
+      "at": 1788753575171,
+      "type": "session.finished",
+      "actor": "coordinator",
+      "title": "Dispatch session saved",
+      "detail": "The plan and its event trail are ready to review.",
+      "revision": 6
+    }
+  ],
+  "spans": [
+    {
+      "id": "67f14b76-be9d-49bd-a48c-f7400ea1a3fa",
+      "role": "supply",
+      "start": 1788753418886,
+      "end": 1788753420401,
+      "outcome": "ok"
+    },
+    {
+      "id": "b5da242f-0ec6-4b82-99be-a44d6d5fa9bc",
+      "role": "community",
+      "start": 1788753418886,
+      "end": 1788753420378,
+      "outcome": "ok"
+    },
+    {
+      "id": "e7927156-f5f7-4307-b59e-a554559db26a",
+      "role": "dispatch",
+      "start": 1788753418886,
+      "end": 1788753434109,
+      "outcome": "ok"
+    },
+    {
+      "id": "da1c6f42-2f59-405d-a0cb-b1ec6fe0f047",
+      "role": "community",
+      "start": 1788753420378,
+      "end": 1788753441974,
+      "outcome": "ok"
+    },
+    {
+      "id": "b161a5c0-aea3-4f07-a187-5e4df09ef7c2",
+      "role": "supply",
+      "start": 1788753420401,
+      "end": 1788753421094,
+      "outcome": "ok"
+    },
+    {
+      "id": "0cce378f-b449-4f0f-8d9a-58cc87da797b",
+      "role": "dispatch",
+      "start": 1788753434109,
+      "end": 1788753434809,
+      "outcome": "ok"
+    },
+    {
+      "id": "d3e5a1fb-018a-4b37-972b-4b2dd18d14ab",
+      "role": "dispatch",
+      "start": 1788753434809,
+      "end": 1788753436390,
+      "outcome": "ok"
+    },
+    {
+      "id": "fd6252f8-2ea8-4910-8934-5b68195f1fc2",
+      "role": "supply",
+      "start": 1788753435824,
+      "end": 1788753436657,
+      "outcome": "ok"
+    },
+    {
+      "id": "691a0b13-e55e-4fbd-9cde-39b4c3fd73e4",
+      "role": "dispatch",
+      "start": 1788753436390,
+      "end": 1788753437894,
+      "outcome": "ok"
+    },
+    {
+      "id": "1222c8aa-7875-4981-bb0e-4c8d2010ea99",
+      "role": "supply",
+      "start": 1788753436657,
+      "end": 1788753437335,
+      "outcome": "ok"
+    },
+    {
+      "id": "128fb0a2-0fcb-448b-80ec-18a737fdf7ba",
+      "role": "dispatch",
+      "start": 1788753437894,
+      "end": 1788753439840,
+      "outcome": "ok"
+    },
+    {
+      "id": "24b1f420-5277-4335-8db0-5e66df801e55",
+      "role": "dispatch",
+      "start": 1788753439840,
+      "end": 1788753442212,
+      "outcome": "ok"
+    },
+    {
+      "id": "d09a6545-a6e6-48f1-9e11-1371a8cc1424",
+      "role": "community",
+      "start": 1788753478886,
+      "end": 1788753514580,
+      "outcome": "error"
+    },
+    {
+      "id": "4b1a8495-1977-49b4-be5e-9b35189c5ea2",
+      "role": "dispatch",
+      "start": 1788753478886,
+      "end": 1788753523886,
+      "outcome": "error"
+    },
+    {
+      "id": "5f09729c-0b95-4342-a4bf-9d38723be1d5",
+      "role": "community",
+      "start": 1788753515580,
+      "end": 1788753560580,
+      "outcome": "error"
+    },
+    {
+      "id": "b30e9453-a204-4b47-98e9-6c2f8f83dd39",
+      "role": "dispatch",
+      "start": 1788753524886,
+      "end": 1788753552401,
+      "outcome": "error"
+    },
+    {
+      "id": "6ef526c1-6ace-4c58-a272-570c3fab7d25",
+      "role": "dispatch",
+      "start": 1788753554401,
+      "end": 1788753555775,
+      "outcome": "ok"
+    },
+    {
+      "id": "5955a94d-b963-460b-8be4-c0192aee09ef",
+      "role": "dispatch",
+      "start": 1788753555775,
+      "end": 1788753556709,
+      "outcome": "ok"
+    },
+    {
+      "id": "d25d7816-a234-4900-994b-7b10e507641c",
+      "role": "dispatch",
+      "start": 1788753556709,
+      "end": 1788753557526,
+      "outcome": "ok"
+    },
+    {
+      "id": "e83563d6-b3f6-475e-ac52-a2f6b0ed1057",
+      "role": "community",
+      "start": 1788753562580,
+      "end": 1788753572697,
+      "outcome": "ok"
+    },
+    {
+      "id": "2575bc90-aee4-4ea7-84cc-95f318f4aee4",
+      "role": "dispatch",
+      "start": 1788753572697,
+      "end": 1788753573774,
+      "outcome": "ok"
+    },
+    {
+      "id": "2ab409b5-900d-4579-a183-c6dd2535a4da",
+      "role": "community",
+      "start": 1788753572697,
+      "end": 1788753574203,
+      "outcome": "ok"
+    }
+  ],
+  "model": "gemini-3.1-flash-lite",
+  "calls": 22,
+  "endedAt": 1788753575171
+}

@@ -7,12 +7,15 @@ Validated locally on September 6, 2026 with Node.js 25.3.0. The supported minimu
 | TypeScript strict check | Passed |
 | Application lint | Passed |
 | Domain and actual Mozaik runtime tests | 11 passed |
+| Provider transport tests | Six passed: opaque metadata round-trip, quota redaction, incomplete/unsupported action rejection |
 | Production Worker build | Passed |
 | Production dependency audit | Zero known vulnerabilities at validation |
 | Fresh D1 migration in a separate local store | Passed |
 | Rehearsal streaming API integration | Passed |
 | Real-model streaming API integration | Passed: 17 calls, 59 events, four final reservations |
 | Live overlap/replanning evidence script | Passed: three overlapping model requests, one stale rejection |
+| Hosted streaming API integration | Passed: timely SSE snapshots, cancellation, durable history, owner isolation, origin rejection |
+| Clean GitHub CI on Node 22 | Passed for the deployed release |
 
 ## Browser verification
 
@@ -35,5 +38,7 @@ Verified through the visible interface:
 - Read the browser's recorded warning/error logs after the checks; none were reported for those checks.
 
 Browser testing found and corrected mobile menu dismissal, narrow driver-card wrapping, inaccessible SVG pin descendants, misleading saved-agent statuses, and raw update payloads in the visible event trail.
+
+The deployed browser also passed start, streamed five reservations, cancel Maya, revised four-reservation plan, and Finish & save. No browser warning or error was reported for that check. A gateway buffering issue was resolved by periodically repeating the authoritative SSE snapshot; the hosted integration asserts snapshot delivery age below 20 seconds.
 
 Screenshots in `docs/images/` show actual app states, including a captured real-agent run. These checks are not a full accessibility certification, load test, security assessment, or verification of real logistics operations.

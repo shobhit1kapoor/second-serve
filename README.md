@@ -13,7 +13,7 @@ Built by **Shobhit Kapoor**, solo, for the September 2026 JigJoy/Mozaik hackatho
 ## Try the important part
 
 1. Open the dispatch desk and choose **Start dispatch**. Without a provider key, the app offers clearly labeled **Rehearsal** mode.
-2. As reservations appear, choose **Maya unavailable** (or another assigned driver). Watch the assignments change.
+2. As reservations appear, choose **Maya cancels** (or another assigned driver). Watch the assignments change.
 3. Open **Agent activity** for the actual request intervals, shared findings, rejected reservations, and revised decisions.
 4. Choose **Finish & save**, then open **Run history**. Export the complete record as JSON.
 
@@ -43,6 +43,8 @@ Open the URL printed by the server (normally `http://localhost:3000`). The first
 For real API inference, copy `.env.example` to `.env`, set `OPENAI_API_KEY` and `OPENAI_MODEL`, and restart the server. The default endpoint is OpenAI's Chat Completions API; `OPENAI_BASE_URL` can point to a compatible server. The application does not claim that every provider is compatible. Tool calling is required. Do not use a `VITE_` prefix for secrets.
 
 The public fixture can be explored without credentials. **Rehearsal is not evidence of LLM performance.**
+
+For Gemini, set `GEMINI_API_KEY` and `GEMINI_MODEL` instead. This selects Google's fixed OpenAI-compatible endpoint; the Gemini credential takes precedence over `OPENAI_API_KEY`. The adapter preserves opaque tool-call signatures in server memory and rejects incomplete or unsupported actions. Check the project's actual rate limits in AI Studio before exposing live mode to reviewers. Compatibility tests exercise the transport contract; a working key and a successful live integration run are still required to verify provider access.
 
 ### Optional: existing local Codex sign-in
 

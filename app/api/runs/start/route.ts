@@ -7,6 +7,7 @@ import {
 } from '@/lib/server/store';
 import { apiError, checkOrigin, ownerFrom } from '@/lib/server/http';
 import type { RunRecord } from '@/lib/domain';
+import { providerConfig } from '@/lib/provider-config';
 
 export async function POST(request: Request) {
   const owner = ownerFrom(request) ?? '';
@@ -21,8 +22,8 @@ export async function POST(request: Request) {
   if (!['live', 'rehearsal'].includes(body.mode ?? ''))
     return apiError('Choose live or rehearsal mode.');
   const mode = body.mode as 'live' | 'rehearsal';
-  const config = environment();
-  if (mode === 'live' && !config.OPENAI_API_KEY)
+  const provider = providerConfig(environment());
+  if (mode === 'live' && !provider.apiKey)
     return apiError(
       'Live reasoning needs a configured model provider. Rehearsal remains available.',
       409,
@@ -45,11 +46,7 @@ export async function POST(request: Request) {
   const engine = createDispatchEngine({
     id,
     mode,
-    provider: {
-      apiKey: config.OPENAI_API_KEY,
-      model: config.OPENAI_MODEL ?? 'gpt-4.1-mini',
-      baseUrl: config.OPENAI_BASE_URL,
-    },
+    provider,
     onChange(run) {
       latest = run;
       if (!disconnected) {

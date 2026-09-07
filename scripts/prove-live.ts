@@ -2,8 +2,16 @@ import { createDispatchEngine } from '../lib/dispatch-engine';
 import { maxOverlap, metrics } from '../lib/domain';
 import { writeFile, mkdir } from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import { providerConfig } from '../lib/provider-config';
 
-if (!process.env.OPENAI_API_KEY)
+const configuredProvider = providerConfig({
+  GEMINI_API_KEY: process.env.GEMINI_API_KEY,
+  GEMINI_MODEL: process.env.GEMINI_MODEL,
+  OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+  OPENAI_MODEL: process.env.OPENAI_MODEL,
+  OPENAI_BASE_URL: process.env.OPENAI_BASE_URL,
+});
+if (!configuredProvider.apiKey)
   throw new Error(
     'Configure a server-side provider key before collecting live evidence.',
   );
@@ -13,9 +21,7 @@ const engine = createDispatchEngine({
   id: crypto.randomUUID(),
   mode: 'live',
   provider: {
-    apiKey: process.env.OPENAI_API_KEY,
-    model: process.env.OPENAI_MODEL ?? 'gpt-4.1-mini',
-    baseUrl: process.env.OPENAI_BASE_URL,
+    ...configuredProvider,
     timeoutMs: 90000,
   },
   onChange(run) {
@@ -45,9 +51,11 @@ engine.finish();
 while (!engine.isIdle() && Date.now() < deadline)
   await new Promise((resolve) => setTimeout(resolve, 100));
 await mkdir('evidence', { recursive: true });
-const provider = process.env.OPENAI_BASE_URL?.includes('127.0.0.1')
+const provider = configuredProvider.baseUrl?.includes('127.0.0.1')
   ? 'local-codex'
-  : 'api';
+  : process.env.GEMINI_API_KEY
+    ? 'gemini'
+    : 'api';
 await writeFile(
   `evidence/live-${provider}-run.json`,
   JSON.stringify(engine.record, null, 2),

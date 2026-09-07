@@ -1,10 +1,8 @@
 import { env } from 'cloudflare:workers';
 import type { Command, RunRecord } from '../domain';
-type Environment = {
+import type { ProviderEnvironment } from '../provider-config';
+type Environment = ProviderEnvironment & {
   DB: D1Database;
-  OPENAI_API_KEY?: string;
-  OPENAI_MODEL?: string;
-  OPENAI_BASE_URL?: string;
 };
 export function environment() {
   return env as unknown as Environment;

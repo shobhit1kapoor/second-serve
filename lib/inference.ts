@@ -47,6 +47,9 @@ const call = (name: string, args: unknown): InferenceOutput => ({
 
 /** Uses Mozaik's public runner contract, keeping credentials local to this run. */
 export class DispatchInferenceRunner implements InferenceRunner {
+  // Provider transport metadata (including Gemini's opaque thought signatures)
+  // belongs only in this runtime, never in the browser's exported event record.
+  private toolMetadata = new Map<string, Record<string, unknown>>();
   constructor(
     private state: DispatchState,
     private config: ProviderConfig,
@@ -102,6 +105,7 @@ export class DispatchInferenceRunner implements InferenceRunner {
               id: e.callId,
               type: 'function',
               function: { name: e.name, arguments: e.args },
+              ...this.toolMetadata.get(e.callId ?? ''),
             },
           ],
         };
@@ -116,32 +120,40 @@ export class DispatchInferenceRunner implements InferenceRunner {
         content: e.content?.text ?? '',
       };
     });
-    const response = await fetch(
-      `${this.config.baseUrl ?? 'https://api.openai.com/v1'}/chat/completions`,
-      {
-        method: 'POST',
-        signal: AbortSignal.timeout(this.config.timeoutMs ?? 25000),
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${this.config.apiKey}`,
-        },
-        body: JSON.stringify({
-          model: this.config.model,
-          messages,
-          max_completion_tokens: 900,
-          tools: input.tools?.map((t) => ({
-            type: 'function',
-            function: {
-              name: t.name,
-              description: t.description,
-              parameters: t.parameters,
-              strict: t.strict,
-            },
-          })),
-          parallel_tool_calls: false,
-        }),
+    const baseUrl = (
+      this.config.baseUrl ?? 'https://api.openai.com/v1'
+    ).replace(/\/+$/, '');
+    const gemini =
+      new URL(baseUrl).hostname === 'generativelanguage.googleapis.com';
+    const response = await fetch(`${baseUrl}/chat/completions`, {
+      method: 'POST',
+      signal: AbortSignal.timeout(this.config.timeoutMs ?? 25000),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.config.apiKey}`,
       },
-    );
+      body: JSON.stringify({
+        model: this.config.model,
+        messages,
+        ...(gemini
+          ? { max_tokens: 2048, reasoning_effort: 'low' }
+          : { max_completion_tokens: 900 }),
+        tools: input.tools?.map((t) => ({
+          type: 'function',
+          function: {
+            name: t.name,
+            description: t.description,
+            parameters: t.parameters,
+            strict: t.strict,
+          },
+        })),
+        parallel_tool_calls: false,
+      }),
+    });
+    if (response.status === 429)
+      throw new Error(
+        'The model provider rate or daily quota limit was reached. Wait before starting another live dispatch; saved plans and rehearsal remain available.',
+      );
     if (!response.ok)
       throw new Error(
         `Provider returned HTTP ${response.status}. Check model access, credentials, and quota.`,
@@ -153,6 +165,7 @@ export class DispatchInferenceRunner implements InferenceRunner {
           tool_calls?: {
             id: string;
             function: { name: string; arguments: string };
+            extra_content?: Record<string, unknown>;
           }[];
         };
       }[];
@@ -160,11 +173,33 @@ export class DispatchInferenceRunner implements InferenceRunner {
     const message = result.choices?.[0]?.message;
     if (!message) throw new Error('Provider returned an empty response.');
     const firstTool = message.tool_calls?.[0];
-    if (firstTool)
+    if (firstTool) {
+      // We request one tool per turn. Do not silently discard additional actions
+      // from providers that ignore parallel_tool_calls: false.
+      if (message.tool_calls!.length !== 1)
+        throw new Error(
+          'The model returned multiple tool calls in a single-action turn. No action was applied.',
+        );
+      if (!input.tools?.some((tool) => tool.name === firstTool.function.name))
+        throw new Error(
+          'The model requested an unavailable tool. No action was applied.',
+        );
+      try {
+        JSON.parse(firstTool.function.arguments);
+      } catch {
+        throw new Error(
+          'The model returned incomplete tool arguments. No action was applied.',
+        );
+      }
+      const callId = firstTool.id || crypto.randomUUID();
+      if (firstTool.extra_content)
+        this.toolMetadata.set(callId, {
+          extra_content: firstTool.extra_content,
+        });
       return {
         items: [
           FunctionCallItem.rehydrate({
-            callId: firstTool.id,
+            callId,
             name: firstTool.function.name,
             args: firstTool.function.arguments,
           }),
@@ -172,7 +207,12 @@ export class DispatchInferenceRunner implements InferenceRunner {
         tokenUsage: undefined,
         rowResponse: undefined,
       };
-    return answer(message.content || 'Assessment complete.');
+    }
+    if (!message.content?.trim())
+      throw new Error(
+        'The model returned no usable answer or tool call. Try another live dispatch.',
+      );
+    return answer(message.content);
   }
   private async rehearse(
     role: Role,

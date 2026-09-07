@@ -1,12 +1,13 @@
 import { environment } from '@/lib/server/store';
 import { ownerFrom } from '@/lib/server/http';
+import { providerConfig } from '@/lib/provider-config';
 export async function GET(request: Request) {
   const owner = ownerFrom(request) ?? crypto.randomUUID();
-  const config = environment();
+  const config = providerConfig(environment());
   return Response.json(
     {
-      liveAvailable: Boolean(config.OPENAI_API_KEY),
-      model: config.OPENAI_MODEL ?? 'gpt-4.1-mini',
+      liveAvailable: Boolean(config.apiKey),
+      model: config.model,
     },
     {
       headers: {

@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Second Serve — Food rescue, in motion',
+  icons: { icon: '/favicon.svg' },
   description:
     'A shared dispatch desk for food rescue. Concurrent agents coordinate donations, community capacity, and volunteer drivers.',
 };

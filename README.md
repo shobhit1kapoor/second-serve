@@ -25,7 +25,7 @@ You can also choose **Review real-agent run** on a fresh desk. This opens an une
 - Three independent agents using `@mozaik-ai/core` **4.0.6**: Scout (donations), Bridge (recipients), and Relay (dispatch).
 - Event-driven updates through Mozaik situation handlers; independent inference can overlap while each agent maintains its own conversation.
 - Atomic reservation validation: board revision, donation uniqueness, driver availability, chilled transport, total shift weight, recipient categories/capacity, and cumulative pickup timing.
-- A real server backend with streamed NDJSON snapshots, a durable D1 command queue and run history, per-session ownership, same-origin mutation checks, bounded requests, and provider timeouts.
+- A real server backend with streamed server-sent events, a durable D1 command queue and run history, per-session ownership, same-origin mutation checks, bounded requests, and provider timeouts.
 - A provider-backed inference runner, an explicitly simulated rehearsal runner, and an optional local Codex CLI bridge. Credentials remain server-side.
 
 ## Run locally
@@ -68,7 +68,7 @@ npm run check:api
 
 The last command needs the development server and initialized D1 database. Set `DISPATCH_LIVE=1` to exercise the configured model provider through the same streaming HTTP API. Set `DISPATCH_URL` to change the server URL. It checks cancellation, durable retrieval, ownership isolation, and cross-origin rejection. It writes the observed record into `evidence/`.
 
-The tests check actual constraints and runtime behavior, including a stale board and cancellation during overlapping inference. Lint covers application code; generated UI primitives are excluded. One documented React Compiler internal-error diagnostic is suppressed for the async NDJSON parser, while TypeScript and hook rules remain enabled.
+The tests check actual constraints and runtime behavior, including a stale board and cancellation during overlapping inference. Lint covers application code; generated UI primitives are excluded. One documented React Compiler internal-error diagnostic is suppressed for the async stream parser, while TypeScript and hook rules remain enabled.
 
 ## Evidence, not claims
 
@@ -99,3 +99,4 @@ The completed checks and browser observations are recorded in [`docs/VALIDATION.
 ## License and credits
 
 MIT. The runtime is Mozaik; the app uses React, Vinext, Cloudflare Workers/D1, Drizzle, Tailwind, Base UI/Shadcn primitives, Lucide icons, and Geist fonts. Existing packages and generated primitives are distinguished from project-specific work in [`docs/BUILD_LOG.md`](docs/BUILD_LOG.md).
+

@@ -15,7 +15,7 @@ export type RunSummary = {
   events: number;
   model: string;
 };
-// oxlint-disable-next-line react/react-compiler -- Compiler internal error ("Expected a variable declaration") on the async NDJSON parser; hook rules and TypeScript remain checked.
+// oxlint-disable-next-line react/react-compiler -- Compiler internal error ("Expected a variable declaration") on the async stream parser; hook rules and TypeScript remain checked.
 export function useDispatch() {
   const [run, setRun] = useState<RunRecord | null>(null);
   const [busy, setBusy] = useState(false);
@@ -87,8 +87,10 @@ export function useDispatch() {
           const index = buffer.indexOf('\n');
           const line = buffer.slice(0, index);
           buffer = buffer.slice(index + 1);
-          if (!line) continue;
-          const event = JSON.parse(line);
+          if (!line || line.startsWith(':')) continue;
+          const event = JSON.parse(
+            line.startsWith('data: ') ? line.slice(6) : line,
+          );
           if (event.type === 'snapshot') setRun(event.run);
         }
       }

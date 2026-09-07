@@ -49,7 +49,9 @@ export async function POST(request: Request) {
       if (!disconnected) {
         try {
           streamController?.enqueue(
-            encoder.encode(JSON.stringify({ type: 'snapshot', run }) + '\n'),
+            encoder.encode(
+              'data: ' + JSON.stringify({ type: 'snapshot', run }) + '\n\n',
+            ),
           );
         } catch {
           disconnected = true;
@@ -88,7 +90,9 @@ export async function POST(request: Request) {
         if (!disconnected)
           streamController?.enqueue(
             encoder.encode(
-              JSON.stringify({ type: 'heartbeat', at: Date.now() }) + '\n',
+              'data: ' +
+                JSON.stringify({ type: 'heartbeat', at: Date.now() }) +
+                '\n\n',
             ),
           );
         await new Promise((resolve) => setTimeout(resolve, 450));
@@ -112,7 +116,9 @@ export async function POST(request: Request) {
         try {
           streamController?.enqueue(
             encoder.encode(
-              JSON.stringify({ type: 'snapshot', run: engine.record }) + '\n',
+              'data: ' +
+                JSON.stringify({ type: 'snapshot', run: engine.record }) +
+                '\n\n',
             ),
           );
           streamController?.close();
@@ -124,8 +130,9 @@ export async function POST(request: Request) {
   }
   return new Response(stream, {
     headers: {
-      'Content-Type': 'application/x-ndjson',
+      'Content-Type': 'text/event-stream; charset=utf-8',
       'Cache-Control': 'no-store, no-transform',
+      'X-Accel-Buffering': 'no',
       'X-Content-Type-Options': 'nosniff',
     },
   });

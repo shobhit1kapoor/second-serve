@@ -41,7 +41,7 @@ The available candidates are deterministic calculations. They assist the model a
 
 ## Request and persistence path
 
-`POST /api/runs/start` creates a run, persists it, and returns NDJSON snapshots while the runtime works. A bounded loop drains queued commands, persists snapshots, and sends heartbeats. `POST /api/runs/:id/commands` validates and queues a change. Commands have unique IDs, and the engine also deduplicates processed IDs.
+`POST /api/runs/start` creates a run, persists it, and returns server-sent events while the runtime works. A bounded loop drains queued commands, persists snapshots, and sends heartbeats. `POST /api/runs/:id/commands` validates and queues a change. Commands have unique IDs, and the engine also deduplicates processed IDs.
 
 `GET /api/runs` and `GET /api/runs/:id` read only the current browser session's rows. SQL uses bound parameters. The cookie is HttpOnly and SameSite=Lax, and Secure on HTTPS. Mutations reject an Origin that differs from the request origin. All scenario content is rendered as text by React. Provider credentials are read only by the server and are absent from event records.
 
@@ -72,3 +72,4 @@ The local Codex bridge is optional development infrastructure. It is not shipped
 | `components/operations-panels.tsx` | Network, timeline, history, details |
 | `scripts/prove-live.ts` | Real inference overlap and recovery check |
 | `scripts/check-api.mjs` | End-to-end API and persistence check |
+

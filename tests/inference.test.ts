@@ -9,7 +9,10 @@ import {
 import { DispatchInferenceRunner } from '../lib/inference';
 import { createScenario } from '../lib/domain';
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.useRealTimers();
+});
 const input = (): InferenceInput => ({
   model: 'gemini-3.5-flash-lite',
   context: ModelContext.create().addContextItem(
@@ -96,10 +99,11 @@ describe('provider transport', () => {
       tool_call_id: 'provider-call',
       content: '{"revision":1}',
     });
-    expect(body.reasoning_effort).toBe('low');
+    expect(body.reasoning_effort).toBe('minimal');
   });
 
   it('records quota failure without echoing provider bodies or credentials', async () => {
+    vi.useFakeTimers();
     vi.stubGlobal(
       'fetch',
       vi
@@ -109,10 +113,31 @@ describe('provider transport', () => {
         ),
     );
     const { runner, end } = setup();
-    const output = await runner.run(input());
+    const pending = runner.run(input());
+    await vi.advanceTimersByTimeAsync(180000);
+    const output = await pending;
     expect(end.mock.calls[0][1]).toContain('quota limit');
     expect(JSON.stringify(output)).not.toContain('sensitive provider body');
     expect(JSON.stringify(output)).not.toContain('test-key');
+    expect(end.mock.calls.at(-1)?.[2]).toBe(false);
+  });
+  it('recovers from a temporary service failure and records the retry separately', async () => {
+    vi.useFakeTimers();
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response('busy', { status: 503 }))
+      .mockResolvedValueOnce(
+        Response.json({ choices: [{ message: { content: 'Recovered.' } }] }),
+      );
+    vi.stubGlobal('fetch', fetchMock);
+    const { runner, end } = setup();
+    const pending = runner.run(input());
+    await vi.advanceTimersByTimeAsync(1000);
+    const output = await pending;
+    expect(JSON.stringify(output)).toContain('Recovered.');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(end.mock.calls[0][2]).toBe(true);
+    expect(end.mock.calls[1][1]).toBeUndefined();
   });
 
   it.each([
@@ -128,7 +153,7 @@ describe('provider transport', () => {
       ],
     },
     {
-      tool_calls: Array.from({ length: 2 }, (_, i) => ({
+      tool_calls: Array.from({ length: 9 }, (_, i) => ({
         id: String(i),
         function: { name: 'read_board', arguments: '{}' },
       })),
@@ -144,5 +169,46 @@ describe('provider transport', () => {
     expect(output.items.some((item) => item instanceof FunctionCallItem)).toBe(
       false,
     );
+  });
+  it('drains batched tools one at a time and preserves their original response grouping', async () => {
+    const tools = ['one', 'two'].map((id) => ({
+      id,
+      type: 'function',
+      function: { name: 'read_board', arguments: '{}' },
+      extra_content: { google: { thought_signature: 'opaque' } },
+    }));
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        Response.json({
+          choices: [{ message: { role: 'assistant', tool_calls: tools } }],
+        }),
+      )
+      .mockResolvedValueOnce(
+        Response.json({ choices: [{ message: { content: 'Done.' } }] }),
+      );
+    vi.stubGlobal('fetch', fetchMock);
+    const { runner, end } = setup();
+    const request = input();
+    const first = await runner.run(request);
+    request.context
+      .addContextItems(first.items)
+      .addContextItem(FunctionCallOutputItem.create('one', '{}'));
+    const second = await runner.run(request);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(end).toHaveBeenCalledTimes(1);
+    expect((second.items[0] as FunctionCallItem).callId).toBe('two');
+    request.context
+      .addContextItems(second.items)
+      .addContextItem(FunctionCallOutputItem.create('two', '{}'));
+    await runner.run(request);
+    const messages = JSON.parse(fetchMock.mock.calls[1][1].body).messages;
+    expect(messages.map((message: { role: string }) => message.role)).toEqual([
+      'system',
+      'assistant',
+      'tool',
+      'tool',
+    ]);
+    expect(messages[1].tool_calls).toEqual(tools);
   });
 });

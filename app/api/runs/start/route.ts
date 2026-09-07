@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     try {
       engine.start();
       while (!engine.isFinished()) {
-        if (disconnected || Date.now() - engine.record.startedAt > 120000) {
+        if (disconnected || Date.now() - engine.record.startedAt > 240000) {
           engine.finish();
           break;
         }

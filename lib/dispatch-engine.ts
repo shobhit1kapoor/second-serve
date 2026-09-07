@@ -110,19 +110,27 @@ export function createDispatchEngine(options: EngineOptions) {
         );
         return id;
       },
-      end(id, error) {
+      end(id, error, recoverable = false) {
         const span = record.spans.find((s) => s.id === id)!;
         span.end = Date.now();
         span.outcome = error ? 'error' : 'ok';
-        if (error) {
+        if (error && !recoverable) {
           record.state.agents.find((a) => a.role === span.role)!.state =
             'error';
           record.error = error;
         }
         event(
-          error ? 'inference.error' : 'inference.completed',
+          recoverable
+            ? 'inference.retrying'
+            : error
+              ? 'inference.error'
+              : 'inference.completed',
           span.role,
-          error ? 'Model request needs attention' : 'Reasoning completed',
+          recoverable
+            ? 'Provider busy; retrying this request'
+            : error
+              ? 'Model request needs attention'
+              : 'Reasoning completed',
           error ?? '',
           { spanId: id, durationMs: span.end - span.start },
         );

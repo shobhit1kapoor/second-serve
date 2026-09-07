@@ -13,7 +13,7 @@ export async function POST(
   if (!run) return apiError('Run not found.', 404);
   if (
     !['running', 'watching'].includes(run.status) ||
-    Date.now() - run.startedAt > 180000
+    Date.now() - run.startedAt > 300000
   )
     return apiError('This session has finished. Start a new dispatch.', 409);
   let command: Command;

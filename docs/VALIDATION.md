@@ -7,7 +7,7 @@ Validated locally on September 6, 2026 with Node.js 25.3.0. The supported minimu
 | TypeScript strict check | Passed |
 | Application lint | Passed |
 | Domain and actual Mozaik runtime tests | 11 passed |
-| Provider transport tests | Six passed: opaque metadata round-trip, quota redaction, incomplete/unsupported action rejection |
+| Provider transport and request pacing tests | Ten passed: metadata round-trip, batched tool delivery, quota redaction, transient retry, invalid action rejection, rolling admission, cancelled waits |
 | Production Worker build | Passed |
 | Production dependency audit | Zero known vulnerabilities at validation |
 | Fresh D1 migration in a separate local store | Passed |

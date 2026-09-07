@@ -91,7 +91,11 @@ These are observations from one scenario, not a speed benchmark, optimality proo
 
 The application builds to a Cloudflare-compatible Worker and uses one D1 binding, `DB`. Drizzle migrations live in `drizzle/`. Sites deployment uses `.openai/hosting.json`; a separate deployment should create its own project rather than reuse this project's identifier. Runtime secrets belong in the hosting environment, not the manifest or source archive.
 
-Each session runs for up to two minutes, with a maximum of 48 inference calls. The demo limits new sessions per browser and globally per hour. These limits are abuse deterrents, not a billing guarantee. Active orchestration is request-scoped; an interrupted connection stops the session, and the last persisted snapshot remains available. It does not automatically resume in-flight model work after a Worker restart.
+Each session runs for up to four minutes, with a maximum of 48 inference requests including retries. Gemini sessions admit at most 12 requests in a rolling minute per run, allowing independent calls to overlap. Quota waiting is excluded from inference spans. This pacing is per run; concurrent sessions and other apps still share the provider's account quota. Temporary service errors and quota responses receive at most two retries, while malformed actions and authentication failures stop the affected turn. Failed requests remain in the trace.
+
+Some providers return multiple tool calls despite the single-call preference. The adapter drains those through Mozaik's individual tool transitions and preserves the original response grouping and opaque signatures for the next provider request. Every reservation still passes the current-board validation gate; queued tool execution does not count as additional model inference.
+
+The demo limits new sessions per browser and globally per hour. These limits are abuse deterrents, not a billing guarantee. Active orchestration is request-scoped; an interrupted connection stops the session, and the last persisted snapshot remains available. It does not automatically resume in-flight model work after a Worker restart.
 
 Routes use an illustrative distance estimate rather than a traffic service. Driver capacity is conservatively reserved across the entire shift; the system does not optimize loading/unloading dynamics. Reservations require human review. Real operations would need partner onboarding, inventory and food-safety checks, verified travel estimates, delivery confirmation, stronger identity, and durable orchestration across disconnects.
 

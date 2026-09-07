@@ -7,6 +7,7 @@ import {
   SemanticEvent,
 } from '@mozaik-ai/core';
 import { candidateAssignments, type DispatchState, type Role } from './domain';
+import { RequestPacer } from './request-pacer';
 
 export type ProviderConfig = {
   apiKey?: string;
@@ -16,7 +17,7 @@ export type ProviderConfig = {
 };
 export type InferenceHooks = {
   begin: (role: Role) => string;
-  end: (id: string, error?: string) => void;
+  end: (id: string, error?: string, recoverable?: boolean) => void;
   stopped: () => boolean;
 };
 type ContextEntry = {
@@ -28,6 +29,26 @@ type ContextEntry = {
   args?: string;
   callId?: string;
 };
+type ProviderToolCall = {
+  id: string;
+  type?: string;
+  function: { name: string; arguments: string };
+  extra_content?: Record<string, unknown>;
+};
+type ProviderMessage = {
+  role?: string;
+  content?: string | null;
+  tool_calls?: ProviderToolCall[];
+  extra_content?: Record<string, unknown>;
+};
+class ProviderRequestError extends Error {
+  constructor(
+    message: string,
+    readonly retryAfterMs: number,
+  ) {
+    super(message);
+  }
+}
 const answer = (text: string): InferenceOutput => ({
   items: [ModelMessageItem.rehydrate({ text })],
   tokenUsage: undefined,
@@ -49,7 +70,9 @@ const call = (name: string, args: unknown): InferenceOutput => ({
 export class DispatchInferenceRunner implements InferenceRunner {
   // Provider transport metadata (including Gemini's opaque thought signatures)
   // belongs only in this runtime, never in the browser's exported event record.
-  private toolMetadata = new Map<string, Record<string, unknown>>();
+  private toolMessages = new Map<string, ProviderMessage>();
+  private queuedTools = new Map<Role, FunctionCallItem[]>();
+  private pacer = new RequestPacer();
   constructor(
     private state: DispatchState,
     private config: ProviderConfig,
@@ -64,23 +87,56 @@ export class DispatchInferenceRunner implements InferenceRunner {
       'dispatch') as Role;
     if (this.hooks.stopped())
       return answer('The session has finished. No further changes were made.');
-    const span = this.hooks.begin(role);
-    try {
-      const output = this.rehearsal
-        ? await this.rehearse(role, entries)
-        : await this.infer(input, entries);
-      this.hooks.end(span);
-      return output;
-    } catch (error) {
-      // Mozaik v4 runLoop is fire-and-forget. Resolve a final answer on provider failure
-      // so the runtime closes the loop rather than creating an unhandled rejection.
-      const message =
-        error instanceof Error ? error.message : 'Model request failed';
-      this.hooks.end(span, message);
-      return answer(
-        `I could not complete this turn: ${message}. Existing reservations remain unchanged.`,
-      );
+    // Mozaik 4.0.6 executes one function item per transition. Drain a provider
+    // batch through those transitions without inventing additional model calls.
+    const queued = this.queuedTools.get(role)?.shift();
+    if (queued)
+      return { items: [queued], tokenUsage: undefined, rowResponse: undefined };
+    for (let attempt = 0; attempt < 3; attempt++) {
+      if (
+        !this.rehearsal &&
+        this.config.baseUrl?.includes('generativelanguage.googleapis.com')
+      ) {
+        if (!(await this.pacer.acquire(this.hooks.stopped)))
+          return answer(
+            'The session has finished. No further changes were made.',
+          );
+      }
+      const span = this.hooks.begin(role);
+      try {
+        const output = this.rehearsal
+          ? await this.rehearse(role, entries)
+          : await this.infer(input, entries, role);
+        this.hooks.end(span);
+        return output;
+      } catch (error) {
+        // Mozaik v4 runLoop is fire-and-forget. Resolve a final answer on provider failure
+        // so the runtime closes the loop rather than creating an unhandled rejection.
+        const message =
+          error instanceof Error ? error.message : 'Model request failed';
+        const retry =
+          error instanceof ProviderRequestError &&
+          attempt < 2 &&
+          !this.hooks.stopped();
+        this.hooks.end(span, message, retry);
+        if (retry) {
+          const until = Date.now() + error.retryAfterMs * (attempt + 1);
+          while (!this.hooks.stopped() && Date.now() < until)
+            await new Promise((resolve) =>
+              setTimeout(resolve, Math.min(200, until - Date.now())),
+            );
+          if (this.hooks.stopped())
+            return answer(
+              'The session has finished. No further changes were made.',
+            );
+          continue;
+        }
+        return answer(
+          `I could not complete this turn: ${message}. Existing reservations remain unchanged.`,
+        );
+      }
     }
+    return answer('The provider could not complete this turn.');
   }
   async *stream(input: InferenceInput): AsyncGenerator<SemanticEvent> {
     yield SemanticEvent.create(
@@ -92,34 +148,46 @@ export class DispatchInferenceRunner implements InferenceRunner {
   private async infer(
     input: InferenceInput,
     entries: ContextEntry[],
+    role: Role,
   ): Promise<InferenceOutput> {
     if (!this.config.apiKey)
       throw new Error('A model provider key is required for live dispatch.');
-    const messages = entries.map((e) => {
-      if (e.type === 'function_call')
+    const emittedMessages = new Set<ProviderMessage>();
+    const messages = entries
+      .map((e) => {
+        const original =
+          e.type === 'function_call'
+            ? this.toolMessages.get(e.callId ?? '')
+            : undefined;
+        if (original) {
+          if (emittedMessages.has(original)) return null;
+          emittedMessages.add(original);
+          return original;
+        }
+        if (e.type === 'function_call')
+          return {
+            role: 'assistant',
+            content: null,
+            tool_calls: [
+              {
+                id: e.callId,
+                type: 'function',
+                function: { name: e.name, arguments: e.args },
+              },
+            ],
+          };
+        if (e.type === 'function_call_output')
+          return {
+            role: 'tool',
+            tool_call_id: e.callId,
+            content: e.output?.text ?? '',
+          };
         return {
-          role: 'assistant',
-          content: null,
-          tool_calls: [
-            {
-              id: e.callId,
-              type: 'function',
-              function: { name: e.name, arguments: e.args },
-              ...this.toolMetadata.get(e.callId ?? ''),
-            },
-          ],
+          role: e.role === 'developer' ? 'system' : (e.role ?? 'user'),
+          content: e.content?.text ?? '',
         };
-      if (e.type === 'function_call_output')
-        return {
-          role: 'tool',
-          tool_call_id: e.callId,
-          content: e.output?.text ?? '',
-        };
-      return {
-        role: e.role === 'developer' ? 'system' : (e.role ?? 'user'),
-        content: e.content?.text ?? '',
-      };
-    });
+      })
+      .filter((message) => message !== null);
     const baseUrl = (
       this.config.baseUrl ?? 'https://api.openai.com/v1'
     ).replace(/\/+$/, '');
@@ -136,7 +204,12 @@ export class DispatchInferenceRunner implements InferenceRunner {
         model: this.config.model,
         messages,
         ...(gemini
-          ? { max_tokens: 2048, reasoning_effort: 'low' }
+          ? {
+              max_tokens: 2048,
+              reasoning_effort: this.config.model.includes('flash-lite')
+                ? 'minimal'
+                : 'low',
+            }
           : { max_completion_tokens: 900 }),
         tools: input.tools?.map((t) => ({
           type: 'function',
@@ -151,8 +224,20 @@ export class DispatchInferenceRunner implements InferenceRunner {
       }),
     });
     if (response.status === 429)
-      throw new Error(
+      throw new ProviderRequestError(
         'The model provider rate or daily quota limit was reached. Wait before starting another live dispatch; saved plans and rehearsal remain available.',
+        Math.min(
+          60000,
+          Math.max(
+            1000,
+            Number(response.headers.get('retry-after') ?? 60) * 1000 || 60000,
+          ),
+        ),
+      );
+    if ([500, 502, 503, 504].includes(response.status))
+      throw new ProviderRequestError(
+        `The model service temporarily returned HTTP ${response.status}.`,
+        1000,
       );
     if (!response.ok)
       throw new Error(
@@ -160,50 +245,51 @@ export class DispatchInferenceRunner implements InferenceRunner {
       );
     const result = (await response.json()) as {
       choices?: {
-        message: {
-          content?: string;
-          tool_calls?: {
-            id: string;
-            function: { name: string; arguments: string };
-            extra_content?: Record<string, unknown>;
-          }[];
-        };
+        message: ProviderMessage;
       }[];
     };
     const message = result.choices?.[0]?.message;
     if (!message) throw new Error('Provider returned an empty response.');
     const firstTool = message.tool_calls?.[0];
     if (firstTool) {
-      // We request one tool per turn. Do not silently discard additional actions
-      // from providers that ignore parallel_tool_calls: false.
-      if (message.tool_calls!.length !== 1)
+      if (message.tool_calls!.length > 8)
         throw new Error(
-          'The model returned multiple tool calls in a single-action turn. No action was applied.',
+          'The model returned too many actions in one response. No action was applied.',
         );
-      if (!input.tools?.some((tool) => tool.name === firstTool.function.name))
-        throw new Error(
-          'The model requested an unavailable tool. No action was applied.',
-        );
-      try {
-        JSON.parse(firstTool.function.arguments);
-      } catch {
-        throw new Error(
-          'The model returned incomplete tool arguments. No action was applied.',
-        );
+      for (const requested of message.tool_calls!) {
+        if (!input.tools?.some((tool) => tool.name === requested.function.name))
+          throw new Error(
+            'The model requested an unavailable tool. No action was applied.',
+          );
+        try {
+          JSON.parse(requested.function.arguments);
+        } catch {
+          throw new Error(
+            'The model returned incomplete tool arguments. No action was applied.',
+          );
+        }
       }
-      const callId = firstTool.id || crypto.randomUUID();
-      if (firstTool.extra_content)
-        this.toolMetadata.set(callId, {
-          extra_content: firstTool.extra_content,
+      const calls = message.tool_calls!.map((tool) => ({
+        ...tool,
+        id: tool.id || crypto.randomUUID(),
+        type: 'function',
+      }));
+      const original: ProviderMessage = {
+        ...message,
+        role: 'assistant',
+        tool_calls: calls,
+      };
+      const items = calls.map((tool) => {
+        this.toolMessages.set(tool.id, original);
+        return FunctionCallItem.rehydrate({
+          callId: tool.id,
+          name: tool.function.name,
+          args: tool.function.arguments,
         });
+      });
+      this.queuedTools.set(role, items.slice(1));
       return {
-        items: [
-          FunctionCallItem.rehydrate({
-            callId,
-            name: firstTool.function.name,
-            args: firstTool.function.arguments,
-          }),
-        ],
+        items: [items[0]],
         tokenUsage: undefined,
         rowResponse: undefined,
       };

@@ -31,6 +31,10 @@ while (true) {
     const e = JSON.parse(line.startsWith('data: ') ? line.slice(6) : line);
     if (e.type !== 'snapshot') continue;
     latest = e.run;
+    if (latest.error) {
+      await reader.cancel();
+      throw new Error(latest.error);
+    }
     assert.ok(
       Date.now() - (e.at ?? latest.events.at(-1)?.at ?? latest.startedAt) <
         20000,

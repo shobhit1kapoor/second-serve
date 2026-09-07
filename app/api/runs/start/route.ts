@@ -96,7 +96,7 @@ export async function POST(request: Request) {
         await new Promise((resolve) => setTimeout(resolve, 450));
       }
       // Let in-flight inference settle; stopped tools cannot mutate the final plan.
-      const until = Date.now() + 26000;
+      const until = Date.now() + Math.max(26000, (provider.timeoutMs ?? 25000) + 1000);
       while (!engine.isIdle() && Date.now() < until)
         await new Promise((resolve) => setTimeout(resolve, 100));
       await saveRun(latest, owner);

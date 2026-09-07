@@ -15,6 +15,7 @@ export function providerConfig(env: ProviderEnvironment): ProviderConfig {
       apiKey: env.GEMINI_API_KEY,
       model: env.GEMINI_MODEL ?? 'gemini-3.1-flash-lite',
       baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai',
+      timeoutMs: 45000,
     };
   return {
     apiKey: env.OPENAI_API_KEY,

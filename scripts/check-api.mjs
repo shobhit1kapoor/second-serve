@@ -32,6 +32,8 @@ while (true) {
     if (e.type !== 'snapshot') continue;
     latest = e.run;
     if (latest.error) {
+      await mkdir('outputs', { recursive: true });
+      await writeFile('outputs/failed-api-run.json', JSON.stringify(latest, null, 2));
       await reader.cancel();
       throw new Error(latest.error);
     }

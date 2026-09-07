@@ -114,13 +114,19 @@ export class DispatchInferenceRunner implements InferenceRunner {
         // so the runtime closes the loop rather than creating an unhandled rejection.
         const message =
           error instanceof Error ? error.message : 'Model request failed';
-        const retry =
-          error instanceof ProviderRequestError &&
-          attempt < 2 &&
-          !this.hooks.stopped();
+        const transient =
+          error instanceof ProviderRequestError ||
+          (error instanceof Error &&
+            ['TimeoutError', 'AbortError'].includes(error.name));
+        const retry = transient && attempt < 2 && !this.hooks.stopped();
         this.hooks.end(span, message, retry);
         if (retry) {
-          const until = Date.now() + error.retryAfterMs * (attempt + 1);
+          const until =
+            Date.now() +
+            (error instanceof ProviderRequestError
+              ? error.retryAfterMs
+              : 1000) *
+              (attempt + 1);
           while (!this.hooks.stopped() && Date.now() < until)
             await new Promise((resolve) =>
               setTimeout(resolve, Math.min(200, until - Date.now())),

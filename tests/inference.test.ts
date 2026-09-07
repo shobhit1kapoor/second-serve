@@ -139,6 +139,24 @@ describe('provider transport', () => {
     expect(end.mock.calls[0][2]).toBe(true);
     expect(end.mock.calls[1][1]).toBeUndefined();
   });
+  it('retries a timed-out network request without counting the backoff as inference', async () => {
+    vi.useFakeTimers();
+    const fetchMock = vi
+      .fn()
+      .mockRejectedValueOnce(
+        new DOMException('Request timed out', 'TimeoutError'),
+      )
+      .mockResolvedValueOnce(
+        Response.json({ choices: [{ message: { content: 'Recovered.' } }] }),
+      );
+    vi.stubGlobal('fetch', fetchMock);
+    const { runner, end } = setup();
+    const pending = runner.run(input());
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(JSON.stringify(await pending)).toContain('Recovered.');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(end.mock.calls[0][2]).toBe(true);
+  });
 
   it.each([
     {},
